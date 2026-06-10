@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0c0c0c">
+<title>Planos de Produção — 3P's Produções</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0c0c0c;
+  --dark:#111111;
+  --card:#161616;
+  --line:#242424;
+  --text:#f0ede8;
+  --muted:#6b6b6b;
+  --light:#a8a8a8;
+  --gold:#c9a028;
+  --gold-light:#e8bc45;
+  --gold-dim:rgba(201,160,40,0.12);
+  --teal:#00c9a7;
+  --teal-dim:rgba(0,201,167,0.10);
+  --white:#ffffff;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ─── UTILITY ─────────────────────────────── */
+.serif{font-family:'Cormorant Garamond',serif}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+hr.line{border:none;border-top:1px solid var(--line);margin:0}
+
+/* ─── HEADER ──────────────────────────────── */
+header{
+  padding:40px 24px 0;
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo-img{height:52px;width:auto}
+.header-contact{
+  font-size:13px;color:var(--muted);
+  display:flex;align-items:center;gap:6px;
+}
+.header-contact a{color:var(--light);text-decoration:none;transition:color .2s}
+.header-contact a:hover{color:var(--gold)}
+
+/* ─── HERO ────────────────────────────────── */
+.hero{
+  padding:80px 24px 72px;
+  max-width:1100px;
+  margin:0 auto;
+  border-bottom:1px solid var(--line);
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:28px;
+}
+.hero-eyebrow::before{
+  content:'';display:block;width:24px;height:1px;background:var(--gold);
+}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(44px,7vw,80px);
+  font-weight:300;
+  line-height:1.05;
+  color:var(--white);
+  letter-spacing:-1px;
+  margin-bottom:24px;
+}
+.hero h1 em{
+  font-style:italic;
+  color:var(--gold);
+}
+.hero-sub{
+  font-size:15px;
+  color:var(--light);
+  line-height:1.7;
+  max-width:560px;
+  font-weight:300;
+}
+.hero-meta{
+  display:flex;gap:40px;flex-wrap:wrap;margin-top:52px;
+  padding-top:40px;border-top:1px solid var(--line);
+}
+.meta-item{}
+.meta-val{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;font-weight:500;color:var(--white);line-height:1;
+}
+.meta-val span{font-size:18px;color:var(--gold)}
+.meta-label{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:.5px}
+
+/* ─── PAYMENT NOTICE ──────────────────────── */
+.payment-notice{
+  background:var(--dark);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:20px 24px;
+}
+.payment-notice-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;
+}
+.payment-notice p{font-size:13px;color:var(--muted)}
+.payment-notice strong{color:var(--light)}
+.pay-pills{display:flex;gap:8px;flex-wrap:wrap}
+.pay-pill{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:600;padding:5px 12px;border-radius:2px;
+  letter-spacing:.3px;
+}
+.pay-pill.pix{background:rgba(0,201,167,.1);color:var(--teal);border:1px solid rgba(0,201,167,.2)}
+.pay-pill.card{background:rgba(255,255,255,.04);color:var(--light);border:1px solid var(--line)}
+
+/* ─── PLANS SECTION ───────────────────────── */
+.plans-section{padding:80px 0 0}
+.plans-header{
+  max-width:1100px;margin:0 auto;
+  padding:0 24px 52px;
+}
+.plans-header h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(32px,4vw,48px);font-weight:300;
+  color:var(--white);letter-spacing:-.5px;
+}
+.plans-header p{font-size:14px;color:var(--muted);margin-top:8px}
+
+/* ─── PLAN CARDS ──────────────────────────── */
+.plans-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);
+}
+@media(max-width:860px){
+  .plans-grid{grid-template-columns:1fr;border-top:none}
+}
+
+.plan-col{
+  border-right:1px solid var(--line);
+  padding:0;
+  position:relative;
+  transition:background .3s;
+}
+.plan-col:last-child{border-right:none}
+@media(max-width:860px){
+  .plan-col{border-right:none;border-bottom:1px solid var(--line)}
+  .plan-col:last-child{border-bottom:none}
+}
+
+/* Featured glow */
+.plan-col.featured{background:var(--dark)}
+.plan-col.featured::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));
+}
+
+/* Plan top */
+.plan-top{padding:40px 36px 32px}
+@media(max-width:480px){.plan-top{padding:32px 24px 24px}}
+.plan-tier{
+  font-size:10px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:16px;
+}
+.plan-col.featured .plan-tier{color:var(--gold)}
+.plan-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;font-weight:400;color:var(--white);
+  margin-bottom:12px;line-height:1.1;
+}
+.plan-col.featured .plan-name{color:var(--gold-light)}
+.plan-desc{font-size:13px;color:var(--muted);line-height:1.6;font-weight:300}
+
+/* Pricing */
+.plan-price-block{padding:32px 36px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+@media(max-width:480px){.plan-price-block{padding:24px}}
+.price-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.price-main{
+  display:flex;align-items:flex-start;gap:4px;margin-bottom:8px;
+}
+.price-curr{font-size:16px;color:var(--muted);margin-top:6px;font-weight:300}
+.price-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:56px;font-weight:400;color:var(--white);line-height:1;
+  letter-spacing:-1px;
+}
+.plan-col.featured .price-num{color:var(--gold-light)}
+.price-suffix{font-size:12px;color:var(--muted);align-self:flex-end;margin-bottom:6px}
+.price-equiv{font-size:12px;color:var(--muted);font-weight:300}
+.price-equiv strong{color:var(--light);font-weight:500}
+
+/* Features */
+.plan-features{padding:32px 36px}
+@media(max-width:480px){.plan-features{padding:24px}}
+.feat-group-label{
+  font-size:10px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:16px;
+  display:flex;align-items:center;gap:8px;
+}
+.feat-group-label::after{
+  content:'';flex:1;height:1px;background:var(--line);
+}
+.feat-list{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.feat-row{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--light);line-height:1.5}
+.feat-row.off{color:var(--muted)}
+.feat-check{flex-shrink:0;margin-top:2px;font-size:11px}
+.feat-check.on{color:var(--teal)}
+.feat-check.gold{color:var(--gold)}
+.feat-check.off{color:var(--line)}
+
+/* Premium badge */
+.premium-badge{
+  background:var(--gold-dim);
+  border:1px solid rgba(201,160,40,.2);
+  border-radius:2px;
+  padding:14px 16px;
+  margin-bottom:24px;
+}
+.premium-badge-title{
+  font-size:10px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:10px;
+}
+.premium-badge-list{display:flex;flex-direction:column;gap:6px}
+.premium-feat-row{font-size:12px;color:var(--light);display:flex;align-items:flex-start;gap:6px;line-height:1.4}
+.premium-feat-row::before{content:'—';color:var(--gold);flex-shrink:0;font-size:10px;margin-top:2px}
+
+/* CTA */
+.plan-cta{padding:0 36px 40px}
+@media(max-width:480px){.plan-cta{padding:0 24px 32px}}
+.cta-btn{
+  display:block;width:100%;
+  padding:15px 20px;
+  font-family:'Inter',sans-serif;
+  font-size:13px;font-weight:600;
+  letter-spacing:.5px;text-align:center;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:all .25s;
+}
+.cta-btn.outline{
+  background:transparent;
+  color:var(--light);
+  border:1px solid var(--line);
+}
+.cta-btn.outline:hover{border-color:var(--gold);color:var(--gold)}
+.cta-btn.solid{
+  background:var(--gold);
+  color:#000;
+  font-weight:700;
+  letter-spacing:.8px;
+}
+.cta-btn.solid:hover{background:var(--gold-light)}
+
+/* ─── ADDONS ──────────────────────────────── */
+.addons-section{
+  padding:80px 24px;
+  max-width:1100px;margin:0 auto;
+  border-top:1px solid var(--line);
+}
+.section-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.section-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,3.5vw,42px);font-weight:300;
+  color:var(--white);margin-bottom:8px;
+}
+.section-sub{font-size:14px;color:var(--muted);margin-bottom:48px;font-weight:300}
+
+.addons-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--line);
+}
+@media(max-width:680px){.addons-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:400px){.addons-grid{grid-template-columns:1fr}}
+
+.addon-card{
+  background:var(--dark);
+  padding:28px 24px;
+  transition:background .2s;
+}
+.addon-card:hover{background:#1c1c1c}
+.addon-icon{font-size:20px;margin-bottom:14px}
+.addon-name{font-size:14px;font-weight:600;color:var(--white);margin-bottom:6px}
+.addon-desc{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:16px;font-weight:300}
+.addon-price{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold-light)}
+
+/* ─── COMPARE TABLE ───────────────────────── */
+.compare-section{
+  padding:0 24px 80px;
+  max-width:1100px;margin:0 auto;
+}
+.table-wrap{
+  overflow-x:auto;
+  border:1px solid var(--line);
+}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{
+  padding:16px 24px;text-align:left;
+  font-size:10px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);
+  background:var(--dark);
+  border-bottom:1px solid var(--line);
+}
+thead th.hl{color:var(--gold)}
+tbody tr:not(:last-child) td{border-bottom:1px solid rgba(36,36,36,.6)}
+td{padding:14px 24px;color:var(--light);vertical-align:middle;background:var(--black)}
+td:first-child{color:var(--muted);font-size:12px;background:var(--dark)}
+.ck{color:var(--teal);font-size:14px}
+.gk{color:var(--gold);font-size:14px}
+.dk{color:var(--line)}
+.tv{color:var(--text);font-weight:500}
+.gv{color:var(--gold-light);font-weight:600}
+.price-row td{
+  padding-top:20px;padding-bottom:20px;
+  border-top:1px solid var(--line)!important;
+}
+.price-row td:not(:first-child){
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:400;color:var(--white);
+}
+.price-row td.gv-price{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:400;color:var(--gold-light);
+}
+
+/* ─── GUARANTEE ───────────────────────────── */
+.guarantee-section{
+  border-top:1px solid var(--line);
+  background:var(--dark);
+}
+.guarantee-inner{
+  max-width:1100px;margin:0 auto;
+  padding:64px 24px;
+  display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start;
+}
+@media(max-width:680px){.guarantee-inner{grid-template-columns:1fr;gap:32px}}
+.guarantee-icon{
+  font-family:'Cormorant Garamond',serif;
+  font-size:72px;line-height:1;color:var(--gold);font-weight:300;
+}
+.guarantee-content h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;font-weight:300;color:var(--white);margin-bottom:12px;
+}
+.guarantee-content p{font-size:14px;color:var(--muted);line-height:1.8;font-weight:300}
+.guarantee-content strong{color:var(--light);font-weight:500}
+
+/* ─── FAQ ─────────────────────────────────── */
+.faq-section{
+  max-width:1100px;margin:0 auto;
+  padding:80px 24px;
+  border-top:1px solid var(--line);
+}
+.faq-grid{
+  display:grid;grid-template-columns:1fr 2fr;gap:64px;
+  margin-top:48px;
+}
+@media(max-width:680px){.faq-grid{grid-template-columns:1fr;gap:32px}}
+.faq-sidebar h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;font-weight:300;color:var(--white);line-height:1.2;
+}
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{
+  width:100%;background:none;border:none;
+  padding:20px 0;cursor:pointer;
+  font-family:'Inter',sans-serif;
+  font-size:14px;font-weight:500;color:var(--light);
+  text-align:left;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  transition:color .2s;
+}
+.faq-q:hover{color:var(--white)}
+.faq-q.open{color:var(--gold)}
+.faq-icon{
+  width:20px;height:20px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:18px;transition:transform .3s;
+}
+.faq-q.open .faq-icon{transform:rotate(45deg);color:var(--gold)}
+.faq-answer{
+  display:none;padding-bottom:20px;
+  font-size:13px;color:var(--muted);line-height:1.8;font-weight:300;
+}
+.faq-answer.open{display:block}
+
+/* ─── FOOTER ──────────────────────────────── */
+footer{
+  background:var(--dark);
+  border-top:1px solid var(--line);
+  padding:48px 24px;
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;
+}
+.footer-logo img{height:36px;opacity:.7;filter:grayscale(30%)}
+.footer-right{text-align:right}
+.footer-right p{font-size:12px;color:var(--muted);line-height:1.7}
+.footer-right a{color:var(--gold);text-decoration:none}
+
+/* ─── WA FLOAT ────────────────────────────── */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:100;
+  width:56px;height:56px;border-radius:50%;
+  background:#25d366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 24px rgba(37,211,102,.35);
+  text-decoration:none;
+  transition:transform .2s,box-shadow .2s;
+}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 32px rgba(37,211,102,.5)}
+.wa-float svg{width:26px;height:26px;fill:#fff}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <img src="logo_3ps.png" alt="3P's Produções" class="logo-img">
+  <div class="header-contact">
+    <span>Dúvidas?</span>
+    <a href="https://wa.me/5521979223500" target="_blank">(21) 97922-3500</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Audiovisual Premium · Médicos e Clínicas</div>
+  <h1>Sua <em>autoridade médica</em><br>merece uma imagem à altura</h1>
+  <p class="hero-sub">Captação e edição cinematográfica desenvolvidas exclusivamente para médicos e clínicas de alto padrão na Barra da Tijuca, Recreio e Zona Sul do Rio de Janeiro.</p>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <div class="meta-val">4K<span></span></div>
+      <div class="meta-label">Resolução de entrega</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-val">CFM<span></span></div>
+      <div class="meta-label">Roteiros conformes</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-val">3<span>+</span></div>
+      <div class="meta-label">Anos de especialização</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-val">RJ<span></span></div>
+      <div class="meta-label">Barra · Recreio · Zona Sul</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT NOTICE -->
+<div class="payment-notice">
+  <div class="payment-notice-inner">
+    <p><strong>Contratos trimestrais</strong> — preço fixo garantido por 3 meses</p>
+    <div class="pay-pills">
+      <span class="pay-pill pix">✓ Pix à vista</span>
+      <span class="pay-pill card">💳 Cartão com acréscimo</span>
+    </div>
+  </div>
+</div>
+
+<!-- PLANS -->
+<section class="plans-section">
+  <div class="plans-header container">
+    <div class="section-eyebrow">Planos</div>
+    <h2>Escolha o nível de presença<br>que o seu consultório merece</h2>
+    <p>Todos os planos incluem gravação presencial no seu consultório com equipamento profissional completo.</p>
+  </div>
+
+  <div class="plans-grid">
+
+    <!-- PLANO 1 -->
+    <div class="plan-col">
+      <div class="plan-top">
+        <div class="plan-tier">Essencial</div>
+        <div class="plan-name">Presença Clínica</div>
+        <p class="plan-desc">Para o médico que quer começar a construir presença digital com produção de qualidade, sem abrir mão do seu social media atual.</p>
+      </div>
+      <div class="plan-price-block">
+        <div class="price-label">Plano Trimestral</div>
+        <div class="price-main">
+          <span class="price-curr">R$</span>
+          <span class="price-num">8.400</span>
+        </div>
+        <p class="price-equiv">Equivale a <strong>R$ 2.800 por mês</strong> · 10 vídeos</p>
+      </div>
+      <div class="plan-features">
+        <div class="feat-group-label">Produção</div>
+        <div class="feat-list">
+          <div class="feat-row"><span class="feat-check on">✓</span><span><strong style="color:var(--text)">10 vídeos por mês</strong> — 8 low-fi + 2 premium</span></div>
+          <div class="feat-row"><span class="feat-check on">✓</span><span>Gravação no seu consultório (Barra / Zona Sul)</span></div>
+          <div class="feat-row"><span class="feat-check on">✓</span><span>Câmera 4K profissional com luz de estúdio</span></div>
+          <div class="feat-row"><span class="feat-check on">✓</span><span>Microfone lapela duplo sem fio</span></div>
+          <div class="feat-row"><span class="feat-check on">✓</span><span>Legendas dinâmicas e color grading</span></div>
+          <div class="feat-row"><span class="feat-check on">✓</span><span>Entrega para Instagram, TikTok e Shorts</span></div>
+        </div>
+        <div class="premium-badge">
+          <div class="premium-badge-title">2 Vídeos Premium / mês</div>
+          <div class="premium-badge-list">
+            <div class="premium-feat-row">Storytelling emocional e montagem acelerada</div>
+            <div class="premium-feat-row">Fotos e vídeos de IA integrados</div>
+            <div class="premium-feat-row">Títulos, textos e lower thirds animados</div>
+            <div class="premium-feat-row">Trilha sonora e recursos de retenção</div>
+          </div>
+        </div>
+        <div class="feat-group-label">Estratégia</div>
+        <div class="feat-list">
+          <div class="feat-row off"><span class="feat-check off">—</span><span>Roteiro mensal personalizado</span></div>
+          <div class="feat-row off"><span class="feat-check off">—</span><span>Checklist de conformidade CFM</span></div>
+        </div>
+      </div>
+      <div class="plan-cta">
+        <a href="https://wa.me/5521979223500?text=Ol%C3%A1!+Tenho+interesse+no+Plano+Presen%C3%A7a+Cl%C3%ADnica." class="cta-btn outline" target="_blank">Solicitar proposta</a>
+      </div>
+    </div>
+
+    <!-- PLANO 2 (FEATURED) -->
+    <div class="plan-col featured">
+      <div class="plan-top">
+        <div class="plan-tier">Premium · Mais escolhido</div>
+        <div class="plan-name">Autoridade Premium</div>
+        <p class="plan-desc">O plano preferido de endocrinologistas e clínicas de emagrecimento que querem se tornar a principal referência visual da especialidade.</p>
+      </div>
+      <div class="plan-price-block">
+        <div class="price-label">Plano Trimestral</div>
+        <div class="price-main">
+          <span class="price-curr">R$</span>
+          <span class="price-num">12.600</span>
+        </div>
+        <p class="price-equiv">Equivale a <strong>R$ 4.200 por mês</strong> · 20 vídeos</p>
+      </div>
+      <div class="plan-features">
+        <div class="feat-group-label">Produção</div>
+        <div class="feat-list">
+          <div class="feat-row"><span class="feat-check gold">✓</span><span><strong style="color:var(--text)">20 vídeos por mês</strong> — 14 low-fi + 6 premium</span></div>
+          <div class="feat-row"><span class="feat-check gold">✓</span><span>Gravação no seu consultório (Barra / Zona Sul)</span></div>
+          <div class="feat-row"><span class="feat-check gold">✓</span><span>Câmera 4K profissional com luz de estúdio</span></div>
+          <div class="feat-row"><span class="feat-check gold">✓</span><span>Microfone lapela duplo sem fio</span></div>
+          <div class="feat-row"><span class="feat-check gold">✓</span><span>Legendas dinâmicas e color grading</span></div>
+          <div class="feat-row"><span class="feat-check gold">✓</span><span>Entrega para Instagram, TikTok e Shorts</span></div>
+        </div>
+        <div class="premium-badge">
+          <div class="premium-badge-title">6 Vídeos Premium / mês</div>
+          <div class="premium-badge-list">
+            <div class="premium-feat-row">Storytelling emocional e montagem acelerada</div>
+            <div class="premium-feat-row">Fotos e vídeos de IA integrados</div>
+            <div class="premium-feat-row">Títulos, textos e lower thirds animados</div>
+            <div class="premium-feat-row">Trilha sonora imersiva sincronizada</div>
+            <div class="premium-feat-row">Gráficos e dados visuais de autoridade médica</div>
+            <div class="premium-feat-row">Cortes rítmicos, zooms e recursos de retenção</div>
+          </div>
+        </div>
+        <div class="feat-group-label">Estratégia</div>
+        <div class="feat-list">
+          <div class="feat-row"><span class="feat-check gold">✓</span><span>Roteiro mensal alinhado à linha editorial</span></div>
+          <div class="feat-row"><span class="feat-check gold">✓</span><span>Checklist de conformidade CFM em todos os roteiros</span></div>
+        </div>
+      </div>
+      <div class="plan-cta">
+        <a href="https://wa.me/5521979223500?text=Ol%C3%A1!+Tenho+interesse+no+Plano+Autoridade+Premium." class="cta-btn solid" target="_blank">Solicitar proposta</a>
+      </div>
+    </div>
+
+    <!-- PLANO 3 -->
+    <div class="plan-col">
+      <div class="plan-top">
+        <div class="plan-tier">Elite</div>
+        <div class="plan-name">Domínio Total</div>
+        <p class="plan-desc">Para o médico que quer dominar completamente o digital na sua especialidade e usar vídeos como criativos de alta performance em anúncios.</p>
+      </div>
+      <div class="plan-price-block">
+        <div class="price-label">Plano Trimestral</div>
+        <div class="price-main">
+          <span class="price-curr">R$</span>
+          <span class="price-num">17.400</span>
+        </div>
+        <p class="price-equiv">Equivale a <strong>R$ 5.800 por mês</strong> · 30 vídeos</p>
+      </div>
+      <div class="plan-features">
+        <div class="feat-group-label">Produção</div>
+        <div class="feat-list">
+          <div class="feat-row"><span class="feat-check on">✓</span><span><strong style="color:var(--text)">30 vídeos por mês</strong> — 20 low-fi + 10 premium</span></div>
+          <div class="feat-row"><span class="feat-check on">✓</span><span>Gravação no seu consultório (Barra / Zona Sul)</span></div>
+          <div class="feat-row"><span class="feat-check on">✓</span><span>Câmera 4K profissional com luz de estúdio</span></div>
+          <div class="feat-row"><span class="feat-check on">✓</span><span>Microfone lapela duplo sem fio</span></div>
+          <div class="feat-row"><span class="feat-check on">✓</span><span>Legendas dinâmicas e color grading</span></div>
+          <div class="feat-row"><span class="feat-check on">✓</span><span>Entrega para Instagram, TikTok e Shorts</span></div>
+        </div>
+        <div class="premium-badge">
+          <div class="premium-badge-title">10 Vídeos Premium / mês</div>
+          <div class="premium-badge-list">
+            <div class="premium-feat-row">Storytelling emocional e montagem acelerada</div>
+            <div class="premium-feat-row">Fotos e vídeos de IA integrados</div>
+            <div class="premium-feat-row">Títulos, textos e lower thirds animados</div>
+            <div class="premium-feat-row">Trilha sonora imersiva sincronizada</div>
+            <div class="premium-feat-row">Gráficos e dados visuais de autoridade médica</div>
+            <div class="premium-feat-row">Cortes rítmicos, zooms e recursos de retenção</div>
+            <div class="premium-feat-row">Criativos otimizados para Meta Ads</div>
+          </div>
+        </div>
+        <div class="feat-group-label">Estratégia + Extras</div>
+        <div class="feat-list">
+          <div class="feat-row"><span class="feat-check on">✓</span><span>Roteiro mensal alinhado à linha editorial</span></div>
+          <div class="feat-row"><span class="feat-check on">✓</span><span>Checklist de conformidade CFM em todos os roteiros</span></div>
+          <div class="feat-row"><span class="feat-check on">✓</span><span>1 sessão de fotos corporativas por trimestre</span></div>
+        </div>
+      </div>
+      <div class="plan-cta">
+        <a href="https://wa.me/5521979223500?text=Ol%C3%A1!+Tenho+interesse+no+Plano+Dom%C3%ADnio+Total." class="cta-btn outline" target="_blank">Solicitar proposta</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ADDONS -->
+<section class="addons-section">
+  <div class="section-eyebrow">Avulsos</div>
+  <h2 class="section-title">Serviços sob demanda</h2>
+  <p class="section-sub">Ideal para quem já tem agência e quer apenas a captação, ou para complementar o plano contratado.</p>
+  <div class="addons-grid">
+    <div class="addon-card">
+      <div class="addon-icon">🎥</div>
+      <div class="addon-name">Captação de Brutos</div>
+      <p class="addon-desc">4K profissional + luz de estúdio + áudio nítido. Arquivos brutos entregues para sua agência editar.</p>
+      <div class="addon-price">R$ 1.800 / sessão</div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-icon">📸</div>
+      <div class="addon-name">Fotos Corporativas</div>
+      <p class="addon-desc">Retratos premium no consultório com iluminação de estúdio. Entrega de 15 fotos editadas em alta resolução.</p>
+      <div class="addon-price">R$ 950 / sessão</div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-icon">🎤</div>
+      <div class="addon-name">Cobertura de Evento</div>
+      <p class="addon-desc">Cobertura profissional de simpósios, congressos e palestras médicas com edição de highlights.</p>
+      <div class="addon-price">R$ 2.200 / evento</div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-icon">🎓</div>
+      <div class="addon-name">Coprodução de Curso</div>
+      <p class="addon-desc">Gravação completa do seu infoproduto médico. Estrutura chave na mão, da abertura à conclusão.</p>
+      <div class="addon-price">A partir de R$ 4.500</div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-icon">⚡</div>
+      <div class="addon-name">Vídeo Premium Avulso</div>
+      <p class="addon-desc">Um vídeo com storytelling, IA, animações e recursos de retenção. Ideal como criativo para anúncio.</p>
+      <div class="addon-price">R$ 850 / vídeo</div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-icon">🏠</div>
+      <div class="addon-name">Consultoria de Estúdio</div>
+      <p class="addon-desc">1 hora online para projetar o estúdio ideal dentro do seu consultório com indicação de equipamentos.</p>
+      <div class="addon-price">R$ 297 / hora</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="compare-section">
+  <div class="section-eyebrow">Comparativo</div>
+  <h2 class="section-title" style="margin-bottom:32px">Visão geral dos planos</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:30%">Recurso</th>
+          <th>Presença Clínica</th>
+          <th class="hl">Autoridade Premium</th>
+          <th>Domínio Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Total de vídeos / mês</td><td class="tv">10</td><td class="gv">20</td><td class="tv">30</td></tr>
+        <tr><td>Vídeos low-fi</td><td class="tv">8</td><td class="gv">14</td><td class="tv">20</td></tr>
+        <tr><td>Vídeos Premium</td><td class="tv">2</td><td class="gv">6</td><td class="tv">10</td></tr>
+        <tr><td>IA + textos animados + retenção</td><td><span class="ck">✓</span></td><td><span class="gk">✓</span></td><td><span class="ck">✓</span></td></tr>
+        <tr><td>Câmera 4K + luz de estúdio</td><td><span class="ck">✓</span></td><td><span class="gk">✓</span></td><td><span class="ck">✓</span></td></tr>
+        <tr><td>Áudio lapela duplo sem fio</td><td><span class="ck">✓</span></td><td><span class="gk">✓</span></td><td><span class="ck">✓</span></td></tr>
+        <tr><td>Entrega multiplataforma</td><td><span class="ck">✓</span></td><td><span class="gk">✓</span></td><td><span class="ck">✓</span></td></tr>
+        <tr><td>Roteiro mensal personalizado</td><td><span class="dk">—</span></td><td><span class="gk">✓</span></td><td><span class="ck">✓</span></td></tr>
+        <tr><td>Checklist CFM nos roteiros</td><td><span class="dk">—</span></td><td><span class="gk">✓</span></td><td><span class="ck">✓</span></td></tr>
+        <tr><td>Sessão de fotos trimestral</td><td><span class="dk">—</span></td><td><span class="dk">—</span></td><td><span class="ck">✓</span></td></tr>
+        <tr><td>Criativos para Meta Ads</td><td><span class="dk">—</span></td><td><span class="dk">—</span></td><td><span class="ck">✓</span></td></tr>
+        <tr class="price-row">
+          <td>Investimento trimestral</td>
+          <td class="tv" style="font-family:'Cormorant Garamond',serif;font-size:24px">R$ 8.400</td>
+          <td class="gv-price">R$ 12.600</td>
+          <td class="tv" style="font-family:'Cormorant Garamond',serif;font-size:24px">R$ 17.400</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee-section">
+  <div class="guarantee-inner">
+    <div class="guarantee-icon">§</div>
+    <div class="guarantee-content">
+      <h3>Conformidade total com a Resolução CFM nº 2.336/2023</h3>
+      <p>Todos os nossos roteiros são revisados antes da gravação com base nas normas de publicidade médica do Conselho Federal de Medicina. Você grava com total tranquilidade, sabendo que cada vídeo está <strong>eticamente alinhado</strong> e não oferece risco de notificação no CRM-RJ. Somos provavelmente os únicos videomakers no Rio que entregam essa garantia como parte do processo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-eyebrow">FAQ</div>
+  <div class="faq-grid">
+    <div class="faq-sidebar">
+      <h3>Perguntas<br><em style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;color:var(--gold)">frequentes</em></h3>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item" id="fa1">
+        <button class="faq-q" onclick="toggleFaq('fa1')">Por que o contrato é trimestral? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">O contrato trimestral garante consistência — os algoritmos do Instagram e TikTok levam entre 60 e 90 dias para reconhecer um perfil como regular e começar a distribuir o conteúdo organicamente. Além disso, você paga uma única vez e fica 3 meses com produção garantida, sem reajustes.</div>
+      </div>
+      <div class="faq-item" id="fa2">
+        <button class="faq-q" onclick="toggleFaq('fa2')">Preciso ter social media ou agência para contratar? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">Não. Os vídeos chegam prontos para você postar diretamente, enviar para seu social media ou agência — ou você pode contratar apenas a captação bruta para que sua equipe edite. Adaptamos a entrega ao seu fluxo atual.</div>
+      </div>
+      <div class="faq-item" id="fa3">
+        <button class="faq-q" onclick="toggleFaq('fa3')">Quantos dias de gravação por mês estão incluídos? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">Em média, 1 a 2 dias de gravação presencial por mês no seu consultório, filmando em lotes. Assim você não precisa de múltiplas sessões — concentramos o máximo de conteúdo em cada visita, respeitando sua agenda clínica.</div>
+      </div>
+      <div class="faq-item" id="fa4">
+        <button class="faq-q" onclick="toggleFaq('fa4')">O que é o Diagnóstico Visual Gratuito? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">Uma avaliação de 30 minutos — presencial ou por vídeo — onde analisamos seu perfil atual nas redes, identificamos as principais falhas técnicas e de posicionamento, e mostramos concretamente o que seria possível alcançar com produção profissional. Sem compromisso.</div>
+      </div>
+      <div class="faq-item" id="fa5">
+        <button class="faq-q" onclick="toggleFaq('fa5')">Vocês atuam fora da Barra e Zona Sul? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">Nossa área principal é Barra da Tijuca, Recreio dos Bandeirantes e Zona Sul. Para outros bairros ou municípios do Rio, entre em contato para verificar disponibilidade — pode haver taxa de deslocamento.</div>
+      </div>
+      <div class="faq-item" id="fa6">
+        <button class="faq-q" onclick="toggleFaq('fa6')">Qual é a diferença entre vídeo low-fi e Premium? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">O vídeo low-fi é produzido com agilidade: captação 4K, edição dinâmica, legendas e color grading — pronto para o feed diário. O vídeo Premium usa todos os recursos de retenção: storytelling emocional, fotos e vídeos de inteligência artificial, textos e títulos animados, trilha sonora sincronizada e gráficos de autoridade. O Premium é pensado para gerar agendamentos e funcionar como criativo de anúncio.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="logo_3ps.png" alt="3P's Produções"></div>
+    <div class="footer-right">
+      <p>Barra da Tijuca · Recreio · Zona Sul — Rio de Janeiro<br>
+      <a href="https://wa.me/5521979223500">(21) 97922-3500</a> · Todos os direitos reservados</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/5521979223500?text=Ol%C3%A1!+Gostaria+de+agendar+um+diagn%C3%B3stico+visual+gratuito." class="wa-float" target="_blank" title="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+function toggleFaq(id){
+  const item=document.getElementById(id);
+  const q=item.querySelector('.faq-q');
+  const a=item.querySelector('.faq-answer');
+  const open=q.classList.contains('open');
+  document.querySelectorAll('.faq-q').forEach(el=>el.classList.remove('open'));
+  document.querySelectorAll('.faq-answer').forEach(el=>el.classList.remove('open'));
+  if(!open){q.classList.add('open');a.classList.add('open')}
+}
+</script>
+</body>
+</html>
