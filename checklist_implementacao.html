@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Implementação — Rodrigo Ramos Audiovisual</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0d0f14;
+            --surface: #161a23;
+            --surface2: #1e2330;
+            --border: #2a3045;
+            --text: #e8eaf0;
+            --muted: #6b7494;
+            --red: #ff4757;
+            --orange: #ffa502;
+            --green: #2ed573;
+            --blue: #5352ed;
+            --gold: #ffd700;
+            --accent: #7c6af7;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 24px 16px 60px;
+        }
+        .header {
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(124, 106, 247, 0.15);
+            border: 1px solid rgba(124, 106, 247, 0.3);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+        h1 span { color: var(--accent); }
+        .subtitle {
+            color: var(--muted);
+            font-size: 14px;
+        }
+        .global-progress {
+            max-width: 800px;
+            margin: 0 auto 32px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px 24px;
+        }
+        .global-progress-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .global-progress-top span:first-child {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .global-pct {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        .progress-bar-wrap {
+            height: 8px;
+            background: var(--border);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), #a78bfa);
+            border-radius: 100px;
+            transition: width 0.5s ease;
+        }
+        .phases {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .phase-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .phase-header {
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .phase-dot {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .phase-dot.red { background: rgba(255, 71, 87, 0.15); }
+        .phase-dot.orange { background: rgba(255, 165, 2, 0.15); }
+        .phase-dot.green { background: rgba(46, 213, 115, 0.15); }
+        .phase-dot.blue { background: rgba(83, 82, 237, 0.15); }
+        .phase-meta { flex: 1; }
+        .phase-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .phase-label.red { color: var(--red); }
+        .phase-label.orange { color: var(--orange); }
+        .phase-label.green { color: var(--green); }
+        .phase-label.blue { color: var(--blue); }
+        .phase-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .phase-subtitle {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+        .phase-progress-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .phase-pct {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--muted);
+            min-width: 36px;
+            text-align: right;
+        }
+        .mini-bar {
+            width: 80px;
+            height: 6px;
+            background: var(--border);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+        .mini-bar-fill {
+            height: 100%;
+            border-radius: 100px;
+            transition: width 0.4s ease;
+        }
+        .mini-bar-fill.red { background: var(--red); }
+        .mini-bar-fill.orange { background: var(--orange); }
+        .mini-bar-fill.green { background: var(--green); }
+        .mini-bar-fill.blue { background: var(--blue); }
+        .phase-body {
+            border-top: 1px solid var(--border);
+        }
+        .action-group {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+        .action-group:last-child { border-bottom: none; }
+        .action-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .action-title::before {
+            content: '';
+            display: block;
+            width: 3px;
+            height: 14px;
+            border-radius: 2px;
+        }
+        .action-title.red::before { background: var(--red); }
+        .action-title.orange::before { background: var(--orange); }
+        .action-title.green::before { background: var(--green); }
+        .action-title.blue::before { background: var(--blue); }
+        .task {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background 0.15s;
+        }
+        .task:hover { background: rgba(255,255,255,0.03); padding-left: 8px; margin-left: -8px; }
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .task.done .checkbox {
+            border-color: var(--green);
+            background: var(--green);
+        }
+        .task.done .checkbox::after {
+            content: '';
+            display: block;
+            width: 5px;
+            height: 9px;
+            border: 2px solid #0d0f14;
+            border-top: none;
+            border-left: none;
+            transform: rotate(45deg) translateY(-1px);
+        }
+        .task-text {
+            font-size: 14px;
+            color: var(--text);
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+        .task.done .task-text {
+            color: var(--muted);
+            text-decoration: line-through;
+        }
+        .success-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(46, 213, 115, 0.1);
+            border: 1px solid rgba(46, 213, 115, 0.25);
+            color: var(--green);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+        .reset-btn {
+            display: block;
+            margin: 40px auto 0;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-size: 13px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+        .reset-btn:hover {
+            border-color: var(--red);
+            color: var(--red);
+        }
+        .completed-phase .phase-header {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="header-badge">📋 Plano de Implementação</div>
+    <h1>Rodrigo Ramos <span>Audiovisual</span></h1>
+    <p class="subtitle">Clique em cada item para marcar como concluído. O progresso é salvo automaticamente.</p>
+</div>
+
+<div class="global-progress">
+    <div class="global-progress-top">
+        <span>Progresso Geral</span>
+        <span class="global-pct" id="globalPct">0%</span>
+    </div>
+    <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="globalBar" style="width:0%"></div>
+    </div>
+</div>
+
+<div class="phases" id="phases"></div>
+<button class="reset-btn" onclick="resetAll()">↺ Reiniciar progresso</button>
+
+<script>
+const data = [
+    {
+        id: 'fase1',
+        color: 'red',
+        emoji: '🔴',
+        label: 'Fase 1 — Blindagem',
+        title: 'Proteção do que você já tem',
+        subtitle: 'Semanas 1 e 2 — CRÍTICO: Não avance sem completar esta fase',
+        actions: [
+            {
+                id: 'renovacao',
+                title: 'Renovação Proativa dos 3 Clientes',
+                tasks: [
+                    { id: 't1', text: 'Agendar reunião individual com cada um dos 3 médicos antes do vencimento.' },
+                    { id: 't2', text: 'Preparar Relatório de Resultado do trimestre (vídeos entregues, destaques).' },
+                    { id: 't3', text: 'Apresentar o contrato do próximo trimestre já pronto com melhoria incluída.' },
+                    { id: 't4', text: 'Oferecer desconto simbólico (5%) para fechamento na mesma semana via Pix.' },
+                ]
+            },
+            {
+                id: 'camera',
+                title: 'Câmera de Backup (Solução Imediata)',
+                tasks: [
+                    { id: 't5', text: 'Testar o smartphone como câmera backup com Filmic Pro ou Blackmagic Camera App.' },
+                    { id: 't6', text: 'Pesquisar aluguel de câmera por dia no Rio (Studio Rent RJ, Grife Câmeras).' },
+                    { id: 't7', text: 'Abrir conta/poupança separada na PJ para reserva da Sony a6700.', done: true },
+                ]
+            },
+            {
+                id: 'editor',
+                title: 'Formalizar Acordo com o Editor Júnior',
+                tasks: [
+                    { id: 't8', text: 'Agendar conversa com o editor sobre o plano de crescimento e o papel dele.' },
+                    { id: 't9', text: 'Formalizar os 30% atuais e o marco de transição para fixo no 5º cliente.' },
+                    { id: 't10', text: 'Redigir e assinar o Termo de Parceria Simples (guardar cópia digital e física).' },
+                ]
+            },
+            {
+                id: 'financas',
+                title: 'Separação Financeira PF e PJ',
+                tasks: [
+                    { id: 't11', text: 'Abrir conta corrente PJ (Nubank PJ, Banco Inter PJ — gratuitas).' },
+                    { id: 't12', text: 'Definir e transferir o pró-labore fixo mensal (sugestão: R$ 6.000 a R$ 8.000).' },
+                    { id: 't13', text: 'Criar planilha de fluxo de caixa (Data / Descrição / Entrada / Saída).' },
+                    { id: 't14', text: 'Preencher o cenário otimista (3 renovam + 2 novos).' },
+                    { id: 't15', text: 'Preencher o cenário realista (3 renovam + 1 novo).' },
+                    { id: 't16', text: 'Preencher o cenário pessimista (2 renovam + 0 novos) e avaliar impacto no caixa.' },
+                ]
+            }
+        ]
+    },
+    {
+        id: 'fase2',
+        color: 'orange',
+        emoji: '🟡',
+        label: 'Fase 2 — Estrutura',
+        title: 'Base para crescimento replicável',
+        subtitle: 'Semanas 3 a 8 — Processos, identidade e parcerias',
+        actions: [
+            {
+                id: 'manual',
+                title: 'Criar o Manual de Padrão da Produtora',
+                tasks: [
+                    { id: 't17', text: 'Criar documento (Google Docs ou Notion) com Seção 1: Setup de Iluminação em Consultório.' },
+                    { id: 't18', text: 'Seção 2: Configuração de Câmera (perfil de cor, ISO, resolução 4K obrigatória).' },
+                    { id: 't19', text: 'Seção 3: Setup de Áudio (lapela sem fio, posicionamento, como evitar eco).' },
+                    { id: 't20', text: 'Seção 4: Enquadramento e Planos (planos obrigatórios por sessão).' },
+                    { id: 't21', text: 'Seção 5: Postura e Protocolo de Conduta (vestimenta, recepção, direção do médico).' },
+                    { id: 't22', text: 'Adicionar fotos de referência de setups reais das gravações anteriores.' },
+                    { id: 't23', text: 'Testar: o editor júnior consegue entender o manual sem perguntar nada?' },
+                ]
+            },
+            {
+                id: 'marca',
+                title: 'Consolidar a Identidade Visual da Produtora',
+                tasks: [
+                    { id: 't24', text: 'Definir o nome oficial da produtora.' },
+                    { id: 't25', text: 'Criar paleta de cores sóbria e premium (sugestão: preto + dourado + branco).' },
+                    { id: 't26', text: 'Redesenhar bio do Instagram direcionada ao médico com link de agendamento.' },
+                    { id: 't27', text: 'Organizar destaques do Instagram (Portfólio / Bastidores / Resultados).' },
+                    { id: 't28', text: 'Criar kit de apresentação digital (PDF 5 a 8 slides) para uso em abordagens.' },
+                ]
+            },
+            {
+                id: 'cfm',
+                title: 'Estudar Diretrizes do CFM para Publicidade Médica',
+                tasks: [
+                    { id: 't29', text: 'Ler a Resolução CFM nº 2.336/2023 no site cfm.org.br.' },
+                    { id: 't30', text: 'Anotar o que é proibido (antes/depois, promessas de resultado, depoimentos).' },
+                    { id: 't31', text: 'Anotar o que é permitido (conteúdo educativo, divulgação de especialidade).' },
+                    { id: 't32', text: 'Criar Checklist de Roteiro CFM-Safe com 10 itens de verificação.' },
+                    { id: 't33', text: 'Aplicar o checklist nos próximos 3 roteiros entregues.' },
+                    { id: 't34', text: 'Incluir no kit de apresentação: "roteiros revisados com base nas diretrizes do CFM".' },
+                ]
+            },
+            {
+                id: 'agencias',
+                title: 'Prospecção de 5 Agências de Tráfego Pago',
+                tasks: [
+                    { id: 't35', text: 'Pesquisar 5 agências de tráfego para médicos/clínicas no Rio de Janeiro.' },
+                    { id: 't36', text: 'Enviar o script de parceria (Playbook Seção 1) para cada uma via Direct ou WhatsApp.' },
+                    { id: 't37', text: 'Preparar proposta de parceria formal para os que responderem.' },
+                    { id: 't38', text: 'Fechar pelo menos 2 agências parceiras nos primeiros 60 dias.' },
+                ]
+            },
+            {
+                id: 'eventos',
+                title: 'Mapear e Se Inscrever em Eventos Médicos (ANI Hack)',
+                tasks: [
+                    { id: 't39', text: 'Pesquisar eventos médicos nos próximos 60 a 90 dias: CRM-RJ, SBEM, SBCP.' },
+                    { id: 't40', text: 'Se inscrever como imprensa (ANI) nos 2 ou 3 eventos mais relevantes.' },
+                    { id: 't41', text: 'Preparar kit de campo: crachá + a6400 + gimbal + lapela dupla + cartões premium.' },
+                    { id: 't42', text: 'Sair de cada evento com pelo menos 5 contatos qualificados (WhatsApp/Instagram).' },
+                    { id: 't43', text: 'Entregar o vídeo editado de cortesia para cada contato na semana seguinte ao evento.' },
+                ]
+            }
+        ]
+    },
+    {
+        id: 'fase3',
+        color: 'green',
+        emoji: '🟢',
+        label: 'Fase 3 — Crescimento',
+        title: 'Escalar de 3 para 6 clientes',
+        subtitle: 'Meses 2 a 6 — Novos clientes, anúncios e treinamento',
+        actions: [
+            {
+                id: 'prospeccao',
+                title: 'Prospecção Ativa de Endocrinologistas',
+                tasks: [
+                    { id: 't44', text: 'Usar a Técnica do Presente para prospectar 3 a 5 endocrinologistas por semana via Direct.' },
+                    { id: 't45', text: 'Criar planilha de CRM (Nome / Instagram / Data / Status / Próxima Ação).' },
+                    { id: 't46', text: 'Aplicar o argumento de quebra de objeção para médicos que já têm social media.' },
+                    { id: 't47', text: 'Fechar 3 novos clientes médicos até o mês 6 (total: 6 ativos).' },
+                ]
+            },
+            {
+                id: 'anuncios',
+                title: 'Testar os Criativos de Anúncio',
+                tasks: [
+                    { id: 't48', text: 'Gravar a Versão 2 (O Espelho Honesto) do roteiro de anúncio.' },
+                    { id: 't49', text: 'Gravar a Versão 3 (A Comparação Pura) em split screen.' },
+                    { id: 't50', text: 'Publicar organicamente e monitorar por 7 dias (alcance, salvamentos, DMs).' },
+                    { id: 't51', text: 'Impulsionar a versão de melhor desempenho com R$ 300 a R$ 500 de tráfego pago.' },
+                    { id: 't52', text: 'Medir: CPL, CTR e número de DMs recebidos. Gerar pelo menos 1 reunião de vendas.' },
+                ]
+            },
+            {
+                id: 'treinamento',
+                title: 'Lançar Turma do "Criando Videomakers" com Foco em Recrutamento',
+                tasks: [
+                    { id: 't53', text: 'Definir a data da próxima turma (mínimo 6 a 8 alunos).' },
+                    { id: 't54', text: 'Divulgar no Instagram, YouTube e via anúncio (R$ 200 a R$ 300 de verba).' },
+                    { id: 't55', text: 'Durante o treinamento, observar os 2 ou 3 alunos com maior aptidão técnica.' },
+                    { id: 't56', text: 'Fazer convite direto para os melhores alunos como freelancers de campo.' },
+                ]
+            },
+            {
+                id: 'youtube',
+                title: 'Elevar o Canal do YouTube com Consistência',
+                tasks: [
+                    { id: 't57', text: 'Publicar 1 vídeo longo por mês sobre relojoaria (validado via Shorts).' },
+                    { id: 't58', text: 'Incluir CTA natural ao infoproduto ao final de cada vídeo longo.' },
+                    { id: 't59', text: 'Criar tela final e cartão personalizado direcionando ao "Domine Seu Vídeo" (R$ 97).' },
+                    { id: 't60', text: 'Meta: 5 vendas mensais do infoproduto via canal orgânico até o mês 6.' },
+                ]
+            }
+        ]
+    },
+    {
+        id: 'fase4',
+        color: 'blue',
+        emoji: '🔵',
+        label: 'Fase 4 — Escala',
+        title: 'Sair do operacional, entrar na gestão',
+        subtitle: 'Meses 6 a 24 — Equipe, delegação e palestras',
+        actions: [
+            {
+                id: 'videomaker',
+                title: 'Contratar o Videomaker de Campo',
+                tasks: [
+                    { id: 't61', text: 'Identificar o candidato ideal no treinamento Criando Videomakers.' },
+                    { id: 't62', text: 'Fechar modelo de freelancer por diária (R$ 400 a R$ 600/dia).' },
+                    { id: 't63', text: 'Exigir que o videomaker siga o Manual de Padrão da Produtora rigorosamente.' },
+                    { id: 't64', text: 'Acompanhar nas 3 primeiras gravações. Depois, delegar completamente.' },
+                ]
+            },
+            {
+                id: 'remuneracao',
+                title: 'Transição da Remuneração do Editor para Fixo',
+                tasks: [
+                    { id: 't65', text: 'No mês do 5º cliente: calcular total de vídeos editados por mês.' },
+                    { id: 't66', text: 'Oferecer ao editor: R$ 50-60/Reels (variável) ou R$ 3.000-3.500 fixos/mês.' },
+                    { id: 't67', text: 'Formalizar o novo acordo por escrito e garantir margem líquida acima de 50%.' },
+                ]
+            },
+            {
+                id: 'equipamentos',
+                title: 'Adquirir Notebook Gamer e Sony a6700',
+                tasks: [
+                    { id: 't68', text: 'Pesquisar notebooks com GPU RTX 4060+ (orçamento: R$ 5.000 a R$ 8.000).' },
+                    { id: 't69', text: 'Pesquisar Sony a6700 com lente kit (orçamento: R$ 9.000 a R$ 12.000).' },
+                    { id: 't70', text: 'Comprar com CNPJ da produtora para dedução fiscal (ativo do negócio).' },
+                ]
+            },
+            {
+                id: 'gestao',
+                title: 'Estudar Gestão (Ação Contínua)',
+                tasks: [
+                    { id: 't71', text: 'Mês 1: Ler "O Mito do Empreendedor" (Michael E. Gerber).' },
+                    { id: 't72', text: 'Mês 2: Ler "Tração" (Gino Wickman).' },
+                    { id: 't73', text: 'Mês 3: Implementar reunião semanal de 30 min de revisão do negócio.' },
+                    { id: 't74', text: 'Mês 4: Criar e preencher Scorecard Semanal com 5 indicadores-chave.' },
+                ]
+            },
+            {
+                id: 'palestras',
+                title: 'Estruturar Palestras como Produto',
+                tasks: [
+                    { id: 't75', text: 'Definir 2 ou 3 temas de palestra alinhados à sua trajetória.' },
+                    { id: 't76', text: 'Criar um Onesheet de Palestrante (1 página com bio, temas e contato).' },
+                    { id: 't77', text: 'Enviar o Onesheet para organizadores dos eventos médicos que você cobriu.' },
+                    { id: 't78', text: 'Realizar pelo menos 3 palestras gratuitas para validar o formato.' },
+                    { id: 't79', text: 'Fechar a primeira palestra paga até o mês 12.' },
+                ]
+            }
+        ]
+    }
+];
+
+function loadState() {
+    const s = localStorage.getItem('rrAudiovisual_plan');
+    return s ? JSON.parse(s) : {};
+}
+function saveState(state) {
+    localStorage.setItem('rrAudiovisual_plan', JSON.stringify(state));
+}
+
+let state = loadState();
+
+// Pre-mark the confirmed done item
+if (!('t7' in state)) { state.t7 = true; saveState(state); }
+
+function countTasks() {
+    let total = 0, done = 0;
+    data.forEach(phase => phase.actions.forEach(a => a.tasks.forEach(t => {
+        total++;
+        if (state[t.id]) done++;
+    })));
+    return { total, done };
+}
+
+function countPhase(phase) {
+    let total = 0, done = 0;
+    phase.actions.forEach(a => a.tasks.forEach(t => {
+        total++;
+        if (state[t.id]) done++;
+    }));
+    return { total, done };
+}
+
+function updateGlobal() {
+    const { total, done } = countTasks();
+    const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+    document.getElementById('globalPct').textContent = pct + '%';
+    document.getElementById('globalBar').style.width = pct + '%';
+}
+
+function render() {
+    const container = document.getElementById('phases');
+    container.innerHTML = '';
+    data.forEach(phase => {
+        const { total, done } = countPhase(phase);
+        const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+        const card = document.createElement('div');
+        card.className = 'phase-card';
+
+        const actionsHTML = phase.actions.map(action => `
+            <div class="action-group">
+                <div class="action-title ${phase.color}">${action.title}</div>
+                ${action.tasks.map(t => `
+                    <div class="task ${state[t.id] ? 'done' : ''}" onclick="toggle('${t.id}')" id="task_${t.id}">
+                        <div class="checkbox"></div>
+                        <span class="task-text">${t.text}</span>
+                    </div>
+                `).join('')}
+            </div>
+        `).join('');
+
+        card.innerHTML = `
+            <div class="phase-header">
+                <div class="phase-dot ${phase.color}">${phase.emoji}</div>
+                <div class="phase-meta">
+                    <div class="phase-label ${phase.color}">${phase.label}</div>
+                    <div class="phase-title">${phase.title}</div>
+                    <div class="phase-subtitle">${phase.subtitle}</div>
+                </div>
+                <div class="phase-progress-wrap">
+                    <div class="mini-bar">
+                        <div class="mini-bar-fill ${phase.color}" style="width:${pct}%"></div>
+                    </div>
+                    <div class="phase-pct">${done}/${total}</div>
+                </div>
+            </div>
+            <div class="phase-body">${actionsHTML}</div>
+        `;
+        container.appendChild(card);
+    });
+    updateGlobal();
+}
+
+function toggle(taskId) {
+    state[taskId] = !state[taskId];
+    saveState(state);
+    const taskEl = document.getElementById('task_' + taskId);
+    if (state[taskId]) {
+        taskEl.classList.add('done');
+    } else {
+        taskEl.classList.remove('done');
+    }
+    // update phase progress
+    render();
+}
+
+function resetAll() {
+    if (confirm('Tem certeza que quer reiniciar todo o progresso?')) {
+        state = {};
+        saveState(state);
+        render();
+    }
+}
+
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#0d0f14">
+<title>RR Audiovisual — Plano de Negócios</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#0d0f14;--s1:#161a23;--s2:#1e2330;--s3:#252d3d;
+  --border:#2a3045;--text:#e8eaf0;--muted:#6b7494;--muted2:#4a5270;
+  --red:#ff4757;--orange:#ffaa00;--green:#2ed573;--blue:#5c6bc0;--purple:#7c6af7;--cyan:#00d2d3;
+  --gold:#ffd700;
+}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow:hidden}
+/* APP SHELL */
+.app{display:flex;flex-direction:column;height:100vh;height:100dvh}
+.topbar{
+  background:var(--s1);border-bottom:1px solid var(--border);
+  padding:16px 20px 12px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.topbar-brand{display:flex;flex-direction:column}
+.topbar-brand h1{font-size:17px;font-weight:800;color:var(--text)}
+.topbar-brand h1 span{color:var(--purple)}
+.topbar-brand p{font-size:11px;color:var(--muted);margin-top:2px}
+.topbar-badge{
+  background:rgba(46,213,115,0.12);border:1px solid rgba(46,213,115,0.25);
+  color:var(--green);font-size:11px;font-weight:700;padding:5px 10px;border-radius:100px;
+}
+/* CONTENT */
+.content{flex:1;overflow:hidden;position:relative}
+.tab-panel{
+  position:absolute;inset:0;overflow-y:auto;
+  padding:16px 16px 20px;
+  display:none;
+  -webkit-overflow-scrolling:touch;
+}
+.tab-panel.active{display:block}
+/* BOTTOM NAV */
+.bottom-nav{
+  background:var(--s1);border-top:1px solid var(--border);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  flex-shrink:0;padding-bottom:env(safe-area-inset-bottom);
+}
+.nav-btn{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:10px 4px;gap:4px;background:none;border:none;cursor:pointer;
+  color:var(--muted2);transition:color .2s;
+}
+.nav-btn.active{color:var(--purple)}
+.nav-btn svg{width:22px;height:22px;stroke-width:2}
+.nav-btn span{font-size:10px;font-weight:600;letter-spacing:0.3px}
+
+/* CARDS & TYPOGRAPHY */
+.card{background:var(--s1);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:12px}
+.card-head{padding:14px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.card-head h2{font-size:14px;font-weight:700}
+.card-head h3{font-size:13px;font-weight:700}
+.card-body{padding:14px 16px}
+.section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';display:block;width:3px;height:12px;border-radius:2px;background:var(--purple)}
+
+/* METRICS */
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.metric{background:var(--s1);border:1px solid var(--border);border-radius:14px;padding:14px}
+.metric-val{font-size:22px;font-weight:800;color:var(--purple);line-height:1}
+.metric-label{font-size:11px;color:var(--muted);margin-top:4px}
+.metric.green .metric-val{color:var(--green)}
+.metric.orange .metric-val{color:var(--orange)}
+.metric.red .metric-val{color:var(--red)}
+
+/* PILLS */
+.pill{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:100px;font-size:11px;font-weight:700}
+.pill.red{background:rgba(255,71,87,.12);color:var(--red);border:1px solid rgba(255,71,87,.2)}
+.pill.orange{background:rgba(255,170,0,.12);color:var(--orange);border:1px solid rgba(255,170,0,.2)}
+.pill.green{background:rgba(46,213,115,.12);color:var(--green);border:1px solid rgba(46,213,115,.2)}
+.pill.blue{background:rgba(92,107,192,.12);color:var(--blue);border:1px solid rgba(92,107,192,.2)}
+.pill.purple{background:rgba(124,106,247,.12);color:var(--purple);border:1px solid rgba(124,106,247,.2)}
+
+/* PRODUCT LIST */
+.product-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+.product-item:last-child{border-bottom:none}
+.product-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.product-info h4{font-size:13px;font-weight:700;color:var(--text)}
+.product-info p{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4}
+.product-price{margin-top:5px;font-size:12px;font-weight:700;color:var(--green)}
+
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:0}
+.timeline-item{display:flex;gap:12px;padding-bottom:20px;position:relative}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:28px}
+.timeline-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;z-index:1}
+.timeline-line{flex:1;width:2px;background:var(--border);margin-top:4px}
+.timeline-item:last-child .timeline-line{display:none}
+.timeline-content{flex:1;padding-top:4px}
+.timeline-content h4{font-size:13px;font-weight:700;margin-bottom:4px}
+.timeline-content p{font-size:12px;color:var(--muted);line-height:1.5}
+.timeline-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;margin-bottom:6px}
+
+/* CHECKLIST */
+.phase-header{
+  display:flex;align-items:center;gap:10px;padding:12px 16px;
+  cursor:pointer;
+}
+.phase-emoji{font-size:20px}
+.phase-info{flex:1}
+.phase-info h3{font-size:14px;font-weight:700}
+.phase-info p{font-size:11px;color:var(--muted);margin-top:2px}
+.phase-progress{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.phase-count{font-size:12px;font-weight:700;color:var(--muted)}
+.mini-ring{width:32px;height:32px;flex-shrink:0}
+.phase-body{display:none;border-top:1px solid var(--border)}
+.phase-body.open{display:block}
+.action-section{padding:12px 16px;border-bottom:1px solid var(--border)}
+.action-section:last-child{border-bottom:none}
+.action-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:8px}
+.task-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;cursor:pointer}
+.checkbox{width:20px;height:20px;border:2px solid var(--border);border-radius:6px;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.task-item.done .checkbox{background:var(--green);border-color:var(--green)}
+.check-icon{display:none;width:10px;height:10px;border:2px solid var(--bg);border-top:none;border-left:none;transform:rotate(45deg) translateY(-1px)}
+.task-item.done .check-icon{display:block}
+.task-text{font-size:13px;color:var(--text);line-height:1.5;transition:color .2s}
+.task-item.done .task-text{color:var(--muted);text-decoration:line-through}
+.global-progress-bar{background:var(--s1);border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:12px}
+.gp-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.gp-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+.gp-pct{font-size:22px;font-weight:900;color:var(--purple)}
+.progress-track{height:8px;background:var(--border);border-radius:100px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--purple),#a78bfa);border-radius:100px;transition:width .5s ease}
+
+/* MARKETING / AD SCRIPTS */
+.script-card{background:var(--s2);border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.script-head{padding:12px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+.script-head h4{font-size:13px;font-weight:700}
+.script-body{padding:14px;display:none}
+.script-body.open{display:block}
+.script-text{font-size:13px;line-height:1.7;color:var(--text);white-space:pre-wrap}
+.script-text em{color:var(--muted);font-style:normal}
+.copy-btn{background:rgba(124,106,247,.12);border:1px solid rgba(124,106,247,.25);color:var(--purple);padding:6px 12px;border-radius:8px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;gap:5px}
+.copy-btn:active{transform:scale(.96)}
+.expand-btn{background:none;border:1px solid var(--border);color:var(--muted);padding:5px 10px;border-radius:8px;font-size:11px;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:4px;transition:all .2s}
+.expand-btn.open{color:var(--purple);border-color:var(--purple)}
+.dm-script{background:var(--s3);border-left:3px solid var(--purple);padding:12px;border-radius:0 10px 10px 0;font-size:13px;line-height:1.7;color:var(--text);font-style:italic;margin:8px 0}
+.objection-box{background:rgba(255,170,0,.06);border:1px solid rgba(255,170,0,.2);border-radius:12px;padding:12px;margin:8px 0}
+.objection-box h5{font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.objection-box p{font-size:12px;color:var(--text);line-height:1.6}
+
+/* SWOT */
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.swot-quad{border-radius:14px;padding:14px;border:1px solid}
+.swot-quad.s{background:rgba(46,213,115,.06);border-color:rgba(46,213,115,.2)}
+.swot-quad.w{background:rgba(255,71,87,.06);border-color:rgba(255,71,87,.2)}
+.swot-quad.o{background:rgba(92,107,192,.06);border-color:rgba(92,107,192,.2)}
+.swot-quad.t{background:rgba(255,170,0,.06);border-color:rgba(255,170,0,.2)}
+.swot-quad-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.swot-quad.s .swot-quad-title{color:var(--green)}
+.swot-quad.w .swot-quad-title{color:var(--red)}
+.swot-quad.o .swot-quad-title{color:var(--blue)}
+.swot-quad.t .swot-quad-title{color:var(--orange)}
+.swot-item{font-size:11px;color:var(--muted);padding:3px 0;border-bottom:1px solid rgba(255,255,255,.04);line-height:1.4}
+.swot-item:last-child{border-bottom:none}
+.swot-item::before{content:'• ';color:rgba(255,255,255,.2)}
+.priority-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)}
+.priority-item:last-child{border-bottom:none}
+.priority-num{width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0}
+.priority-num.p1{background:rgba(255,71,87,.15);color:var(--red)}
+.priority-num.p2{background:rgba(255,170,0,.15);color:var(--orange)}
+.priority-num.p3{background:rgba(46,213,115,.15);color:var(--green)}
+.priority-info h5{font-size:13px;font-weight:600;color:var(--text);line-height:1.3}
+.priority-info p{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.4}
+
+/* UTILS */
+.mb-3{margin-bottom:12px}
+.mt-2{margin-top:8px}
+.text-muted{color:var(--muted);font-size:13px;line-height:1.6}
+.highlight-box{background:rgba(124,106,247,.08);border:1px solid rgba(124,106,247,.2);border-radius:12px;padding:12px;margin-bottom:10px}
+.highlight-box p{font-size:13px;line-height:1.6;color:var(--text)}
+.warn-box{background:rgba(255,71,87,.07);border:1px solid rgba(255,71,87,.2);border-radius:12px;padding:12px;margin-bottom:10px}
+.warn-box p{font-size:12px;line-height:1.6;color:var(--red)}
+.warn-box strong{display:block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+a{color:var(--purple);text-decoration:none}
+a:hover{text-decoration:underline}
+.chevron{transition:transform .2s;display:inline-block}
+.chevron.open{transform:rotate(180deg)}
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-brand">
+    <h1>RR <span>Audiovisual</span></h1>
+    <p>Plano de Negócios Completo</p>
+  </div>
+  <div class="topbar-badge" id="headerProgress">0%</div>
+</div>
+
+<!-- CONTENT PANELS -->
+<div class="content">
+
+  <!-- TAB 1: PLANO -->
+  <div class="tab-panel active" id="tab-plano">
+
+    <div class="metrics">
+      <div class="metric"><div class="metric-val">3</div><div class="metric-label">Clientes ativos</div></div>
+      <div class="metric green"><div class="metric-val">R$50k</div><div class="metric-label">Meta 24 meses</div></div>
+      <div class="metric orange"><div class="metric-val">R$15k</div><div class="metric-label">Meta 6 meses</div></div>
+      <div class="metric red"><div class="metric-val">2 anos</div><div class="metric-label">Sair do operacional</div></div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-head"><h2>🎯 Sumário Executivo</h2></div>
+      <div class="card-body">
+        <p class="text-muted">Produtora audiovisual premium focada em <strong style="color:var(--text)">médicos e clínicas de alto padrão</strong> na Barra da Tijuca, Recreio e Zona Sul do Rio de Janeiro.</p>
+        <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px">
+          <span class="pill purple">Nicho: Endocrinologistas</span>
+          <span class="pill green">Pagamento à vista</span>
+          <span class="pill orange">Meta: R$50k líquido</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-head"><h2>🛒 Esteira de Produtos</h2></div>
+      <div class="card-body" style="padding-top:8px;padding-bottom:8px">
+        <div class="product-item">
+          <div class="product-icon" style="background:rgba(124,106,247,.12)">📹</div>
+          <div class="product-info">
+            <h4>Pacote Trimestral de Reels</h4>
+            <p>20 ou 30 vídeos/mês. Pagamento à vista no Pix. Carro-chefe da produtora.</p>
+            <div class="product-price">R$ 3.500 – R$ 6.000 / mês</div>
+          </div>
+        </div>
+        <div class="product-item">
+          <div class="product-icon" style="background:rgba(46,213,115,.12)">📸</div>
+          <div class="product-info">
+            <h4>Sessão de Fotos (Cross-sell)</h4>
+            <p>Retratos corporativos premium no mesmo dia da gravação.</p>
+          </div>
+        </div>
+        <div class="product-item">
+          <div class="product-icon" style="background:rgba(0,210,211,.12)">🎬</div>
+          <div class="product-info">
+            <h4>Coprodução de Cursos Online</h4>
+            <p>Gravação cinematográfica de infoprodutos médicos. Upsell de alto ticket.</p>
+          </div>
+        </div>
+        <div class="product-item">
+          <div class="product-icon" style="background:rgba(255,170,0,.12)">👨‍🏫</div>
+          <div class="product-info">
+            <h4>Treinamento Criando Videomakers</h4>
+            <p>2 dias presenciais. Também forma futuros colaboradores da produtora.</p>
+            <div class="product-price">R$ 1.500 Pix / R$ 1.850 Hotmart</div>
+          </div>
+        </div>
+        <div class="product-item">
+          <div class="product-icon" style="background:rgba(255,71,87,.12)">💻</div>
+          <div class="product-info">
+            <h4>Domine Seu Vídeo</h4>
+            <p>Infoproduto. Vendido organicamente pelo canal de relojoaria no YouTube.</p>
+            <div class="product-price">R$ 97,00</div>
+          </div>
+        </div>
+        <div class="product-item">
+          <div class="product-icon" style="background:rgba(92,107,192,.12)">🏠</div>
+          <div class="product-info">
+            <h4>Consultoria Monte Seu Estúdio</h4>
+            <p>1 hora online. 100% de margem, sem custo de deslocamento.</p>
+            <div class="product-price"><a href="https://hotmart.com/pt-br/marketplace/produtos/hagsxd-consultoria-monte-seu-estudio-em-casa-kv14g/X103042244J" target="_blank">Ver na Hotmart →</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-head"><h2>📈 Plano de Transição Operacional</h2></div>
+      <div class="card-body" style="padding-top:8px;padding-bottom:8px">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-left">
+              <div class="timeline-dot" style="background:rgba(255,71,87,.15);color:var(--red)">1</div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-tag" style="background:rgba(255,71,87,.12);color:var(--red)">0–3 meses</span>
+              <h4>Otimização Atual</h4>
+              <p>Rodrigo: roteiro + gravação. Editor júnior edita 80% do material. 30% comissão por contrato.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-left">
+              <div class="timeline-dot" style="background:rgba(255,170,0,.15);color:var(--orange)">2</div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-tag" style="background:rgba(255,170,0,.12);color:var(--orange)">3–12 meses</span>
+              <h4>Videomaker de Campo</h4>
+              <p>Contratar o melhor aluno do Criando Videomakers como freelancer de captação. Rodrigo faz só direção criativa e roteiro.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-left">
+              <div class="timeline-dot" style="background:rgba(46,213,115,.15);color:var(--green)">3</div>
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-tag" style="background:rgba(46,213,115,.12);color:var(--green)">12–24 meses</span>
+              <h4>Delegação Total</h4>
+              <p>Equipe completa (roteirista + videomaker + editor). Rodrigo na gestão, vendas estratégicas e palestras.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <strong>⚠️ Alerta de Margem — Editor Júnior</strong>
+      <p>Os 30% são válidos até o 4º cliente ativo. A partir do 5º, migrar para salário fixo (R$ 3.000/mês) ou R$ 55/vídeo editado. Caso contrário, ao contratar videomaker de campo (mais 15–20%), o custo operacional chega a 50% e inviabiliza a meta de R$50k líquido.</p>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-head"><h2>💰 Metas Financeiras</h2></div>
+      <div class="card-body">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="background:var(--s2);border-radius:12px;padding:12px;border:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-bottom:4px">Meta 6 meses</div>
+            <div style="font-size:20px;font-weight:800;color:var(--purple)">R$ 15.000 – 25.000 / mês líquido</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:4px">5–6 clientes × R$ 4.000/mês = R$ 20.000 bruto</div>
+          </div>
+          <div style="background:var(--s2);border-radius:12px;padding:12px;border:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-bottom:4px">Meta 24 meses</div>
+            <div style="font-size:20px;font-weight:800;color:var(--green)">R$ 50.000 / mês líquido</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:4px">10 clientes recorrentes + treinamentos + infoprodutos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-head"><h2>📚 Gestão — Leituras Obrigatórias</h2></div>
+      <div class="card-body" style="display:flex;flex-direction:column;gap:8px">
+        <div class="highlight-box">
+          <p><strong>"O Mito do Empreendedor"</strong> — Michael E. Gerber<br><span style="color:var(--muted);font-size:12px">Explica como parar de ser o técnico da própria empresa e começar a agir como empreendedor.</span></p>
+        </div>
+        <div class="highlight-box">
+          <p><strong>"Tração"</strong> — Gino Wickman<br><span style="color:var(--muted);font-size:12px">Como organizar processos e pessoas para o negócio rodar sem depender da sua presença física.</span></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TAB 2: CHECKLIST -->
+  <div class="tab-panel" id="tab-checklist">
+
+    <div class="global-progress-bar">
+      <div class="gp-row">
+        <span class="gp-label">Progresso Geral</span>
+        <span class="gp-pct" id="globalPct">0%</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="globalFill" style="width:0%"></div></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:8px" id="globalCount">0 de 0 tarefas concluídas</div>
+    </div>
+
+    <div id="checklist-phases"></div>
+
+    <button onclick="resetChecklist()" style="width:100%;background:none;border:1px solid var(--border);color:var(--muted);padding:12px;border-radius:12px;font-family:inherit;font-size:13px;cursor:pointer;margin-top:4px">↺ Reiniciar progresso</button>
+
+  </div>
+
+  <!-- TAB 3: MARKETING -->
+  <div class="tab-panel" id="tab-marketing">
+
+    <!-- PROSPECÇÃO MÉDICOS -->
+    <div class="card mb-3">
+      <div class="card-head"><h2>🏥 Prospecção de Endocrinologistas</h2></div>
+      <div class="card-body" style="padding-top:8px">
+        <div class="section-title">Dores Visuais Comuns</div>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px">
+          <div style="background:var(--s2);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text)">🎞️ <strong>Prisão do Tripé de Mesa</strong> — Gravado em Full HD (1080p), sempre no mesmo ângulo estático. Editor sem margem para zoom dinâmico.</div>
+          <div style="background:var(--s2);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text)">🔊 <strong>Áudio de Banheiro</strong> — Eco em consultórios com mármore e paredes lisas.</div>
+          <div style="background:var(--s2);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text)">💡 <strong>Iluminação Hospitalar</strong> — Luz fria de teto cria olheiras e aparência cansada (contrário de "saúde").</div>
+          <div style="background:var(--s2);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text)">🖥️ <strong>Dor da Geladeira</strong> — Médico sentado atrás da mesa branca do consultório, sem profundidade.</div>
+        </div>
+
+        <div class="section-title">Script — Técnica do Presente</div>
+        <div class="dm-script">"Olá, Dra. [Nome]! Fiquei impressionado com a clareza com que explica sobre [assunto]. Como produtora especializada em médicos aqui na Barra e Zona Sul, fiz uma edição cinematográfica de presente de 15 segundos do seu último vídeo: corrigi o eco acústico, apliquei color grading sofisticado e inseri legendas executivas dinâmicas.
+
+O resultado ficou extremamente sofisticado. Posso te enviar o link aqui pelo Direct? É 100% de cortesia."</div>
+
+        <div class="objection-box">
+          <h5>⚡ Objeção: "Já tenho social media"</h5>
+          <p>"Doutor, o social media é excelente na estratégia, mas está limitado pela qualidade de captação do celular. Quando trazemos câmeras de cinema para o seu consultório, entregamos uma matéria-prima premium. Seu social media finalmente terá material digno da sua autoridade para trabalhar."</p>
+        </div>
+        <div style="background:rgba(46,213,115,.06);border:1px solid rgba(46,213,115,.15);border-radius:12px;padding:12px;font-size:12px;color:var(--text)">
+          <strong style="color:var(--green)">💡 Produto de Entrada:</strong> Para médicos que não querem trocar de agência, ofereça apenas a <strong>Captação de Brutos Premium</strong> — você grava 20-30 vídeos em 4K e entrega os arquivos para a agência deles editar.
+        </div>
+      </div>
+    </div>
+
+    <!-- PARCERIAS AGÊNCIAS -->
+    <div class="card mb-3">
+      <div class="card-head"><h2>🤝 Parcerias com Agências de Tráfego</h2></div>
+      <div class="card-body" style="padding-top:8px">
+        <p class="text-muted" style="margin-bottom:12px">Agências de tráfego têm uma dor: criativos ruins detonam o ROAS. Você é a solução que salva o resultado delas.</p>
+        <div class="section-title">Script de Abordagem (WhatsApp / Direct)</div>
+        <div class="dm-script">"Olá, [Nome]! Acompanho o trabalho da [Agência] com clínicas de alto padrão.
+
+Sou diretor audiovisual no Rio (Barra e Zona Sul) especializado em criativos cinematográficos para médicos de alto ticket. Sabemos que o maior gargalo dos gestores hoje é receber vídeos ruins dos próprios médicos, o que detona o CTR.
+
+Queria propor uma parceria ganha-ganha: cuidamos da captação e edição dos criativos dos seus clientes aqui no Rio, garantindo que o tráfego performe ao máximo.
+
+Teria 5 minutos esta semana para uma ligação rápida?"</div>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-top:10px">
+          <div style="background:var(--s2);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text)">💰 <strong>Modelo Afiliado:</strong> Paga 10–15% do primeiro mês do contrato por indicação que fechar.</div>
+          <div style="background:var(--s2);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text)">🔗 <strong>Modelo Coprodução:</strong> Agência embuti seu custo no pacote de tráfego — "Combo Tráfego + Vídeo Premium".</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROTEIROS DE ANÚNCIO -->
+    <div class="section-title" style="margin-bottom:8px">🎬 Roteiros de Anúncio (5 Versões)</div>
+
+    <div class="script-card">
+      <div class="script-head" onclick="toggleScript('s1')">
+        <div>
+          <div class="pill purple" style="margin-bottom:4px">Versão 1</div>
+          <h4>Antes & Depois — Gancho de Ego</h4>
+        </div>
+        <button class="expand-btn" id="btn-s1">Ver <span class="chevron" id="chev-s1">▾</span></button>
+      </div>
+      <div class="script-body" id="body-s1">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:10px">Formato: 45s · Split scene · Gancho direto no ego do médico</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="background:var(--s1);border-radius:10px;padding:10px 12px">
+            <div style="font-size:10px;font-weight:700;color:var(--red);margin-bottom:4px">00:00–00:09 · CENÁRIO AMADOR</div>
+            <p style="font-size:12px;color:var(--text);line-height:1.6;font-style:italic">"Doutor, você passou mais de seis anos estudando, investiu uma fortuna em especializações, cobra mais de mil reais por consulta... e realmente acredita que toda a autoridade da sua carreira cabe em um vídeo gravado de forma amadora?"</p>
+          </div>
+          <div style="background:var(--s1);border-radius:10px;padding:10px 12px">
+            <div style="font-size:10px;font-weight:700;color:var(--purple);margin-bottom:4px">00:09–00:12 · TRANSIÇÃO (estalo de dedos)</div>
+            <p style="font-size:12px;color:var(--text);line-height:1.6;font-style:italic">"Essa é a imagem que você deseja projetar? A verdade é que o paciente de alto padrão julga a qualidade do seu tratamento pelo visual da sua marca."</p>
+          </div>
+          <div style="background:var(--s1);border-radius:10px;padding:10px 12px">
+            <div style="font-size:10px;font-weight:700;color:var(--green);margin-bottom:4px">00:12–00:24 · CENÁRIO PREMIUM</div>
+            <p style="font-size:12px;color:var(--text);line-height:1.6;font-style:italic">"Se você grava em Full HD, de cima de um tripé de mesa com eco no consultório, você está destruindo o valor percebido da sua consulta."</p>
+          </div>
+          <div style="background:var(--s1);border-radius:10px;padding:10px 12px">
+            <div style="font-size:10px;font-weight:700;color:var(--orange);margin-bottom:4px">00:24–00:35 · B-ROLL PORTFÓLIO</div>
+            <p style="font-size:12px;color:var(--text);line-height:1.6;font-style:italic">"A captação cinematográfica não é vaidade, é posicionamento. Ela atrai o paciente que paga particular sem questionar seu preço."</p>
+          </div>
+          <div style="background:var(--s1);border-radius:10px;padding:10px 12px">
+            <div style="font-size:10px;font-weight:700;color:var(--cyan);margin-bottom:4px">00:35–00:45 · CTA</div>
+            <p style="font-size:12px;color:var(--text);line-height:1.6;font-style:italic">"Nós cuidamos de toda a captação no seu consultório aqui no Rio. Toque em 'Saiba Mais' e agende um diagnóstico visual gratuito."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="script-card">
+      <div class="script-head" onclick="toggleScript('s2')">
+        <div>
+          <div class="pill blue" style="margin-bottom:4px">Versão 2</div>
+          <h4>O Espelho Honesto</h4>
+        </div>
+        <button class="expand-btn" id="btn-s2">Ver <span class="chevron" id="chev-s2">▾</span></button>
+      </div>
+      <div class="script-body" id="body-s2">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:10px">Formato: 40s · Tom reflexivo · Premium desde o início · Sem transição de cenário</div>
+        <div class="dm-script">[Cenário premium do início. Tom pausado, olhar direto na câmera.]
+
+"Você é um médico de excelência.
+
+Passou anos estudando. Fez residência. Especializações. Congressos internacionais.
+
+E no seu consultório, você é impecável.
+
+A questão é: o seu Instagram sabe disso?
+
+[Pausa]
+
+Porque o paciente que vai te pagar de cinco a dez mil reais num tratamento… ele te encontra primeiro nas redes. E em três segundos, sem te conhecer, ele decide se você é o médico que ele quer ou não.
+
+Três segundos.
+
+É o tempo de um vídeo amador afastar o paciente que seria o seu melhor contrato do trimestre.
+
+Nós gravamos médicos na Barra e Zona Sul com padrão de cinema. Sem você precisar pensar nisso.
+
+Se faz sentido, o link está aqui."</div>
+      </div>
+    </div>
+
+    <div class="script-card">
+      <div class="script-head" onclick="toggleScript('s3')">
+        <div>
+          <div class="pill green" style="margin-bottom:4px">Versão 3</div>
+          <h4>A Comparação Pura (sem narração)</h4>
+        </div>
+        <button class="expand-btn" id="btn-s3">Ver <span class="chevron" id="chev-s3">▾</span></button>
+      </div>
+      <div class="script-body" id="body-s3">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:10px">Formato: 30s · Split screen · Zero narração · Só texto + música · Alto potencial de parar o scroll no mudo</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="background:var(--s1);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text)">
+            <span style="color:var(--muted)">00:00–00:05</span> Tela dividida: esq. amador · dir. cinema<br>
+            <strong>Texto: "Mesmo médico. Mesmo consultório."</strong>
+          </div>
+          <div style="background:var(--s1);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text)">
+            <span style="color:var(--muted)">00:05–00:12</span> Esq: ângulo estático · Dir: zoom dinâmico<br>
+            <strong>Texto: "Mesma mensagem."</strong>
+          </div>
+          <div style="background:var(--s1);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text)">
+            <span style="color:var(--muted)">00:12–00:20</span> Esq: eco no áudio · Dir: áudio nítido<br>
+            <strong>Texto: "Percepções completamente diferentes."</strong>
+          </div>
+          <div style="background:var(--s1);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text)">
+            <span style="color:var(--muted)">00:20–00:28</span><br>
+            <strong>Texto: "O paciente de alto padrão não escolhe só o médico. Ele escolhe a imagem que o médico projeta."</strong>
+          </div>
+          <div style="background:var(--s1);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text)">
+            <span style="color:var(--muted)">00:28–00:30</span><br>
+            <strong>Logo + Link "Diagnóstico Visual Gratuito"</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="script-card">
+      <div class="script-head" onclick="toggleScript('s4')">
+        <div>
+          <div class="pill red" style="margin-bottom:4px">Versão 4</div>
+          <h4>A Provocação Direta</h4>
+        </div>
+        <button class="expand-btn" id="btn-s4">Ver <span class="chevron" id="chev-s4">▾</span></button>
+      </div>
+      <div class="script-body" id="body-s4">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:10px">Formato: 35s · Tom confrontador e agressivo · Sem suavidade</div>
+        <div class="dm-script">[Cenário amador. Tom direto, sem sorrir.]
+
+"Você cobra caro. Estudou muito. É bom no que faz.
+
+Mas vou ser honesto contigo.
+
+Se eu fosse seu paciente, entraria no seu Instagram e pensaria: 'será que esse médico realmente entrega o que promete?'
+
+Porque o vídeo que você posta não representa quem você é dentro do consultório.
+
+E o pior não é isso.
+
+O pior é que você provavelmente nem percebe o quanto isso te custa em pacientes que chegam no seu perfil... e vão embora sem marcar consulta."
+
+[Estalo de dedo → cenário premium]
+
+"Nós resolvemos isso. De forma completa. No seu consultório, aqui no Rio.
+
+Se quiser entender como, o link está aqui."</div>
+      </div>
+    </div>
+
+    <div class="script-card">
+      <div class="script-head" onclick="toggleScript('s5')">
+        <div>
+          <div class="pill orange" style="margin-bottom:4px">Versão 5</div>
+          <h4>O Olhar do Paciente</h4>
+        </div>
+        <button class="expand-btn" id="btn-s5">Ver <span class="chevron" id="chev-s5">▾</span></button>
+      </div>
+      <div class="script-body" id="body-s5">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:10px">Formato: 45s · Narrativa em 3ª pessoa · Voz off · Câmera mostra mão rolando o feed</div>
+        <div class="dm-script">[Voz off. Câmera mostra mão rolando feed com vídeos amadores de médicos.]
+
+"Ana tem 38 anos. Quer fazer um procedimento estético. Vai gastar em torno de oito mil reais.
+
+Ela não sabe o nome do melhor médico. Ela não conhece ninguém do setor.
+
+Ela só tem o Instagram.
+
+Ela rola o feed. Vê um vídeo. E em três segundos, decide se confia ou não.
+
+Aquele médico com a iluminação escura, o eco no áudio, o enquadramento torto…
+
+ela scrollou. Sem nem ler a legenda."
+
+[A mão para em perfil com vídeo cinematográfico. Toca para assistir.]
+
+"Neste aqui, ela parou. Assistiu até o final. Salvou. E mandou mensagem.
+
+A Ana não sabe a diferença entre uma câmera de cinema e um celular.
+
+Mas ela sente.
+
+Nós cuidamos da imagem do seu consultório no Rio para que a próxima Ana pare no seu vídeo.
+
+O link está aqui."</div>
+      </div>
+    </div>
+
+    <!-- EVENTOS -->
+    <div class="card" style="margin-top:12px">
+      <div class="card-head"><h2>🎤 ANI Hack — Cobertura de Eventos</h2></div>
+      <div class="card-body" style="display:flex;flex-direction:column;gap:8px">
+        <div style="background:var(--s2);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text)">📋 Usar credencial ANI (Associação Nacional de Imprensa) para acessar congressos médicos na Barra e Zona Sul.</div>
+        <div style="background:var(--s2);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text)">🎥 Kit de campo: a6400 + gimbal + lapela dupla sem fio (DJI Mic / Rode). Bastão de entrevista personalizado gera autoridade imediata.</div>
+        <div class="dm-script">"Dr.! Estamos cobrindo o evento para nossa editoria de saúde premium no Rio. Poderia nos dar um depoimento de 1 minuto sobre a principal tendência discutida hoje?"
+
+[Após gravar:]
+
+"Ficou excelente! Vou enviar o vídeo editado de cortesia no seu WhatsApp na segunda-feira. Qual o contato?"</div>
+        <div style="background:rgba(46,213,115,.06);border:1px solid rgba(46,213,115,.15);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text)">✅ <strong>Meta por evento:</strong> Sair com 5+ contatos qualificados. Na semana seguinte, entregar o vídeo editado e abrir o gancho para o Pacote Trimestral.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TAB 4: SWOT -->
+  <div class="tab-panel" id="tab-swot">
+
+    <div class="swot-grid">
+      <div class="swot-quad s">
+        <div class="swot-quad-title">💪 Forças</div>
+        <div class="swot-item">3 clientes ativos, pagamento à vista</div>
+        <div class="swot-item">Nicho de demanda infinita (emagrecimento)</div>
+        <div class="swot-item">Ecossistema de 5 fontes de receita integradas</div>
+        <div class="swot-item">Autoridade técnica pública (canal de relojoaria)</div>
+        <div class="swot-item">Leitura profunda do comportamento médico</div>
+        <div class="swot-item">Contratos trimestrais (alta barreira de saída)</div>
+        <div class="swot-item">Canal próprio de recrutamento (treinamento)</div>
+        <div class="swot-item">Estratégia de eventos (ANI Hack)</div>
+      </div>
+      <div class="swot-quad w">
+        <div class="swot-quad-title">⚠️ Fraquezas</div>
+        <div class="swot-item">Operação 100% dependente do Rodrigo</div>
+        <div class="swot-item">Teto físico de ~6 clientes sem equipe</div>
+        <div class="swot-item">Nenhum processo documentado (playbook)</div>
+        <div class="swot-item">Lacuna em gestão empresarial</div>
+        <div class="swot-item">Câmera principal com problemas, sem backup</div>
+        <div class="swot-item">Acordo do editor sem documento formal</div>
+        <div class="swot-item">Identidade visual da produtora não consolidada</div>
+      </div>
+      <div class="swot-quad o">
+        <div class="swot-quad-title">🚀 Oportunidades</div>
+        <div class="swot-item">Algoritmo do Instagram favorece vídeo de qualidade</div>
+        <div class="swot-item">Agências de tráfego como canal de indicação</div>
+        <div class="swot-item">Eventos médicos inexplorados no Rio</div>
+        <div class="swot-item">Pacote "só captação" para médicos com agência</div>
+        <div class="swot-item">Explosão de cursos online médicos</div>
+        <div class="swot-item">YouTube como máquina orgânica de leads</div>
+        <div class="swot-item">Mercado de treinamento para videomakers em alta</div>
+        <div class="swot-item">Expansão geográfica futura (SP, Niterói)</div>
+      </div>
+      <div class="swot-quad t">
+        <div class="swot-quad-title">🛡️ Ameaças</div>
+        <div class="swot-item">Produtoras maiores entrando no nicho médico</div>
+        <div class="swot-item">Celulares de alta qualidade reduzindo percepção de valor</div>
+        <div class="swot-item">Churn dos 3 clientes em renovação simultânea</div>
+        <div class="swot-item">Dependência do Instagram/TikTok</div>
+        <div class="swot-item">Sazonalidade (jan/fev, julho — férias médicas)</div>
+        <div class="swot-item">Cópia dos scripts por concorrentes</div>
+        <div class="swot-item">Regulamentação do CFM para publicidade médica</div>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-head"><h2>⚔️ Estratégias Cruzadas</h2></div>
+      <div class="card-body" style="display:flex;flex-direction:column;gap:10px">
+        <div style="background:var(--s2);border-radius:12px;padding:12px">
+          <div style="font-size:10px;font-weight:700;color:var(--purple);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">F1+F2 × O2 — Portfólio como argumento para agências</div>
+          <p style="font-size:12px;color:var(--text);line-height:1.5">Use os 3 médicos como cases de portfólio (engajamento, crescimento) ao abordar agências de tráfego. Prova concreta de ROI.</p>
+        </div>
+        <div style="background:var(--s2);border-radius:12px;padding:12px">
+          <div style="font-size:10px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">F5 × O3 — Diagnóstico de perfil em eventos</div>
+          <p style="font-size:12px;color:var(--text);line-height:1.5">Criar PDF de "Diagnóstico Gratuito de Perfil Médico" para distribuir fisicamente nos eventos. Médico leva para casa e você fica na cabeça dele.</p>
+        </div>
+        <div style="background:var(--s2);border-radius:12px;padding:12px">
+          <div style="font-size:10px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">W1+W2 × F7 — Contratar videomaker ANTES do gargalo</div>
+          <p style="font-size:12px;color:var(--text);line-height:1.5">Identificar o melhor aluno do próximo treinamento antes de fechar o 5º cliente. Não esperar o colapso de agenda para agir.</p>
+        </div>
+        <div style="background:var(--s2);border-radius:12px;padding:12px">
+          <div style="font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">T7 × F5 — CFM como vantagem competitiva</div>
+          <p style="font-size:12px;color:var(--text);line-height:1.5">Dominar as regras do CFM para publicidade médica. Ser o único videomaker no Rio que entrega roteiros já eticamente alinhados elimina o maior medo do médico.</p>
+        </div>
+        <div style="background:var(--s2);border-radius:12px;padding:12px">
+          <div style="font-size:10px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">F8 × T6 — Eventos como canal impossível de copiar</div>
+          <p style="font-size:12px;color:var(--text);line-height:1.5">A estratégia de eventos é relacional e presencial — impossível de replicar por concorrentes digitais. Priorizar como canal principal de prospecção de alto ticket.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>📋 Matriz de Prioridade</h2></div>
+      <div class="card-body" style="padding-top:8px;padding-bottom:8px">
+        <div class="priority-item">
+          <div class="priority-num p1">1</div>
+          <div class="priority-info"><h5>Renovar os 3 clientes proativamente</h5><p>Chegar antes do vencimento com relatório e novo contrato pronto.</p></div>
+        </div>
+        <div class="priority-item">
+          <div class="priority-num p1">2</div>
+          <div class="priority-info"><h5>Câmera backup testada e disponível</h5><p>Smartphone com Filmic Pro ou aluguel por diária antes da próxima gravação.</p></div>
+        </div>
+        <div class="priority-item">
+          <div class="priority-num p1">3</div>
+          <div class="priority-info"><h5>Acordo do editor formalizado</h5><p>Termo escrito com os 30% atuais e cláusula de transição no 5º cliente.</p></div>
+        </div>
+        <div class="priority-item">
+          <div class="priority-num p2">4</div>
+          <div class="priority-info"><h5>Separação PF/PJ + planilha de caixa</h5><p>Conta PJ ativa, pró-labore definido e 3 cenários de renovação preenchidos.</p></div>
+        </div>
+        <div class="priority-item">
+          <div class="priority-num p2">5</div>
+          <div class="priority-info"><h5>Manual de Padrão da Produtora</h5><p>Documentar setup de luz, áudio, câmera e protocolo de conduta em consultório.</p></div>
+        </div>
+        <div class="priority-item">
+          <div class="priority-num p2">6</div>
+          <div class="priority-info"><h5>Abordar 5 agências de tráfego</h5><p>Usar o script de parceria do Playbook. Meta: 2 parcerias fechadas em 60 dias.</p></div>
+        </div>
+        <div class="priority-item">
+          <div class="priority-num p2">7</div>
+          <div class="priority-info"><h5>Mapear eventos médicos (ANI)</h5><p>Grade CRM-RJ, SBEM e SBCP. Inscrever como imprensa nos 2 mais relevantes.</p></div>
+        </div>
+        <div class="priority-item">
+          <div class="priority-num p3">8</div>
+          <div class="priority-info"><h5>Gravar e testar criativos (Versões 2 e 3)</h5><p>Publicar organicamente. Melhor resultado recebe verba de R$ 300–500.</p></div>
+        </div>
+        <div class="priority-item">
+          <div class="priority-num p3">9</div>
+          <div class="priority-info"><h5>Estudar regras CFM para publicidade médica</h5><p>Resolução nº 2.336/2023. Criar checklist CFM-Safe para todos os roteiros.</p></div>
+        </div>
+        <div class="priority-item">
+          <div class="priority-num p3">10</div>
+          <div class="priority-info"><h5>Consolidar identidade visual da produtora</h5><p>Nome, paleta de cores, Instagram redesenhado e kit de apresentação em PDF.</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+  <button class="nav-btn active" id="nav-plano" onclick="switchTab('plano')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+    <span>Plano</span>
+  </button>
+  <button class="nav-btn" id="nav-checklist" onclick="switchTab('checklist')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    <span>Checklist</span>
+  </button>
+  <button class="nav-btn" id="nav-marketing" onclick="switchTab('marketing')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+    <span>Marketing</span>
+  </button>
+  <button class="nav-btn" id="nav-swot" onclick="switchTab('swot')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="9" height="9" rx="1"/><rect x="13" y="2" width="9" height="9" rx="1"/><rect x="2" y="13" width="9" height="9" rx="1"/><rect x="13" y="13" width="9" height="9" rx="1"/></svg>
+    <span>SWOT</span>
+  </button>
+</nav>
+
+<script>
+// ─── NAV ───────────────────────────────────────────────
+function switchTab(tab) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  document.getElementById('nav-' + tab).classList.add('active');
+  document.getElementById('tab-' + tab).scrollTop = 0;
+}
+
+// ─── SCRIPT TOGGLE ─────────────────────────────────────
+function toggleScript(id) {
+  const body = document.getElementById('body-' + id);
+  const btn = document.getElementById('btn-' + id);
+  const chev = document.getElementById('chev-' + id);
+  const open = body.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  chev.classList.toggle('open', open);
+}
+
+// ─── CHECKLIST DATA ────────────────────────────────────
+const phases = [
+  { id:'f1', emoji:'🔴', color:'#ff4757', label:'Fase 1 — Blindagem', sub:'Semanas 1 e 2 · CRÍTICO',
+    actions:[
+      { label:'Renovação dos 3 Clientes', tasks:[
+        {id:'t1',text:'Agendar reunião individual com cada um dos 3 médicos antes do vencimento.'},
+        {id:'t2',text:'Preparar Relatório de Resultado do trimestre anterior.'},
+        {id:'t3',text:'Apresentar o próximo contrato com melhoria incluída.'},
+        {id:'t4',text:'Oferecer 5% de desconto para fechamento na mesma semana via Pix.'},
+      ]},
+      { label:'Câmera de Backup', tasks:[
+        {id:'t5',text:'Testar smartphone com Filmic Pro / Blackmagic Camera App como backup.'},
+        {id:'t6',text:'Pesquisar aluguel de câmera no Rio (Studio Rent RJ, Grife Câmeras).'},
+        {id:'t7',text:'Conta/poupança na PJ separada para reserva da Sony a6700.',done:true},
+      ]},
+      { label:'Acordo com o Editor', tasks:[
+        {id:'t8',text:'Conversar com o editor sobre o plano de crescimento e o papel dele.'},
+        {id:'t9',text:'Formalizar os 30% atuais e o marco de transição para fixo no 5º cliente.'},
+        {id:'t10',text:'Redigir e assinar o Termo de Parceria Simples (cópia digital e física).'},
+      ]},
+      { label:'Separação Financeira PF/PJ', tasks:[
+        {id:'t11',text:'Abrir conta corrente PJ (Nubank PJ ou Inter PJ — gratuitas).'},
+        {id:'t12',text:'Definir e agendar pró-labore fixo mensal (sugestão: R$ 6.000–8.000).'},
+        {id:'t13',text:'Criar planilha de fluxo de caixa (Data / Descrição / Entrada / Saída).'},
+        {id:'t14',text:'Preencher cenário otimista (3 renovam + 2 novos).'},
+        {id:'t15',text:'Preencher cenário realista (3 renovam + 1 novo).'},
+        {id:'t16',text:'Preencher cenário pessimista (2 renovam + 0 novos) e avaliar impacto.'},
+      ]},
+    ]
+  },
+  { id:'f2', emoji:'🟡', color:'#ffaa00', label:'Fase 2 — Estrutura', sub:'Semanas 3 a 8',
+    actions:[
+      { label:'Manual de Padrão da Produtora', tasks:[
+        {id:'t17',text:'Criar documento com Seção 1: Setup de Iluminação em Consultório Médico.'},
+        {id:'t18',text:'Seção 2: Configuração de Câmera (perfil de cor, ISO, 4K obrigatório).'},
+        {id:'t19',text:'Seção 3: Setup de Áudio (lapela sem fio, como evitar eco).'},
+        {id:'t20',text:'Seção 4: Enquadramento e Planos obrigatórios por sessão.'},
+        {id:'t21',text:'Seção 5: Postura e Protocolo de Conduta em clínicas de luxo.'},
+        {id:'t22',text:'Adicionar fotos de referência de setups reais das gravações.'},
+        {id:'t23',text:'Testar: o editor consegue entender o manual sem perguntar nada?'},
+      ]},
+      { label:'Identidade Visual', tasks:[
+        {id:'t24',text:'Definir o nome oficial da produtora.'},
+        {id:'t25',text:'Criar paleta de cores sóbria e premium (preto + dourado + branco).'},
+        {id:'t26',text:'Redesenhar bio do Instagram direcionada ao médico com link de agendamento.'},
+        {id:'t27',text:'Organizar destaques: Portfólio / Bastidores / Resultados.'},
+        {id:'t28',text:'Criar kit de apresentação digital (PDF 5–8 slides).'},
+      ]},
+      { label:'Diretrizes CFM', tasks:[
+        {id:'t29',text:'Ler a Resolução CFM nº 2.336/2023 (cfm.org.br).'},
+        {id:'t30',text:'Anotar o que é proibido (antes/depois, promessas de resultado).'},
+        {id:'t31',text:'Anotar o que é permitido (educativo, divulgação de especialidade).'},
+        {id:'t32',text:'Criar Checklist de Roteiro CFM-Safe com 10 itens.'},
+        {id:'t33',text:'Aplicar o checklist nos próximos 3 roteiros entregues.'},
+        {id:'t34',text:'Incluir "roteiros revisados pelo CFM" no kit de apresentação.'},
+      ]},
+      { label:'Parcerias com Agências', tasks:[
+        {id:'t35',text:'Pesquisar 5 agências de tráfego para médicos/clínicas no Rio.'},
+        {id:'t36',text:'Enviar o script de parceria para cada uma via Direct ou WhatsApp.'},
+        {id:'t37',text:'Preparar proposta de parceria formal para os que responderem.'},
+        {id:'t38',text:'Fechar pelo menos 2 agências parceiras nos primeiros 60 dias.'},
+      ]},
+      { label:'Eventos Médicos (ANI Hack)', tasks:[
+        {id:'t39',text:'Pesquisar eventos nos próximos 60–90 dias: CRM-RJ, SBEM, SBCP.'},
+        {id:'t40',text:'Se inscrever como imprensa (ANI) nos 2 eventos mais relevantes.'},
+        {id:'t41',text:'Preparar kit de campo: crachá + a6400 + gimbal + lapela dupla + cartões.'},
+        {id:'t42',text:'Sair de cada evento com pelo menos 5 contatos qualificados.'},
+        {id:'t43',text:'Entregar o vídeo editado de cortesia na semana seguinte ao evento.'},
+      ]},
+    ]
+  },
+  { id:'f3', emoji:'🟢', color:'#2ed573', label:'Fase 3 — Crescimento', sub:'Meses 2 a 6',
+    actions:[
+      { label:'Prospecção de Endocrinologistas', tasks:[
+        {id:'t44',text:'Prospectar 3–5 endocrinologistas por semana via Técnica do Presente.'},
+        {id:'t45',text:'Criar planilha CRM (Nome / Instagram / Data / Status / Próxima Ação).'},
+        {id:'t46',text:'Aplicar argumento de quebra de objeção para médicos com social media.'},
+        {id:'t47',text:'Fechar 3 novos clientes até o mês 6 (total: 6 ativos).'},
+      ]},
+      { label:'Criativos de Anúncio', tasks:[
+        {id:'t48',text:'Gravar a Versão 2 (O Espelho Honesto).'},
+        {id:'t49',text:'Gravar a Versão 3 (A Comparação Pura — split screen sem narração).'},
+        {id:'t50',text:'Publicar organicamente e monitorar por 7 dias.'},
+        {id:'t51',text:'Impulsionar o melhor com R$ 300–500 de tráfego pago.'},
+        {id:'t52',text:'Meta: 1 reunião de vendas gerada pelos anúncios nos primeiros 30 dias.'},
+      ]},
+      { label:'Treinamento Criando Videomakers', tasks:[
+        {id:'t53',text:'Definir data da próxima turma (mínimo 6–8 alunos).'},
+        {id:'t54',text:'Divulgar no Instagram, YouTube e anúncio (R$ 200–300).'},
+        {id:'t55',text:'Observar os 2–3 alunos com maior aptidão técnica.'},
+        {id:'t56',text:'Fazer convite direto para os melhores como freelancers de campo.'},
+      ]},
+      { label:'Canal do YouTube', tasks:[
+        {id:'t57',text:'Publicar 1 vídeo longo por mês (validado via Shorts).'},
+        {id:'t58',text:'Incluir CTA para o infoproduto ao final de cada vídeo.'},
+        {id:'t59',text:'Criar tela final e cartão direcionando ao Domine Seu Vídeo (R$ 97).'},
+        {id:'t60',text:'Meta: 5 vendas mensais do infoproduto via canal orgânico até o mês 6.'},
+      ]},
+    ]
+  },
+  { id:'f4', emoji:'🔵', color:'#5c6bc0', label:'Fase 4 — Escala', sub:'Meses 6 a 24',
+    actions:[
+      { label:'Contratar Videomaker de Campo', tasks:[
+        {id:'t61',text:'Identificar candidato no treinamento Criando Videomakers.'},
+        {id:'t62',text:'Fechar modelo freelancer por diária (R$ 400–600/dia).'},
+        {id:'t63',text:'Exigir que siga o Manual de Padrão da Produtora rigorosamente.'},
+        {id:'t64',text:'Acompanhar nas 3 primeiras gravações. Depois, delegar completamente.'},
+      ]},
+      { label:'Transição de Remuneração do Editor', tasks:[
+        {id:'t65',text:'No 5º cliente: calcular total de vídeos editados por mês.'},
+        {id:'t66',text:'Oferecer R$ 50–60/Reels (variável) ou R$ 3.000–3.500 fixos/mês.'},
+        {id:'t67',text:'Formalizar novo acordo. Garantir margem líquida acima de 50%.'},
+      ]},
+      { label:'Equipamentos', tasks:[
+        {id:'t68',text:'Pesquisar notebooks RTX 4060+ (orçamento: R$ 5.000–8.000).'},
+        {id:'t69',text:'Pesquisar Sony a6700 com lente kit (orçamento: R$ 9.000–12.000).'},
+        {id:'t70',text:'Comprar com CNPJ para dedução fiscal (ativo do negócio).'},
+      ]},
+      { label:'Gestão — Estudo Contínuo', tasks:[
+        {id:'t71',text:'Mês 1: Ler "O Mito do Empreendedor" (Michael E. Gerber).'},
+        {id:'t72',text:'Mês 2: Ler "Tração" (Gino Wickman).'},
+        {id:'t73',text:'Mês 3: Implementar reunião semanal de 30 min de revisão do negócio.'},
+        {id:'t74',text:'Mês 4: Criar Scorecard Semanal com 5 indicadores-chave.'},
+      ]},
+      { label:'Palestras como Produto', tasks:[
+        {id:'t75',text:'Definir 2–3 temas de palestra alinhados à trajetória.'},
+        {id:'t76',text:'Criar Onesheet de Palestrante (1 página: bio, temas, contato).'},
+        {id:'t77',text:'Enviar para organizadores dos eventos que cobriu como imprensa.'},
+        {id:'t78',text:'Realizar 3 palestras gratuitas para validar o formato.'},
+        {id:'t79',text:'Fechar 1 palestra paga até o mês 12.'},
+      ]},
+    ]
+  }
+];
+
+// ─── CHECKLIST STATE ───────────────────────────────────
+function loadState() {
+  try { return JSON.parse(localStorage.getItem('rr_plan_v2') || '{}'); } catch(e) { return {}; }
+}
+function saveState(s) {
+  localStorage.setItem('rr_plan_v2', JSON.stringify(s));
+}
+let state = loadState();
+// Pre-mark confirmed done item
+if (!('t7' in state)) { state.t7 = true; saveState(state); }
+
+function allTasks() {
+  return phases.flatMap(p => p.actions.flatMap(a => a.tasks));
+}
+function countGlobal() {
+  const all = allTasks();
+  return { total: all.length, done: all.filter(t => state[t.id]).length };
+}
+function countPhase(phase) {
+  const all = phase.actions.flatMap(a => a.tasks);
+  return { total: all.length, done: all.filter(t => state[t.id]).length };
+}
+
+function updateGlobalUI() {
+  const { total, done } = countGlobal();
+  const pct = total > 0 ? Math.round(done / total * 100) : 0;
+  const pctStr = pct + '%';
+  document.getElementById('globalPct').textContent = pctStr;
+  document.getElementById('globalFill').style.width = pctStr;
+  document.getElementById('globalCount').textContent = `${done} de ${total} tarefas concluídas`;
+  document.getElementById('headerProgress').textContent = pctStr;
+}
+
+function renderChecklist() {
+  const container = document.getElementById('checklist-phases');
+  container.innerHTML = '';
+  phases.forEach((phase, pi) => {
+    const { total, done } = countPhase(phase);
+    const pct = total > 0 ? Math.round(done / total * 100) : 0;
+    const circumference = 2 * Math.PI * 10;
+    const offset = circumference * (1 - pct / 100);
+
+    const card = document.createElement('div');
+    card.className = 'card mb-3';
+
+    const actionsHTML = phase.actions.map(action => `
+      <div class="action-section">
+        <div class="action-label">${action.label}</div>
+        ${action.tasks.map(t => `
+          <div class="task-item ${state[t.id] ? 'done' : ''}" id="task_${t.id}" onclick="toggleTask('${t.id}', ${pi})">
+            <div class="checkbox"><div class="check-icon"></div></div>
+            <span class="task-text">${t.text}</span>
+          </div>
+        `).join('')}
+      </div>
+    `).join('');
+
+    card.innerHTML = `
+      <div class="phase-header" onclick="togglePhase('pb_${phase.id}')">
+        <span class="phase-emoji">${phase.emoji}</span>
+        <div class="phase-info">
+          <h3>${phase.label}</h3>
+          <p>${phase.sub}</p>
+        </div>
+        <div class="phase-progress">
+          <span class="phase-count">${done}/${total}</span>
+          <svg class="mini-ring" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="${'var(--border)'}" stroke-width="2.5"/>
+            <circle cx="12" cy="12" r="10" fill="none" stroke="${phase.color}" stroke-width="2.5"
+              stroke-dasharray="${circumference}" stroke-dashoffset="${offset}"
+              stroke-linecap="round" transform="rotate(-90 12 12)" style="transition:stroke-dashoffset .4s"/>
+          </svg>
+        </div>
+      </div>
+      <div class="phase-body ${pi === 0 ? 'open' : ''}" id="pb_${phase.id}">${actionsHTML}</div>
+    `;
+    container.appendChild(card);
+  });
+  updateGlobalUI();
+}
+
+function togglePhase(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+
+function toggleTask(taskId, phaseIndex) {
+  state[taskId] = !state[taskId];
+  saveState(state);
+  // Update just the task element
+  const el = document.getElementById('task_' + taskId);
+  if (state[taskId]) el.classList.add('done');
+  else el.classList.remove('done');
+  // Re-render phase ring & count
+  const phase = phases[phaseIndex];
+  const { total, done } = countPhase(phase);
+  const pct = total > 0 ? Math.round(done / total * 100) : 0;
+  const circumference = 2 * Math.PI * 10;
+  const offset = circumference * (1 - pct / 100);
+  const card = el.closest('.card');
+  const circle = card.querySelectorAll('circle')[1];
+  if (circle) circle.setAttribute('stroke-dashoffset', offset);
+  const countEl = card.querySelector('.phase-count');
+  if (countEl) countEl.textContent = `${done}/${total}`;
+  updateGlobalUI();
+}
+
+function resetChecklist() {
+  if (confirm('Reiniciar todo o progresso?')) {
+    state = {};
+    saveState(state);
+    renderChecklist();
+  }
+}
+
+// ─── INIT ──────────────────────────────────────────────
+renderChecklist();
+updateGlobalUI();
+</script>
+</body>
+</html>
