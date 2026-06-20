@@ -348,13 +348,21 @@ a:hover{text-decoration:underline}
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
     <span>Plano</span>
   </button>
+  <button class="tab-btn" onclick="switchTab('tabela',this)" id="btn-tabela">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+    <span>Tabela</span>
+  </button>
+  <button class="tab-btn" onclick="switchTab('cenarios',this)" id="btn-cenarios">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    <span>Cenários</span>
+  </button>
   <button class="tab-btn" onclick="switchTab('swot',this)" id="btn-swot">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
     <span>SWOT</span>
   </button>
   <button class="tab-btn" onclick="switchTab('impl',this)" id="btn-impl">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-    <span>Plano</span>
+    <span>Tarefas</span>
   </button>
   <button class="tab-btn" onclick="switchTab('play',this)" id="btn-play">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
@@ -390,142 +398,36 @@ a:hover{text-decoration:underline}
   </div>
 
   <div class="card mb-3">
-    <div class="card-head"><h2>🛒 Esteira de Produtos — Catálogo Completo</h2></div>
+    <div class="card-head"><h2>🧠 Os 3 Modelos de Atuação (Trabalhar Menos, Ganhar Mais)</h2></div>
     <div class="card-body" style="padding-top:8px;padding-bottom:8px">
 
-      <div class="sec-title">📱 Instagram &amp; TikTok — Planos Recorrentes</div>
+      <div class="sec-title">Modelo A: Estúdio Premium (0 Deslocamento)</div>
       <div class="prod-item">
-        <div class="prod-icon" style="background:rgba(201,160,40,0.12)">📹</div>
+        <div class="prod-icon" style="background:rgba(201,160,40,0.12)">🏠</div>
         <div class="prod-info">
-          <h4>Gestão de Redes Sociais</h4>
-          <p>Ativação diária seg–seg. 5 vídeos/semana · 16 Cortes Dinâmicos/mês · 4 Vídeos Premium/mês. Instagram, TikTok e YT Shorts. Pix com 5% desconto.</p>
-          <div class="prod-price">R$ 5.000/mês · Contrato trimestral</div>
-        </div>
-      </div>
-      <div class="prod-item">
-        <div class="prod-icon" style="background:rgba(124,106,247,0.12)">👑</div>
-        <div class="prod-info">
-          <h4>Domínio Total</h4>
-          <p>7 vídeos/semana (30/mês) · 6 Premium Cinematográficos + 24 Dinâmicos + 1 Sessão Fotográfica (20 fotos). Sessão a cada 15 dias. Pix com 5% desconto.</p>
-          <div class="prod-price">R$ 4.500/mês · Contrato trimestral</div>
-        </div>
-      </div>
-      <div class="prod-item">
-        <div class="prod-icon" style="background:rgba(78,154,241,0.12)">🎬</div>
-        <div class="prod-info">
-          <h4>Autoridade Premium</h4>
-          <p>5 vídeos/semana (20/mês) · 4 Premium Cinematográficos + 16 Dinâmicos. 1 sessão/mês. Pix com 5% desconto.</p>
-          <div class="prod-price">R$ 3.500/mês · Contrato trimestral</div>
+          <h4>O Cliente vem até você</h4>
+          <p>Toda a filmagem acontece na Barra. Você não carrega equipamento. O cliente ganha ambiente de cinema, você ganha 3h do seu dia de volta.</p>
         </div>
       </div>
 
-      <div class="sec-title" style="margin-top:14px">🎥 Captação Premium (Sem Edição)</div>
+      <div class="sec-title" style="margin-top:14px">Modelo B: Delegação para Alunos (Escala Pura)</div>
       <div class="prod-item">
-        <div class="prod-icon" style="background:rgba(0,201,167,0.12)">📷</div>
+        <div class="prod-icon" style="background:rgba(124,106,247,0.12)">👥</div>
         <div class="prod-info">
-          <h4>Captação de Brutos para Agências</h4>
-          <p>Para quem já tem agência mas quer qualidade de cinema. Todo o material gravado em um dia, entregue na nuvem para a agência editar.</p>
-          <div class="prod-price">10 vídeos: R$ 1.500 &nbsp;·&nbsp; 20 vídeos: R$ 2.000 &nbsp;·&nbsp; 30 vídeos: R$ 3.000</div>
+          <h4>Você Dirige, Eles Filma</h4>
+          <p>O melhor aluno da turma vai até a clínica filmar (recebe R$ 400). Você faz roteiro, revisão e atende o cliente. Seu valor/hora salta de R$ 300 para R$ 1.500.</p>
         </div>
       </div>
 
-      <div class="sec-title" style="margin-top:14px">🎬 YouTube + Multi-Plataforma</div>
-      <div class="prod-item">
-        <div class="prod-icon" style="background:rgba(255,71,87,0.12)">🏆</div>
-        <div class="prod-info">
-          <h4>Domínio de Mercado</h4>
-          <p>4 vídeos longos (até 10 min)/semana no YouTube + 20 vídeos curtos/mês (IG/TikTok/Shorts) extraídos dos vídeos longos. Pix 5% desconto.</p>
-          <div class="prod-price">R$ 6.000/mês · Contrato trimestral</div>
-        </div>
-      </div>
-      <div class="prod-item">
-        <div class="prod-icon" style="background:rgba(255,159,67,0.12)">📈</div>
-        <div class="prod-info">
-          <h4>Expansão Estratégica</h4>
-          <p>2 vídeos longos (até 10 min)/quinzena no YouTube + 12 vídeos curtos/mês (3x/semana, IG/TikTok/Shorts). Pix 5% desconto.</p>
-          <div class="prod-price">R$ 4.000/mês · Contrato trimestral</div>
-        </div>
-      </div>
-
-      <div class="sec-title" style="margin-top:14px">📸 Fotografia Profissional</div>
-      <div class="prod-item">
-        <div class="prod-icon" style="background:rgba(201,160,40,0.12)">📸</div>
-        <div class="prod-info">
-          <h4>Retratos de Liderança</h4>
-          <p>Direção de postura, olhar e cenário com base no seu arquétipo. Maquiadora inclusa nos planos de 20 e 30 fotos. Pix 5% desconto.</p>
-          <div class="prod-price">10 fotos: R$ 1.500 &nbsp;·&nbsp; 20 fotos: R$ 2.250 &nbsp;·&nbsp; 30 fotos: R$ 3.000</div>
-        </div>
-      </div>
-
-      <div class="sec-title" style="margin-top:14px">🎤 Cobertura de Eventos</div>
-      <div class="prod-item">
-        <div class="prod-icon" style="background:rgba(38,222,129,0.12)">🎤</div>
-        <div class="prod-info">
-          <h4>Cobertura 360°</h4>
-          <p>Story Maker in-loco (Reels/Stories), captação cinematográfica da palestra, fotografia de elite. Entrega em formatos vertical e horizontal. Pix 5% desconto.</p>
-          <div class="prod-price">R$ 3.000 · Cobertura completa</div>
-        </div>
-      </div>
-      <div class="prod-item">
-        <div class="prod-icon" style="background:rgba(78,154,241,0.12)">📷</div>
-        <div class="prod-info">
-          <h4>Fotografia de Evento</h4>
-          <p>Registro fotográfico profissional de eventos, palestras e congressos. Pix 5% desconto.</p>
-          <div class="prod-price">R$ 1.250 · Sessão de evento</div>
-        </div>
-      </div>
-
-      <div class="sec-title" style="margin-top:14px">🎓 Infoprodutos — Gravação de Aulas</div>
-      <div class="prod-item">
-        <div class="prod-icon" style="background:rgba(201,160,40,0.12)">⚡</div>
-        <div class="prod-info">
-          <h4>Flash (até 1h)</h4>
-          <p>Gravação no estúdio ou no seu espaço. Som, luz, áudio profissional e uso de prompter. Pix 5% desconto.</p>
-          <div class="prod-price">R$ 3.000</div>
-        </div>
-      </div>
-      <div class="prod-item">
-        <div class="prod-icon" style="background:rgba(124,106,247,0.12)">📖</div>
-        <div class="prod-info">
-          <h4>MiniCurso (até 2h)</h4>
-          <p>Gravação completa no estúdio ou no seu espaço com estrutura profissional. Pix 5% desconto.</p>
-          <div class="prod-price">R$ 4.500</div>
-        </div>
-      </div>
-      <div class="prod-item">
-        <div class="prod-icon" style="background:rgba(38,222,129,0.12)">🏫</div>
-        <div class="prod-info">
-          <h4>Curso (até 4h)</h4>
-          <p>Produção completa de curso online. Chave na mão, da abertura à conclusão. Pix 5% desconto.</p>
-          <div class="prod-price">R$ 6.500</div>
-        </div>
-      </div>
-
-      <div class="sec-title" style="margin-top:14px">👨‍🏫 Educação &amp; Treinamentos</div>
-      <div class="prod-item">
-        <div class="prod-icon" style="background:rgba(255,159,67,0.12)">👨‍🏫</div>
-        <div class="prod-info">
-          <h4>Formação Presencial — Criando Videomakers (2 dias)</h4>
-          <p>Imersão prática no estúdio. Canal de receita + pipeline de talentos para a equipe.</p>
-          <div class="prod-price">R$ 1.500 Pix / R$ 1.850 Hotmart</div>
-        </div>
-      </div>
-      <div class="prod-item">
-        <div class="prod-icon" style="background:rgba(255,71,87,0.12)">📱</div>
-        <div class="prod-info">
-          <h4>Curso Online — Domine Seu Celular em 1h</h4>
-          <p>Vendido organicamente pelo canal de Relojoaria. Escala digital pura.</p>
-          <div class="prod-price">R$ 97,00</div>
-        </div>
-      </div>
+      <div class="sec-title" style="margin-top:14px">Modelo C: High-Ticket Seletivo (Alto Valor)</div>
       <div class="prod-item" style="border-bottom:none">
-        <div class="prod-icon" style="background:rgba(92,107,192,0.12)">🏠</div>
+        <div class="prod-icon" style="background:rgba(38,222,129,0.12)">💎</div>
         <div class="prod-info">
-          <h4>Mentoria ao Vivo — Monte Seu Estúdio (1h)</h4>
-          <p>Consultoria online para projetar o estúdio ideal. 100% de margem, zero custo de deslocamento.</p>
-          <div class="prod-price">R$ 300 · <a href="https://hotmart.com/pt-br/marketplace/produtos/hagsxd-consultoria-monte-seu-estudio-em-casa-kv14g/X103042244J" target="_blank" style="color:inherit;text-decoration:underline">Ver na Hotmart →</a></div>
+          <h4>Menos Clientes, Mais Dinheiro</h4>
+          <p>3 clientes a R$ 5.500 = R$ 16.500 trabalhando metade do tempo de 5 clientes de R$ 3.000. Você terá tempo para escalar infoprodutos e mentoria.</p>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -625,7 +527,245 @@ a:hover{text-decoration:underline}
 
 </div>
 
-<!-- ════════════════════ TAB 2: ANÁLISE SWOT ════════════════════ -->
+<!-- ════════════════════ TAB: TABELA DE PREÇOS ════════════════════ -->
+<div class="panel" id="panel-tabela">
+
+  <div class="card mb-3">
+    <div class="card-head"><h2>🛒 Tabela Oficial de Preços</h2></div>
+    <div class="card-body" style="padding-top:8px;padding-bottom:8px">
+
+      <div class="alert tip mb-3">
+        <div class="alert-icon">💡</div>
+        <div class="alert-body"><strong>A Regra da Locação</strong>Sempre que o cliente não vier gravar no seu estúdio na Barra, você deve adicionar uma "Taxa de Locação" de R$ 700 a R$ 1.000 no valor final.</div>
+      </div>
+
+      <div class="sec-title">📱 Instagram &amp; TikTok (Recorrente Trimestral)</div>
+      <div class="prod-item">
+        <div class="prod-icon" style="background:rgba(201,160,40,0.12)">👑</div>
+        <div class="prod-info">
+          <h4>Domínio C-Level (30 Vídeos)</h4>
+          <p>6 Premium + 24 Dinâmicos. Melhor margem operacional (editor = R$ 1.000 fixo).</p>
+          <div class="prod-price">R$ 3.500/mês</div>
+        </div>
+      </div>
+      <div class="prod-item">
+        <div class="prod-icon" style="background:rgba(78,154,241,0.12)">🎬</div>
+        <div class="prod-info">
+          <h4>Onipresença Estratégica (20 Vídeos)</h4>
+          <p>4 Premium + 16 Dinâmicos. Porta de entrada de menor esforço físico.</p>
+          <div class="prod-price">R$ 2.500/mês</div>
+        </div>
+      </div>
+      <div class="prod-item">
+        <div class="prod-icon" style="background:rgba(124,106,247,0.12)">📹</div>
+        <div class="prod-info">
+          <h4>Gestão Total Multiplataforma</h4>
+          <p>Vídeos Diários. Ativação Seg-Seg. Maior ticket médio da agência.</p>
+          <div class="prod-price">R$ 5.000/mês</div>
+        </div>
+      </div>
+
+      <div class="sec-title" style="margin-top:14px">🎥 Captação de Brutos (Sem Edição)</div>
+      <div class="prod-item">
+        <div class="prod-icon" style="background:rgba(0,201,167,0.12)">📷</div>
+        <div class="prod-info">
+          <h4>Material Bruto para Agências</h4>
+          <p>Para quem já tem agência. Todo o material gravado em um dia na nuvem.</p>
+          <div class="prod-price">10v: R$ 1.200 &nbsp;·&nbsp; 20v: R$ 1.750 &nbsp;·&nbsp; 30v: R$ 2.250</div>
+        </div>
+      </div>
+
+      <div class="sec-title" style="margin-top:14px">🏆 YouTube (Longo Prazo)</div>
+      <div class="prod-item">
+        <div class="prod-icon" style="background:rgba(255,71,87,0.12)">🔴</div>
+        <div class="prod-info">
+          <h4>Domínio de Mercado (4 Longos + 20 Curtos)</h4>
+          <p>Foco agressivo em SEO e crescimento da autoridade orgânica.</p>
+          <div class="prod-price">R$ 4.200/mês</div>
+        </div>
+      </div>
+      <div class="prod-item">
+        <div class="prod-icon" style="background:rgba(255,159,67,0.12)">📈</div>
+        <div class="prod-info">
+          <h4>Expansão Estratégica (2 Longos + 12 Curtos)</h4>
+          <p>Formato de manutenção focado em tráfego de pesquisa (SEO).</p>
+          <div class="prod-price">R$ 2.500/mês</div>
+        </div>
+      </div>
+
+      <div class="sec-title" style="margin-top:14px">📈 Vendas Diretas e Institucional</div>
+      <div class="prod-item">
+        <div class="prod-icon" style="background:rgba(38,222,129,0.12)">💸</div>
+        <div class="prod-info">
+          <h4>Meta Ads (6 Vídeos de Conversão)</h4>
+          <p>Funil completo: Topo, Meio e Fundo. Formato agressivo para venda direta.</p>
+          <div class="prod-price" style="color:var(--orange)">R$ 1.500 <span style="font-size:10px;color:var(--muted)">(Sugerido reajuste urgente para R$ 3.000)</span></div>
+        </div>
+      </div>
+      <div class="prod-item">
+        <div class="prod-icon" style="background:rgba(124,106,247,0.12)">🏢</div>
+        <div class="prod-info">
+          <h4>Manifesto Institucional</h4>
+          <p>Vídeo premium + 3 testemunhos + 5 cortes verticais.</p>
+          <div class="prod-price">R$ 2.500 &nbsp;·&nbsp; C/ Drone: R$ 4.000</div>
+        </div>
+      </div>
+
+      <div class="sec-title" style="margin-top:14px">🎓 Gravação de Cursos no Estúdio</div>
+      <div class="prod-item">
+        <div class="prod-icon" style="background:rgba(201,160,40,0.12)">⚡</div>
+        <div class="prod-info">
+          <h4>Aulas (Flash, Mini, Curso)</h4>
+          <p>Produto de mais alta margem física, executado dentro do próprio estúdio.</p>
+          <div class="prod-price">1h: R$ 1.500 &nbsp;·&nbsp; 2h: R$ 2.500 &nbsp;·&nbsp; 4h: R$ 3.500</div>
+        </div>
+      </div>
+
+      <div class="sec-title" style="margin-top:14px">📸 Fotografia e Eventos</div>
+      <div class="prod-item">
+        <div class="prod-icon" style="background:rgba(78,154,241,0.12)">📸</div>
+        <div class="prod-info">
+          <h4>Fotografia (10, 20, 30 fotos)</h4>
+          <p>Maquiadora inclusa nos planos de 20 e 30 fotos.</p>
+          <div class="prod-price">10f: R$ 1.500 &nbsp;·&nbsp; 20f: R$ 2.250 &nbsp;·&nbsp; 30f: R$ 3.000</div>
+        </div>
+      </div>
+      <div class="prod-item">
+        <div class="prod-icon" style="background:rgba(255,159,67,0.12)">🎤</div>
+        <div class="prod-info">
+          <h4>Cobertura 360°</h4>
+          <p>Requer o dia inteiro. Serviço de altíssimo desgaste físico.</p>
+          <div class="prod-price">360°: R$ 2.500 &nbsp;·&nbsp; Fotografia: R$ 1.250</div>
+        </div>
+      </div>
+
+      <div class="sec-title" style="margin-top:14px">👨‍🏫 Educação &amp; Mentoria</div>
+      <div class="prod-item">
+        <div class="prod-icon" style="background:rgba(38,222,129,0.12)">👨‍🏫</div>
+        <div class="prod-info">
+          <h4>Formação Presencial (2 dias)</h4>
+          <p>Gera caixa rápido e cria a sua pipeline de editores/videomakers delegados.</p>
+          <div class="prod-price">R$ 1.500/aluno</div>
+        </div>
+      </div>
+      <div class="prod-item">
+        <div class="prod-icon" style="background:rgba(92,107,192,0.12)">🏠</div>
+        <div class="prod-info">
+          <h4>Mentoria Monte Seu Estúdio (1h)</h4>
+          <p>100% margem, zero esforço logístico.</p>
+          <div class="prod-price">R$ 300 <span style="font-size:10px;color:var(--muted)">(Sugerido R$ 500)</span></div>
+        </div>
+      </div>
+      <div class="prod-item" style="border-bottom:none">
+        <div class="prod-icon" style="background:rgba(255,71,87,0.12)">📱</div>
+        <div class="prod-info">
+          <h4>Curso Domine Seu Celular</h4>
+          <p>Escala digital pura.</p>
+          <div class="prod-price">R$ 97,00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ TAB: CENÁRIOS DE FATURAMENTO ════════════════════ -->
+<div class="panel" id="panel-cenarios">
+
+  <div class="card mb-3">
+    <div class="card-head"><h2>📊 Calculadora Visual de Faturamento</h2></div>
+    <div class="card-body" style="padding-top:8px;padding-bottom:8px">
+
+      <div class="alert info mb-3">
+        <div class="alert-icon">ℹ️</div>
+        <div class="alert-body"><strong>A Meta 1x1</strong>Cenários baseados em atender <strong>1 cliente de Instagram/TikTok por semana</strong> (4 no mês) e <strong>fechar turmas semanais</strong> de Treinamento. O custo do editor já está descontado (R$ 1.000 fixo/cliente).</div>
+      </div>
+
+      <div class="sec-title">🎬 Base de Clientes (4 por mês)</div>
+      <div class="gap-list mb-3">
+        <div style="background:var(--s2);border-radius:12px;padding:12px;border:1px solid var(--border)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <span style="font-size:13px;font-weight:700">Cenário A: 100% Pacote 20 Vídeos</span>
+            <span class="pill gold">R$ 6.000 lucro</span>
+          </div>
+          <p style="font-size:11px;color:var(--muted)">Apenas clientes do plano Onipresença (R$ 2.500). Menor esforço de gravação (26h/mês).</p>
+        </div>
+        <div style="background:var(--s2);border-radius:12px;padding:12px;border:1px solid var(--border)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <span style="font-size:13px;font-weight:700">Cenário B: Carteira Mista</span>
+            <span class="pill purple">R$ 8.000 lucro</span>
+          </div>
+          <p style="font-size:11px;color:var(--muted)">2 clientes de 20 vídeos + 2 clientes de 30 vídeos. Esforço moderado (32h/mês).</p>
+        </div>
+        <div style="background:var(--s2);border-radius:12px;padding:12px;border:1px solid var(--border)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <span style="font-size:13px;font-weight:700">Cenário C: 100% Pacote 30 Vídeos</span>
+            <span class="pill green">R$ 10.000 lucro</span>
+          </div>
+          <p style="font-size:11px;color:var(--muted)">Apenas clientes Domínio C-Level (R$ 3.500). Margem otimizada (38h/mês).</p>
+        </div>
+      </div>
+
+      <div class="sec-title">👨‍🏫 Treinamentos (Criando Videomakers)</div>
+      <div class="gap-list mb-3">
+        <div style="background:var(--s2);border-radius:12px;padding:12px;border:1px solid var(--border)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <span style="font-size:13px;font-weight:700">2 Turmas/mês (2 alunos)</span>
+            <span class="pill gold">R$ 4.590 lucro</span>
+          </div>
+          <p style="font-size:11px;color:var(--muted)">4 alunos totais. Cobre o estúdio com sobras (32h/mês).</p>
+        </div>
+        <div style="background:var(--s2);border-radius:12px;padding:12px;border:1px solid var(--border)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <span style="font-size:13px;font-weight:700">2 Turmas/mês (3 alunos)</span>
+            <span class="pill purple">R$ 7.550 lucro</span>
+          </div>
+          <p style="font-size:11px;color:var(--muted)">6 alunos totais. Sem aumento de carga horária (32h/mês).</p>
+        </div>
+        <div style="background:var(--s2);border-radius:12px;padding:12px;border:1px solid var(--border)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <span style="font-size:13px;font-weight:700">4 Turmas/mês (2 alunos)</span>
+            <span class="pill blue">R$ 10.180 lucro</span>
+          </div>
+          <p style="font-size:11px;color:var(--muted)">8 alunos totais. O estúdio fica muito barato (64h/mês).</p>
+        </div>
+        <div style="background:var(--s2);border-radius:12px;padding:12px;border:1px solid var(--border)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <span style="font-size:13px;font-weight:700">4 Turmas/mês (3 alunos)</span>
+            <span class="pill green">R$ 16.100 lucro</span>
+          </div>
+          <p style="font-size:11px;color:var(--muted)">12 alunos totais. O modelo ideal de máxima margem (64h/mês).</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card mb-3">
+    <div class="card-head"><h2>🎯 Resultados Consolidados</h2></div>
+    <div class="card-body" style="padding-top:10px">
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Seus Clientes (4x)</th><th>Turmas</th><th>Lucro Líquido</th><th class="hl">Seu Tempo/Mês</th></tr></thead>
+          <tbody>
+            <tr><td>100% (20 vídeos)</td><td class="tv">2 Turmas (2 al)</td><td class="tv" style="color:var(--orange)">R$ 10.590</td><td class="gv">~58h</td></tr>
+            <tr><td>100% (20 vídeos)</td><td class="tv">4 Turmas (3 al)</td><td class="tv" style="color:var(--green)">R$ 22.100</td><td class="gv">~90h</td></tr>
+            <tr><td>Mista (20 e 30v)</td><td class="tv">2 Turmas (3 al)</td><td class="tv" style="color:var(--purple2)">R$ 15.550</td><td class="gv">~64h</td></tr>
+            <tr><td>Mista (20 e 30v)</td><td class="tv">4 Turmas (3 al)</td><td class="tv" style="color:var(--green)">R$ 24.100</td><td class="gv">~96h</td></tr>
+            <tr><td>100% (30 vídeos)</td><td class="tv">4 Turmas (2 al)</td><td class="tv" style="color:var(--purple2)">R$ 20.180</td><td class="gv">~102h</td></tr>
+            <tr><td>100% (30 vídeos)</td><td class="tv">4 Turmas (3 al)</td><td class="tv" style="color:var(--green);font-weight:900">R$ 26.100</td><td class="gv">~102h</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert tip mt-2 mb-0">
+        <div class="alert-icon">💡</div>
+        <div class="alert-body">Trabalhar **102 horas por mês** equivale a **25,5 horas por semana**. Você fatura até R$ 26k líquidos trabalhando o equivalente a um emprego de meio período, sobrando tempo para gerir vendas.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════════════════════ TAB: ANÁLISE SWOT ════════════════════ -->
 <div class="panel" id="panel-swot">
 
   <div class="swot-grid mb-3">
@@ -746,38 +886,23 @@ a:hover{text-decoration:underline}
     <div class="phase-header" onclick="togglePhase('f1')">
       <span class="phase-emoji">🔴</span>
       <div class="phase-info">
-        <h3>Fase 1 — Blindagem</h3>
-        <p>Semanas 1 e 2 · Proteção do que já existe</p>
+        <h3>Fase 1 — Correção de Preços</h3>
+        <p>Ações imediatas · Estancar a perda de dinheiro na mesa</p>
       </div>
       <span class="chevron" id="chev-f1">▾</span>
     </div>
     <div class="phase-body" id="body-f1">
       <div class="task-section">
-        <div class="task-section-label">Ação 1.1 — Renovação dos 3 Clientes</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t1"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Agendar reunião individual com cada um dos 3 médicos antes do vencimento do contrato</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t2"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Preparar Relatório de Resultado do trimestre passado (vídeos entregues, crescimento de engajamento)</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t3"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Apresentar contrato do próximo trimestre já assinado, com melhoria concreta incluída</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t4"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Oferecer desconto simbólico para pagamento antecipado via Pix (ex: 5%)</div></div>
+        <div class="task-section-label">Ação 1.1 — Atualização de Tabela e Canva</div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t1"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Alterar Meta Ads para R$ 3.000 no PDF/Canva</div></div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t2"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Alterar Vídeo Institucional para R$ 3.500 no PDF/Canva</div></div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t3"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Alterar Mentoria "Monte Seu Estúdio" para R$ 500 no Canva e na Hotmart</div></div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t4"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Alterar Curso de 4h (Gravação em Estúdio) para R$ 5.000 no PDF/Canva</div></div>
       </div>
       <div class="task-section">
-        <div class="task-section-label">Ação 1.2 — Câmera de Backup</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t5"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Configurar smartphone premium com Filmic Pro como câmera de emergência (testar hoje)</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t6"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Pesquisar aluguel de câmera por dia no Rio (Studio Rent RJ, Grife) — R$200–400/dia</div></div>
-        <div class="task-item done" onclick="toggleTask(this)" data-id="t7"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Abrir poupança separada na conta PJ com meta de R$8.000–10.000 para Sony a6700 ✅</div></div>
-      </div>
-      <div class="task-section">
-        <div class="task-section-label">Ação 1.3 — Formalizar Acordo com Editor</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t8"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Sentar com o editor júnior para conversa clara sobre o plano de crescimento e papel dele</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t9"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Redigir Termo de Parceria simples com remuneração atual (30%) e cláusula de transição no 5º cliente</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t10"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Ambos assinam. Guardar cópia digital e física.</div></div>
-      </div>
-      <div class="task-section">
-        <div class="task-section-label">Ação 1.4 — Separação Financeira PF/PJ</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t11"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Abrir conta corrente PJ (Nubank PJ, Banco Inter PJ ou similar — gratuitas)</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t12"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Todos os pagamentos de clientes vão exclusivamente para a conta PJ a partir de hoje</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t13"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Definir pró-labore mensal (sugestão: R$6.000–R$8.000) — transferir todo dia 5</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t14"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Criar planilha de fluxo de caixa: Data / Descrição / Entrada / Saída — atualizar semanalmente</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t15"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Preencher 3 cenários (Otimista / Realista / Pessimista) para o próximo trimestre</div></div>
+        <div class="task-section-label">Ação 1.2 — Nova Regra de Locação</div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t5"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Inserir aviso na tabela de preços: "Gravações fora do estúdio possuem Taxa de Locação Externa (sob consulta)"</div></div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t6"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Em todas as novas propostas, orçar o plano + taxa de R$ 700 a R$ 1.000 para clientes que não quiserem ir à Barra</div></div>
       </div>
     </div>
   </div>
@@ -787,40 +912,21 @@ a:hover{text-decoration:underline}
     <div class="phase-header collapsed" onclick="togglePhase('f2')">
       <span class="phase-emoji">🟡</span>
       <div class="phase-info">
-        <h3>Fase 2 — Estrutura</h3>
-        <p>Semanas 3 a 8 · Base que suporta o crescimento</p>
+        <h3>Fase 2 — Otimização do Estúdio</h3>
+        <p>Próximos 30 dias · Extrair o máximo da estrutura física</p>
       </div>
       <span class="chevron" id="chev-f2">▾</span>
     </div>
     <div class="phase-body" id="body-f2">
       <div class="task-section">
-        <div class="task-section-label">Ação 2.1 — Manual de Padrão da Produtora</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t16"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Criar doc "Manual Operacional de Gravação" com: setup de iluminação, configuração de câmera, setup de áudio, enquadramento e planos, protocolo de conduta em consultório</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t17"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Adicionar fotos de referência de setups reais das gravações anteriores</div></div>
+        <div class="task-section-label">Ação 2.1 — Otimizar Treinamentos (A Mina de Ouro)</div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t7"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Alterar comunicação de vendas do "Criando Videomakers" para focar em fechar turmas de 3 alunos</div></div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t8"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Programar agenda para 1 turma por semana</div></div>
       </div>
       <div class="task-section">
-        <div class="task-section-label">Ação 2.2 — Identidade Visual da Produtora</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t18"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Definir nome oficial da produtora e paleta de cores da marca (2–3 cores sóbrias e premium)</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t19"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Redesenhar perfil do Instagram com bio clara direcionada ao médico e destaques organizados</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t20"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Criar kit de apresentação digital (PDF 5–8 slides) com proposta de valor, portfólio e CTA</div></div>
-      </div>
-      <div class="task-section">
-        <div class="task-section-label">Ação 2.3 — Diretrizes CFM</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t21"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Ler e salvar a Resolução CFM nº 2.336/2023 (disponível em cfm.org.br)</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t22"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Criar Checklist de Roteiro CFM-Safe (10 itens) — aplicar em cada roteiro antes de entregar</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t23"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Incluir diferencial CFM no kit de apresentação da produtora</div></div>
-      </div>
-      <div class="task-section">
-        <div class="task-section-label">Ação 2.4 — Prospecção de 5 Agências de Tráfego</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t24"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Pesquisar e selecionar 5 agências de tráfego especializadas em médicos no Rio (Instagram + Google)</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t25"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Enviar script de parceria (do Playbook Seção 1) para cada uma via Direct ou WhatsApp</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t26"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Fechar pelo menos 2 agências parceiras nos primeiros 60 dias</div></div>
-      </div>
-      <div class="task-section">
-        <div class="task-section-label">Ação 2.5 — Eventos Médicos (ANI Hack)</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t27"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Pesquisar grade de eventos médicos nos próximos 60–90 dias: CRM-RJ, SBEM, SBCP, eventos de estética na Barra</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t28"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Se inscrever como cobertura de imprensa via ANI nos 2–3 eventos mais relevantes</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t29"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Participar de 2 eventos com kit completo. Sair com 5+ contatos qualificados por evento.</div></div>
+        <div class="task-section-label">Ação 2.2 — Converter Clientes para o Estúdio</div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t9"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Oferecer a 1 cliente atual a oportunidade de gravar a próxima sessão no Estúdio sem custo extra para teste</div></div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t10"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Criar um mini-vídeo ou fotos do Estúdio mostrando o setup premium para enviar nas prospecções</div></div>
       </div>
     </div>
   </div>
@@ -830,34 +936,22 @@ a:hover{text-decoration:underline}
     <div class="phase-header collapsed" onclick="togglePhase('f3')">
       <span class="phase-emoji">🟢</span>
       <div class="phase-info">
-        <h3>Fase 3 — Crescimento</h3>
-        <p>Meses 2 a 6 · Fechar novos clientes e testar anúncios</p>
+        <h3>Fase 3 — Delegação de Captação</h3>
+        <p>Mês 2 e 3 · Passar a câmera adiante</p>
       </div>
       <span class="chevron" id="chev-f3">▾</span>
     </div>
     <div class="phase-body" id="body-f3">
       <div class="task-section">
-        <div class="task-section-label">Ação 3.1 — Prospecção (+3 Clientes em 6 Meses)</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t30"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Usar Técnica do Presente para prospectar 3–5 novos endocrinologistas por semana via Direct</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t31"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Organizar leads em CRM simples (planilha Google): Nome / Instagram / Data / Status / Próxima Ação</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t32"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Meta semanal: 5 abordagens com Técnica do Presente + 1 reunião de apresentação agendada</div></div>
+        <div class="task-section-label">Ação 3.1 — Seleção do Operador</div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t11"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Identificar os 2 melhores alunos formados recentemente no treinamento</div></div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t12"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Criar um "Manual Operacional de Captação" simples (setup de luz, áudio, quadros) para padronizar</div></div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t13"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Combinar pagamento padrão de R$ 400 a R$ 500 por diária de captação delegada</div></div>
       </div>
       <div class="task-section">
-        <div class="task-section-label">Ação 3.2 — Testar Criativos de Anúncio</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t33"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Gravar Versão 2 (O Espelho Honesto) e Versão 3 (A Comparação Pura)</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t34"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Publicar organicamente e monitorar por 7 dias — alcance, salvamentos e DMs</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t35"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Impulsionar o melhor com R$300–500 segmentando médicos 30–55 anos, Zona Oeste e Zona Sul RJ</div></div>
-      </div>
-      <div class="task-section">
-        <div class="task-section-label">Ação 3.3 — Criando Videomakers (Recrutamento)</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t36"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Definir data da próxima turma (mínimo 6–8 alunos para viabilizar financeiramente)</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t37"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Divulgar turma no Instagram, YouTube e anúncio (verba R$200–300)</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t38"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Identificar 2–3 melhores alunos e fazer convite informal para videomaker de campo</div></div>
-      </div>
-      <div class="task-section">
-        <div class="task-section-label">Ação 3.4 — Canal YouTube (Consistência)</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t39"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Publicar 1 vídeo longo/mês sobre relojoaria, validando tema em 3–5 Shorts/semana antes</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t40"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Incluir chamada para o infoproduto (Domine Seu Vídeo R$97) ao final de cada vídeo</div></div>
+        <div class="task-section-label">Ação 3.2 — Piloto de Delegação</div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t14"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Levar o aluno selecionado para a próxima gravação em cliente externo, atuando como seu assistente/operador principal</div></div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t15"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Aprovar o material gravado por ele. Em caso de sucesso, delegar as próximas 2 captações do mês para ele (sozinho).</div></div>
       </div>
     </div>
   </div>
@@ -867,39 +961,21 @@ a:hover{text-decoration:underline}
     <div class="phase-header collapsed" onclick="togglePhase('f4')">
       <span class="phase-emoji">🔵</span>
       <div class="phase-info">
-        <h3>Fase 4 — Escala</h3>
-        <p>Meses 6 a 24 · Sair do operacional, entrar na gestão</p>
+        <h3>Fase 4 — Direção Criativa e High-Ticket</h3>
+        <p>Mês 4 em diante · Sair do operacional físico</p>
       </div>
       <span class="chevron" id="chev-f4">▾</span>
     </div>
     <div class="phase-body" id="body-f4">
       <div class="task-section">
-        <div class="task-section-label">Ação 4.1 — Contratar Videomaker de Campo</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t41"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Contratar freelancer por diária (R$400–600/dia) a partir do 5º ou 6º cliente ativo</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t42"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Acompanhar as primeiras 3 gravações como diretor criativo. Depois delegar completamente.</div></div>
+        <div class="task-section-label">Ação 4.1 — Vendas Estratégicas</div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t16"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Parar de vender ativamente os pacotes baratos de "só captação" (relegar ao final do PDF)</div></div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t17"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Focar todo o esforço comercial em vender "Domínio C-Level" (30 vídeos) com ou sem taxa de locação</div></div>
       </div>
       <div class="task-section">
-        <div class="task-section-label">Ação 4.2 — Salário Fixo para o Editor</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t43"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">No mês do 5º cliente: oferecer R$50–60/Reels editado (variável) ou R$2.800–3.500 mensal fixo</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t44"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Formalizar novo acordo por escrito. Verificar margem líquida acima de 50%.</div></div>
-      </div>
-      <div class="task-section">
-        <div class="task-section-label">Ação 4.3 — Notebook + Sony a6700</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t45"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Notebook: GPU Nvidia RTX 4060+ para renderização em Premiere/DaVinci (R$5.000–8.000)</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t46"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Sony a6700 + lente: 4K/120fps, foco IA (R$9.000–12.000). Comprar com CNPJ para dedução fiscal.</div></div>
-      </div>
-      <div class="task-section">
-        <div class="task-section-label">Ação 4.4 — Estudar Gestão (Contínuo)</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t47"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Mês 1: Ler "O Mito do Empreendedor" (Michael E. Gerber)</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t48"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Mês 2: Ler "Tração" (Gino Wickman)</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t49"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Mês 3+: Reunião semanal de 30 min consigo mesmo (domingo à noite) — revisão de métricas</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t50"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Mês 4+: Scorecard semanal com 5 indicadores (clientes / faturamento / leads / renovação / entregas)</div></div>
-      </div>
-      <div class="task-section">
-        <div class="task-section-label">Ação 4.5 — Palestra como Produto (Mês 12+)</div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t51"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Definir 2–3 temas de palestra alinhados à trajetória (autoridade visual médica, empreendedorismo audiovisual)</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t52"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Criar Onesheet de Palestrante (1 página: bio, temas, público-alvo, contato)</div></div>
-        <div class="task-item" onclick="toggleTask(this)" data-id="t53"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Enviar Onesheet para organizadores dos eventos cobertos como imprensa</div></div>
+        <div class="task-section-label">Ação 4.2 — Posicionamento de Mentor</div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t18"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Criar conteúdos prospecção falando de "Estratégia e Conversão", não de "câmera e luz"</div></div>
+        <div class="task-item" onclick="toggleTask(this)" data-id="t19"><div class="chk"><div class="chk-mark"></div></div><div class="task-text">Escalar as vendas passivas do infoproduto (Domine seu Celular) nos canais do YouTube</div></div>
       </div>
     </div>
   </div>
