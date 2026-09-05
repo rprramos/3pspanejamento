@@ -2,3 +2,5 @@
 *.mov
 *.avi
 *.mkv
+node_modules/
+.agents/

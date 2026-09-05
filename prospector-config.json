@@ -1,0 +1,25 @@
+{
+  "assinatura": {
+    "nome": "",
+    "apresentacao": "Videomaker & Estrategista de Conteudo Audiovisual",
+    "whatsapp": ""
+  },
+  "prospeccao": {
+    "nichos": [
+      "personal trainer",
+      "psicologo",
+      "nutricionista",
+      "arquiteto",
+      "esteticista"
+    ],
+    "cidade": "Barra da Tijuca e Recreio dos Bandeirantes, Rio de Janeiro",
+    "leadsPorBusca": 10
+  },
+  "envio": {
+    "modo": "whatsapp"
+  },
+  "case": {
+    "imagem": "case_advogada_proof.jpg",
+    "leads": 800
+  }
+}
