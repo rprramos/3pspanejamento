@@ -8059,7 +8059,59 @@ function getWaMsg(l){
   var p4 = "Quero te mostrar em 20 min como vídeos focados em vendas podem gerar isso pra você. Qual dia e horário fica melhor essa semana?";
   return [p1, p2, p3, p4].map(encodeURIComponent).join('%0A%0A');
 }
+
+function getRawMsg(l){
+  var b = (l.cidade||'').indexOf('Recreio')>=0 ? 'Recreio' : 'Barra da Tijuca';
+  var n = l.nome || '';
+  var esp = l.nicho || 'sua área';
+  var nota = l.nota || '4.9';
+  var isAdv = (esp.toLowerCase().indexOf('advog')>=0 || esp.toLowerCase().indexOf('direit')>=0);
+
+  var p1 = "Excelente dia, " + n + ", tudo bem?";
+  var p2 = "Vi seu trabalho em " + esp + " aqui na " + b + " (nota " + nota + " no Google) — parabéns!";
+  var p3 = isAdv
+    ? "Te mandei o print acima da nossa última campanha: foram +800 contatos gerados para um colega seu de advocacia com vídeos de vendas + tráfego. Se deu esse resultado no seu segmento —, em " + esp + " o potencial de retorno é incrível."
+    : "Te mandei o print acima da nossa última campanha: foram +800 contatos gerados para uma advogada com vídeos de vendas + tráfego.  Se deu esse resultado na advocacia — que é um nicho super difícil —, em " + esp + " o potencial é ainda maior.";
+  var p4 = "Quero te mostrar em 20 min como vídeos focados em vendas podem gerar isso pra você. Qual dia e horário fica melhor essa semana?";
+
+  return p1 + "\n\n" + p2 + "\n\n" + p3 + "\n\n" + p4;
+}
+
+function copiarMsgDirect(slug, igHandle, btnElem){
+  var l = leads.filter(function(x){ return x.slug === slug; })[0];
+  var text = l ? getRawMsg(l) : '';
+  if (!text) return;
+
+  var handle = (igHandle || (l ? (l.igProfissional || l.igPessoal) : '') || '').replace('@','').trim();
+
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){
+      if (btnElem){
+        var orig = btnElem.innerHTML;
+        btnElem.innerHTML = '✅ Msg Copiada!';
+        btnElem.style.background = '#10B981';
+        setTimeout(function(){
+          btnElem.innerHTML = orig;
+          btnElem.style.background = '#C13584';
+        }, 3000);
+      }
+      if (handle) {
+        window.open('https://instagram.com/' + handle + '/', '_blank');
+      }
+    }).catch(function(err){
+      console.error(err);
+      if (handle) window.open('https://instagram.com/' + handle + '/', '_blank');
+    });
+  } else {
+    if (handle) window.open('https://instagram.com/' + handle + '/', '_blank');
+  }
+}
+
 function acoes(l){var a=[];
+ if(l.igProfissional||l.igPessoal){
+   var igH = l.igProfissional || l.igPessoal;
+   a.push('<button onclick="copiarMsgDirect(\''+l.slug+'\',\''+igH+'\',this);return false" style="background:#C13584;color:#fff;font-weight:700;border:0;border-radius:6px;padding:4px 8px;cursor:pointer;font-family:var(--sans);font-size:12px" title="Copia a mensagem formatada para a memória e abre o Instagram no perfil/direct">📩 Direct IG (Copia Msg)</button>');
+ }
  if(l.igProfissional) a.push('<a href="https://instagram.com/'+l.igProfissional.replace('@','').trim()+'" target="_blank" style="background:#E1306C;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">📸 IG Profissional</a>');
  if(l.igPessoal) a.push('<a href="https://instagram.com/'+l.igPessoal.replace('@','').trim()+'" target="_blank" style="background:#833AB4;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">👤 IG Pessoal</a>');
  if(l.whatsapp) {
@@ -8069,9 +8121,7 @@ function acoes(l){var a=[];
  }
  if(l.email&&l.email.indexOf('@')>0) a.push('<a href="mailto:'+l.email+'">e-mail</a>');
  a.push('<a href="#" onclick="abrirEdit(\''+l.slug+'\');return false">✎ dados</a>');
- a.push('<a href="#" class="del" onclick="deletar(\''+l.slug+'\');return false">✕ excluir</a>');
- return '<div class="acoes" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">'+a.join('')+'</div>'}
-
+ return '<div class="acoes">'+a.join('')+'</div>'}
 function card(l){
  var cInfo = getCategoria(l);
  var f = l.status==='proposta'&&dias(l.dataProposta)>=4?'<span class="tag fup">follow-up '+dias(l.dataProposta)+'d</span>':'';
