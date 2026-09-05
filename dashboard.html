@@ -8049,13 +8049,17 @@ function nav(){
 }
 function pillStatus(s){return '<span class="pill" style="background:color-mix(in srgb,'+CORES[s]+' 18%,white);color:'+CORES[s]+'">'+NOMES[s]+'</span>'}
 function getWaMsg(l){
-  var b=(l.cidade||'').indexOf('Recreio')>=0?'Recreio':'Barra da Tijuca';
-  var n=l.nome||'';
-  var esp=l.nicho||'Estética Avançada';
-  var nota=l.nota||'4.9';
+  var b = (l.cidade||'').indexOf('Recreio')>=0 ? 'Recreio' : 'Barra da Tijuca';
+  var n = l.nome || '';
+  var esp = l.nicho || 'Estética Avançada';
+  var nota = l.nota || '4.9';
+  var isAdv = (esp.toLowerCase().indexOf('advog')>=0 || esp.toLowerCase().indexOf('direit')>=0);
+
   var p1 = "Excelente dia, " + n + ", tudo bem?";
   var p2 = "Vi seu trabalho em " + esp + " aqui na " + b + " (nota " + nota + " no Google) — parabéns!";
-  var p3 = "Te mandei o print acima da nossa última campanha: foram +800 contatos gerados para uma advogada com vídeos de vendas + tráfego.  Se deu esse resultado na advocacia — que é um nicho super difícil —, em " + esp + " o potencial é ainda maior.";
+  var p3 = isAdv
+    ? "O print mostra os +800 contatos gerados para um colega seu de advocacia com vídeos de vendas + tráfego. Se deu esse resultado na advocacia — que é um nicho super difícil —, no seu segmento de " + esp + " o potencial de retorno é ainda maior."
+    : "O print mostra os +800 contatos gerados para uma advogada com vídeos de vendas + tráfego. Se deu esse resultado na advocacia — que é um nicho super difícil —, em " + esp + " o potencial é ainda maior.";
   var p4 = "Quero te mostrar em 20 min como vídeos focados em vendas podem gerar isso pra você. Qual dia e horário fica melhor essa semana?";
   return [p1, p2, p3, p4].map(encodeURIComponent).join('%0A%0A');
 }
@@ -8070,8 +8074,8 @@ function getRawMsg(l){
   var p1 = "Excelente dia, " + n + ", tudo bem?";
   var p2 = "Vi seu trabalho em " + esp + " aqui na " + b + " (nota " + nota + " no Google) — parabéns!";
   var p3 = isAdv
-    ? "Te mandei o print acima da nossa última campanha: foram +800 contatos gerados para um colega seu de advocacia com vídeos de vendas + tráfego. Se deu esse resultado no seu segmento —, em " + esp + " o potencial de retorno é incrível."
-    : "Te mandei o print acima da nossa última campanha: foram +800 contatos gerados para uma advogada com vídeos de vendas + tráfego.  Se deu esse resultado na advocacia — que é um nicho super difícil —, em " + esp + " o potencial é ainda maior.";
+    ? "O print mostra os +800 contatos gerados para um colega seu de advocacia com vídeos de vendas + tráfego. Se deu esse resultado na advocacia — que é um nicho super difícil —, no seu segmento de " + esp + " o potencial de retorno é ainda maior."
+    : "O print mostra os +800 contatos gerados para uma advogada com vídeos de vendas + tráfego. Se deu esse resultado na advocacia — que é um nicho super difícil —, em " + esp + " o potencial é ainda maior.";
   var p4 = "Quero te mostrar em 20 min como vídeos focados em vendas podem gerar isso pra você. Qual dia e horário fica melhor essa semana?";
 
   return p1 + "\n\n" + p2 + "\n\n" + p3 + "\n\n" + p4;
