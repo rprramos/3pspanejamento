@@ -1,4 +1,4 @@
-# Planilha de Leads Auditados & Verificados — Prospecção Ativa (Barra da Tijuca & Recreio - 261 Leads)
+# Planilha de Leads Auditados & Verificados — Prospecção Ativa (Barra da Tijuca & Recreio - 260 Leads)
 
 ## TOP 1: Estética Facial, Harmonização Orofacial & Dermatologia (64 Leads)
 
@@ -118,7 +118,7 @@
 | 107 | Studio Vilar Arquitetura | Arquitetura Residencial & Interiores | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (46 avaliações) | 552199259078 | @vilararquitetura | — | `novo` |
 | 108 | Arquiteto Diego Martins | Arquitetura Residencial | Barra da Tijuca, Rio de Janeiro | 5.0 (89 avaliações) | 552199173901 | @diegomartins.arq | — | `novo` |
 
-## TOP 3: Odontologia Estética & Lentes de Contato (77 Leads)
+## TOP 3: Odontologia Estética & Lentes de Contato (76 Leads)
 
 | # | Nome do Profissional / Dono | Especialidade Exata | Bairro / Localização | Nota Google | WhatsApp | IG Profissional | IG Pessoal | Status |
 |---|---|---|---|---|---|---|---|---|
@@ -197,102 +197,101 @@
 | 181 | Dra. Luana Porto Cicarino da Rocha | Harmonização Orofacial & Odontologia | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (135 avaliações) | 552199410784 | @luanaportoconsultorio | — | `novo` |
 | 182 | Dra. Angela  Teixeira | Harmonização Orofacial & Odontologia | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (11 avaliações) | 552199453163 | @draangelateixeira.dtm | — | `novo` |
 | 183 | Dra. Rosane Diegas | Harmonização Orofacial & Odontologia | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (34 avaliações) | 552199924763 | @rosanediegas | — | `novo` |
-| 184 | Dra. Ana Carolina Cáceres | Harmonização Orofacial & Odontologia | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (5 avaliações) | 552199485936 | @invites | — | `novo` |
-| 185 | Dra. Luciana Muguet Julio | Harmonização Orofacial & Odontologia | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (7 avaliações) | 552199342547 | @lucianamuguet | — | `novo` |
+| 184 | Dra. Luciana Muguet Julio | Harmonização Orofacial & Odontologia | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (7 avaliações) | 552199342547 | @lucianamuguet | — | `novo` |
 
 ## TOP 4: Nutrição Esportiva, Clínica & Funcional (31 Leads)
 
 | # | Nome do Profissional / Dono | Especialidade Exata | Bairro / Localização | Nota Google | WhatsApp | IG Profissional | IG Pessoal | Status |
 |---|---|---|---|---|---|---|---|---|
-| 186 | Peterson Mendes | Nutrição Esportiva | Barra da Tijuca, Rio de Janeiro | 5 (45) | 5521998877661 | @petersonmendesz | — | `novo` |
-| 187 | Dra. Carolina Borges | Nutrição Clínica | Barra da Tijuca, Rio de Janeiro | 4.9 (42) | 5521988776652 | @carolinaborgesnutri | — | `novo` |
-| 188 | Nathalia Gorni | Nutrição Funcional | Barra (Lead Américas), Rio de Janeiro | 5 (38) | 5521977665543 | @nathaliagorni.nutri | — | `novo` |
-| 189 | Fabiane Marins | Nutrição Comportamental | Recreio dos Bandeirantes, Rio de Janeiro | 4.9 (40) | 5521966554434 | @nutricionistamarins | — | `novo` |
-| 190 | Beatriz Nery | Nutrição Esportiva | Recreio dos Bandeirantes, Rio de Janeiro | 5 (36) | 5521955443325 | @nutribeatriznery | — | `novo` |
-| 191 | Espaço Persona (Nutri Amanda) | Nutrição Esportiva | Recreio dos Bandeirantes, Rio de Janeiro | 4.9 (44) | 5521944332216 | @espacopersona | — | `novo` |
-| 192 | Dra. Gabriela Migueis | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (59 avaliações) | 552199873530 | @gabi.migueis | — | `novo` |
-| 193 | Dra. Nathalia Santos | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (711 avaliações) | 552199834577 | @nathaliasantos.nutricionista | — | `novo` |
-| 194 | Dra. Mariana Baffa | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (140 avaliações) | 552199382605 | @nutrimarianabaffa | — | `novo` |
-| 195 | Dr. Immunis Reumatologia Integrada | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (709 avaliações) | 552199338618 | @clinicaimmunis | — | `novo` |
-| 196 | Dra. Jéssica Bueno | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (311 avaliações) | 552199807731 | @drajessicabueno | — | `novo` |
-| 197 | Dra. Juliana  França | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (5 avaliações) | 552199514043 | @nutrijufranca | — | `novo` |
-| 198 | Dra. Josiane Reichembach | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (116 avaliações) | 552199293646 | @nutrijosireichem | — | `novo` |
-| 199 | Dra. Viviana Navarro | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (60 avaliações) | 552199716295 | @vivinavarro.nutri | — | `novo` |
-| 200 | Dr. Stephani Cardoso | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (112 avaliações) | 552199652893 | @suanutristeph | — | `novo` |
-| 201 | Dra. Eliana Amaro Bianco | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (10 avaliações) | 552199986864 | @nutri.libianco | — | `novo` |
-| 202 | Dr. Roberta Paiva Orofino | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (11 avaliações) | 552199441985 | @dietacetogenicacompleta | — | `novo` |
-| 203 | Dra. Patricia Rito | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (329 avaliações) | 552199900665 | @nutricionistapatriciarito | — | `novo` |
-| 204 | Dr. Aline Lima | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (196 avaliações) | 552199604924 | @saudemental.neurodivergente | — | `novo` |
-| 205 | Dra. Giselle  França da Costa | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (30 avaliações) | 552199233076 | @soulclinic_br | — | `novo` |
-| 206 | Dra. Mônica Calderari | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (3 avaliações) | 552199253370 | @nutrimonicacalderari | — | `novo` |
-| 207 | Dr. Nathália Vieira | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (26 avaliações) | 552199910676 | @dra.liavieira | — | `novo` |
-| 208 | Dra. SIMARA SOUZA | Nutrição Esportiva & Funcional | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (24 avaliações) | 552199183249 | @sinutrii | — | `novo` |
-| 209 | Dr. Instituto Médico Acolher | Nutrição Esportiva & Funcional | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (239 avaliações) | 552199208998 | @institutomedicoacolher | — | `novo` |
-| 210 | Dra. Karen Carvalho | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (17 avaliações) | 552199622102 | @karencarvalho_nutri | — | `novo` |
-| 211 | Dr. Mariana Monteiro | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (31 avaliações) | 552199664533 | @nutricionistamarianamonteiro | — | `novo` |
-| 212 | Dra. Vanessa Cardozo | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (45 avaliações) | 552199958460 | @dravanessacardozogene | — | `novo` |
-| 213 | Dr. Rhian Pietro Vendruscolo | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (12 avaliações) | 552199641655 | @rhianpietronutri | — | `novo` |
-| 214 | Dra. Carolina  Ribas | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (8 avaliações) | 552199835903 | @nutricarolribas | — | `novo` |
-| 215 | Dr. Natália Novis | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (36 avaliações) | 552199543582 | @nutri.natalianovis | — | `novo` |
-| 216 | Dr. RB Clinica Raskovisch Bartholo | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (4632 avaliações) | 552199561669 | @rbclinica | — | `novo` |
+| 185 | Peterson Mendes | Nutrição Esportiva | Barra da Tijuca, Rio de Janeiro | 5 (45) | 5521998877661 | @petersonmendesz | — | `novo` |
+| 186 | Dra. Carolina Borges | Nutrição Clínica | Barra da Tijuca, Rio de Janeiro | 4.9 (42) | 5521988776652 | @carolinaborgesnutri | — | `novo` |
+| 187 | Nathalia Gorni | Nutrição Funcional | Barra (Lead Américas), Rio de Janeiro | 5 (38) | 5521977665543 | @nathaliagorni.nutri | — | `novo` |
+| 188 | Fabiane Marins | Nutrição Comportamental | Recreio dos Bandeirantes, Rio de Janeiro | 4.9 (40) | 5521966554434 | @nutricionistamarins | — | `novo` |
+| 189 | Beatriz Nery | Nutrição Esportiva | Recreio dos Bandeirantes, Rio de Janeiro | 5 (36) | 5521955443325 | @nutribeatriznery | — | `novo` |
+| 190 | Espaço Persona (Nutri Amanda) | Nutrição Esportiva | Recreio dos Bandeirantes, Rio de Janeiro | 4.9 (44) | 5521944332216 | @espacopersona | — | `novo` |
+| 191 | Dra. Gabriela Migueis | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (59 avaliações) | 552199873530 | @gabi.migueis | — | `novo` |
+| 192 | Dra. Nathalia Santos | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (711 avaliações) | 552199834577 | @nathaliasantos.nutricionista | — | `novo` |
+| 193 | Dra. Mariana Baffa | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (140 avaliações) | 552199382605 | @nutrimarianabaffa | — | `novo` |
+| 194 | Dr. Immunis Reumatologia Integrada | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (709 avaliações) | 552199338618 | @clinicaimmunis | — | `novo` |
+| 195 | Dra. Jéssica Bueno | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (311 avaliações) | 552199807731 | @drajessicabueno | — | `novo` |
+| 196 | Dra. Juliana  França | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (5 avaliações) | 552199514043 | @nutrijufranca | — | `novo` |
+| 197 | Dra. Josiane Reichembach | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (116 avaliações) | 552199293646 | @nutrijosireichem | — | `novo` |
+| 198 | Dra. Viviana Navarro | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (60 avaliações) | 552199716295 | @vivinavarro.nutri | — | `novo` |
+| 199 | Dr. Stephani Cardoso | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (112 avaliações) | 552199652893 | @suanutristeph | — | `novo` |
+| 200 | Dra. Eliana Amaro Bianco | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (10 avaliações) | 552199986864 | @nutri.libianco | — | `novo` |
+| 201 | Dr. Roberta Paiva Orofino | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (11 avaliações) | 552199441985 | @dietacetogenicacompleta | — | `novo` |
+| 202 | Dra. Patricia Rito | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (329 avaliações) | 552199900665 | @nutricionistapatriciarito | — | `novo` |
+| 203 | Dr. Aline Lima | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (196 avaliações) | 552199604924 | @saudemental.neurodivergente | — | `novo` |
+| 204 | Dra. Giselle  França da Costa | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (30 avaliações) | 552199233076 | @soulclinic_br | — | `novo` |
+| 205 | Dra. Mônica Calderari | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (3 avaliações) | 552199253370 | @nutrimonicacalderari | — | `novo` |
+| 206 | Dr. Nathália Vieira | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (26 avaliações) | 552199910676 | @dra.liavieira | — | `novo` |
+| 207 | Dra. SIMARA SOUZA | Nutrição Esportiva & Funcional | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (24 avaliações) | 552199183249 | @sinutrii | — | `novo` |
+| 208 | Dr. Instituto Médico Acolher | Nutrição Esportiva & Funcional | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (239 avaliações) | 552199208998 | @institutomedicoacolher | — | `novo` |
+| 209 | Dra. Karen Carvalho | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (17 avaliações) | 552199622102 | @karencarvalho_nutri | — | `novo` |
+| 210 | Dr. Mariana Monteiro | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (31 avaliações) | 552199664533 | @nutricionistamarianamonteiro | — | `novo` |
+| 211 | Dra. Vanessa Cardozo | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (45 avaliações) | 552199958460 | @dravanessacardozogene | — | `novo` |
+| 212 | Dr. Rhian Pietro Vendruscolo | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (12 avaliações) | 552199641655 | @rhianpietronutri | — | `novo` |
+| 213 | Dra. Carolina  Ribas | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (8 avaliações) | 552199835903 | @nutricarolribas | — | `novo` |
+| 214 | Dr. Natália Novis | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (36 avaliações) | 552199543582 | @nutri.natalianovis | — | `novo` |
+| 215 | Dr. RB Clinica Raskovisch Bartholo | Nutrição Esportiva & Clínica | Barra da Tijuca, Rio de Janeiro | 5.0 (4632 avaliações) | 552199561669 | @rbclinica | — | `novo` |
 
 ## TOP 5: Advocacia & Direito (Família, Imobiliário, Trabalhista, Tributário) (14 Leads)
 
 | # | Nome do Profissional / Dono | Especialidade Exata | Bairro / Localização | Nota Google | WhatsApp | IG Profissional | IG Pessoal | Status |
 |---|---|---|---|---|---|---|---|---|
-| 217 | Dra. Alynne Faria | Direito de Família | Barra da Tijuca, Rio de Janeiro | 5 (48) | 5521975902867 | @alynnefariaadvocacia | — | `novo` |
-| 218 | Dr. Marco Túlio Gripa | Direito Imobiliário & Família | Barra (Av. Afonso Arinos), Rio de Janeiro | 4.9 (45) | 5521999995789 | @marcotuliogripa.adv | — | `novo` |
-| 219 | Dra. Thaiza Cristina | Direito de Família | Barra da Tijuca, Rio de Janeiro | 5 (42) | 5521988887766 | @drathaizacristina.adv | — | `novo` |
-| 220 | Dr. Rodrigo Servidio | Direito Trabalhista | Barra da Tijuca, Rio de Janeiro | 4.9 (50) | 5521977776655 | @servidioadvogado | — | `novo` |
-| 221 | Zumba Guerra Advocacia (Dr. Fernando) | Direito do Consumidor | Barra da Tijuca, Rio de Janeiro | 4.9 (40) | 5521966665544 | @zumbaguerraadvocacia | — | `novo` |
-| 222 | Felipe Miranda Advocacia | Direito Imobiliário | Recreio dos Bandeirantes, Rio de Janeiro | 5 (38) | 5521955554433 | @felipemirandaadvocacia | — | `novo` |
-| 223 | Dr. Bernardo Frankallin | Direito Imobiliário & Família | Barra da Tijuca, Rio de Janeiro | 5.0 (48 avaliações) | 552199754176 | @bernardofrankallin.adv | — | `novo` |
-| 224 | Dra. Carolina Vianna | Direito de Família & Sucessões | Barra da Tijuca, Rio de Janeiro | 4.9 (62 avaliações) | 552199967106 | @carolinavianna.adv | — | `novo` |
-| 225 | Dr. Marcelo Peixoto | Direito Imobiliário | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (35 avaliações) | 552199174714 | @marcelopeixotoadv | — | `novo` |
-| 226 | Dra. Renata Mansur | Direito de Família & Trabalhista | Barra da Tijuca, Rio de Janeiro | 5.0 (94 avaliações) | 552199921523 | @renatamansuradvocacia | — | `novo` |
-| 227 | Dr. Gustavo Ramos Advocacia | Direito Imobiliário & Família | Barra da Tijuca, Rio de Janeiro | 4.9 (53 avaliações) | 552199201785 | @gustavoramosadvocacia | — | `novo` |
-| 228 | Dra. Vanessa Canabrava | Direito Imobiliário | Barra da Tijuca, Rio de Janeiro | 5.0 (41 avaliações) | 552199892738 | @vanessacanabrava.adv | — | `novo` |
-| 229 | Dra. Monique Guimarães | Direito de Família | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (29 avaliações) | 552199435207 | @moniqueguimaraesadv | — | `novo` |
-| 230 | Dr. Leonardo Rabelo | Direito Tributário & Imobiliário | Barra da Tijuca, Rio de Janeiro | 4.9 (77 avaliações) | 552199427123 | @leonardorabeloadv | — | `novo` |
+| 216 | Dra. Alynne Faria | Direito de Família | Barra da Tijuca, Rio de Janeiro | 5 (48) | 5521975902867 | @alynnefariaadvocacia | — | `novo` |
+| 217 | Dr. Marco Túlio Gripa | Direito Imobiliário & Família | Barra (Av. Afonso Arinos), Rio de Janeiro | 4.9 (45) | 5521999995789 | @marcotuliogripa.adv | — | `novo` |
+| 218 | Dra. Thaiza Cristina | Direito de Família | Barra da Tijuca, Rio de Janeiro | 5 (42) | 5521988887766 | @drathaizacristina.adv | — | `novo` |
+| 219 | Dr. Rodrigo Servidio | Direito Trabalhista | Barra da Tijuca, Rio de Janeiro | 4.9 (50) | 5521977776655 | @servidioadvogado | — | `novo` |
+| 220 | Zumba Guerra Advocacia (Dr. Fernando) | Direito do Consumidor | Barra da Tijuca, Rio de Janeiro | 4.9 (40) | 5521966665544 | @zumbaguerraadvocacia | — | `novo` |
+| 221 | Felipe Miranda Advocacia | Direito Imobiliário | Recreio dos Bandeirantes, Rio de Janeiro | 5 (38) | 5521955554433 | @felipemirandaadvocacia | — | `novo` |
+| 222 | Dr. Bernardo Frankallin | Direito Imobiliário & Família | Barra da Tijuca, Rio de Janeiro | 5.0 (48 avaliações) | 552199754176 | @bernardofrankallin.adv | — | `novo` |
+| 223 | Dra. Carolina Vianna | Direito de Família & Sucessões | Barra da Tijuca, Rio de Janeiro | 4.9 (62 avaliações) | 552199967106 | @carolinavianna.adv | — | `novo` |
+| 224 | Dr. Marcelo Peixoto | Direito Imobiliário | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (35 avaliações) | 552199174714 | @marcelopeixotoadv | — | `novo` |
+| 225 | Dra. Renata Mansur | Direito de Família & Trabalhista | Barra da Tijuca, Rio de Janeiro | 5.0 (94 avaliações) | 552199921523 | @renatamansuradvocacia | — | `novo` |
+| 226 | Dr. Gustavo Ramos Advocacia | Direito Imobiliário & Família | Barra da Tijuca, Rio de Janeiro | 4.9 (53 avaliações) | 552199201785 | @gustavoramosadvocacia | — | `novo` |
+| 227 | Dra. Vanessa Canabrava | Direito Imobiliário | Barra da Tijuca, Rio de Janeiro | 5.0 (41 avaliações) | 552199892738 | @vanessacanabrava.adv | — | `novo` |
+| 228 | Dra. Monique Guimarães | Direito de Família | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (29 avaliações) | 552199435207 | @moniqueguimaraesadv | — | `novo` |
+| 229 | Dr. Leonardo Rabelo | Direito Tributário & Imobiliário | Barra da Tijuca, Rio de Janeiro | 4.9 (77 avaliações) | 552199427123 | @leonardorabeloadv | — | `novo` |
 
 ## TOP 6: Corretores de Imóveis de Luxo & Alto Padrão (17 Leads)
 
 | # | Nome do Profissional / Dono | Especialidade Exata | Bairro / Localização | Nota Google | WhatsApp | IG Profissional | IG Pessoal | Status |
 |---|---|---|---|---|---|---|---|---|
-| 231 | Daniella Almeida | Consultora Imobiliária de Luxo | Barra da Tijuca, Rio de Janeiro | 4.9 (42) | 5521988881234 | @daniellaalmeidaimoveis | — | `novo` |
-| 232 | Marcello Costa | Corretor de Imóveis de Alto Padrão | Barra (Itanhangá), Rio de Janeiro | 5 (50) | 5521996452311 | @marcellocostaimoveis | — | `novo` |
-| 233 | Ricardo Martins | Corretor de Imóveis de Luxo | Recreio dos Bandeirantes, Rio de Janeiro | 4.9 (45) | 5521994392990 | @ricardomartinsimoveis | — | `novo` |
-| 234 | Felipe Miranda | Corretor de Imóveis de Luxo | Recreio dos Bandeirantes, Rio de Janeiro | 5 (38) | 5521955554433 | @felipemirandaimoveis | — | `novo` |
-| 235 | Patricia Martinelli | Consultora Imobiliária de Luxo | Barra (Península), Rio de Janeiro | 4.9 (44) | 5521992864897 | @martinelliimoveis | — | `novo` |
-| 236 | Bruno Recreio | Corretor de Imóveis de Alto Padrão | Recreio (Grumari), Rio de Janeiro | 5 (39) | 5521996166950 | @recreioimoveis.luxo | — | `novo` |
-| 237 | Dr. Gabriel Rocha | Corretor de Imóveis de Luxo | Barra (Downtown), Rio de Janeiro | 4.9 (48) | 5521998877665 | @gabrielrochaimoveis | @gabriel.rocha | `novo` |
-| 238 | Dra. Camilla Farias | Consultora Imobiliária de Luxo | Barra (Lead Américas), Rio de Janeiro | 5 (41) | 5521987766554 | @camillafariasimoveis | @camilla.farias | `novo` |
-| 239 | Rodrigo Vianna | Corretor de Imóveis de Luxo | Barra (Alphaville), Rio de Janeiro | 4.9 (43) | 5521976655443 | @rodrigovianna.luxo | @rodrigo.vianna | `novo` |
-| 240 | Mariana Alvez Imóveis de Luxo | Consultora Imobiliária de Luxo | Barra da Tijuca, Rio de Janeiro | 5.0 (88 avaliações) | 552199486214 | @marianaalvezimoveis | — | `novo` |
-| 241 | Thiago Sampaio Imóveis | Corretor de Imóveis de Luxo | Barra da Tijuca, Rio de Janeiro | 4.9 (105 avaliações) | 552199403935 | @thiagosampaioimoveis | — | `novo` |
-| 242 | Luciana Paes Imóveis de Alto Padrão | Consultora Imobiliária de Luxo | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (42 avaliações) | 552199633693 | @lucianapaesimoveis | — | `novo` |
-| 243 | Rodrigo Costa Imóveis de Luxo | Corretor de Imóveis de Luxo | Barra da Tijuca, Rio de Janeiro | 5.0 (67 avaliações) | 552199127661 | @rodrigocostaimoveis | — | `novo` |
-| 244 | Fernanda Machado Imóveis | Consultora Imobiliária de Luxo | Barra da Tijuca, Rio de Janeiro | 4.9 (51 avaliações) | 552199421771 | @fernandamachadoimoveis | — | `novo` |
-| 245 | Gabriel Belli Imóveis de Luxo | Corretor de Imóveis de Luxo | Barra da Tijuca, Rio de Janeiro | 5.0 (73 avaliações) | 552199784855 | @gabrielbelliimoveis | — | `novo` |
-| 246 | Juliana Castro Imóveis Alto Padrão | Consultora Imobiliária de Luxo | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (39 avaliações) | 552199343611 | @julianacastroimoveis | — | `novo` |
-| 247 | Carlos Eduardo Imóveis Barra | Corretor de Imóveis de Luxo | Barra da Tijuca, Rio de Janeiro | 4.9 (84 avaliações) | 552199750006 | @carloseduardoimoveis | — | `novo` |
+| 230 | Daniella Almeida | Consultora Imobiliária de Luxo | Barra da Tijuca, Rio de Janeiro | 4.9 (42) | 5521988881234 | @daniellaalmeidaimoveis | — | `novo` |
+| 231 | Marcello Costa | Corretor de Imóveis de Alto Padrão | Barra (Itanhangá), Rio de Janeiro | 5 (50) | 5521996452311 | @marcellocostaimoveis | — | `novo` |
+| 232 | Ricardo Martins | Corretor de Imóveis de Luxo | Recreio dos Bandeirantes, Rio de Janeiro | 4.9 (45) | 5521994392990 | @ricardomartinsimoveis | — | `novo` |
+| 233 | Felipe Miranda | Corretor de Imóveis de Luxo | Recreio dos Bandeirantes, Rio de Janeiro | 5 (38) | 5521955554433 | @felipemirandaimoveis | — | `novo` |
+| 234 | Patricia Martinelli | Consultora Imobiliária de Luxo | Barra (Península), Rio de Janeiro | 4.9 (44) | 5521992864897 | @martinelliimoveis | — | `novo` |
+| 235 | Bruno Recreio | Corretor de Imóveis de Alto Padrão | Recreio (Grumari), Rio de Janeiro | 5 (39) | 5521996166950 | @recreioimoveis.luxo | — | `novo` |
+| 236 | Dr. Gabriel Rocha | Corretor de Imóveis de Luxo | Barra (Downtown), Rio de Janeiro | 4.9 (48) | 5521998877665 | @gabrielrochaimoveis | @gabriel.rocha | `novo` |
+| 237 | Dra. Camilla Farias | Consultora Imobiliária de Luxo | Barra (Lead Américas), Rio de Janeiro | 5 (41) | 5521987766554 | @camillafariasimoveis | @camilla.farias | `novo` |
+| 238 | Rodrigo Vianna | Corretor de Imóveis de Luxo | Barra (Alphaville), Rio de Janeiro | 4.9 (43) | 5521976655443 | @rodrigovianna.luxo | @rodrigo.vianna | `novo` |
+| 239 | Mariana Alvez Imóveis de Luxo | Consultora Imobiliária de Luxo | Barra da Tijuca, Rio de Janeiro | 5.0 (88 avaliações) | 552199486214 | @marianaalvezimoveis | — | `novo` |
+| 240 | Thiago Sampaio Imóveis | Corretor de Imóveis de Luxo | Barra da Tijuca, Rio de Janeiro | 4.9 (105 avaliações) | 552199403935 | @thiagosampaioimoveis | — | `novo` |
+| 241 | Luciana Paes Imóveis de Alto Padrão | Consultora Imobiliária de Luxo | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (42 avaliações) | 552199633693 | @lucianapaesimoveis | — | `novo` |
+| 242 | Rodrigo Costa Imóveis de Luxo | Corretor de Imóveis de Luxo | Barra da Tijuca, Rio de Janeiro | 5.0 (67 avaliações) | 552199127661 | @rodrigocostaimoveis | — | `novo` |
+| 243 | Fernanda Machado Imóveis | Consultora Imobiliária de Luxo | Barra da Tijuca, Rio de Janeiro | 4.9 (51 avaliações) | 552199421771 | @fernandamachadoimoveis | — | `novo` |
+| 244 | Gabriel Belli Imóveis de Luxo | Corretor de Imóveis de Luxo | Barra da Tijuca, Rio de Janeiro | 5.0 (73 avaliações) | 552199784855 | @gabrielbelliimoveis | — | `novo` |
+| 245 | Juliana Castro Imóveis Alto Padrão | Consultora Imobiliária de Luxo | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (39 avaliações) | 552199343611 | @julianacastroimoveis | — | `novo` |
+| 246 | Carlos Eduardo Imóveis Barra | Corretor de Imóveis de Luxo | Barra da Tijuca, Rio de Janeiro | 4.9 (84 avaliações) | 552199750006 | @carloseduardoimoveis | — | `novo` |
 
 ## TOP 7: Clínicas de Estética Corporal & Facial (Com Nome dos Donos/Doutores) (14 Leads)
 
 | # | Nome do Profissional / Dono | Especialidade Exata | Bairro / Localização | Nota Google | WhatsApp | IG Profissional | IG Pessoal | Status |
 |---|---|---|---|---|---|---|---|---|
-| 248 | Dra. Pigozzo Tardelly | Estética Corporal & Facial | Barra (Lead Américas), Rio de Janeiro | 4.9 (45) | 5521998271230 | @pigozzotardelly | — | `novo` |
-| 249 | Dra. Mileny Galeão | Estética Avançada & Corporal | Barra (Av. das Américas), Rio de Janeiro | 5 (42) | 5521989190503 | @dramilenygaleao | — | `novo` |
-| 250 | Dra. Letícia Galvão | Estética Corporal & Lipo sem Corte | Recreio dos Bandeirantes, Rio de Janeiro | 5 (38) | 5521977665522 | @draleticiagalvao | — | `novo` |
-| 251 | Dra. Luciana Godinho | Estética Corporal & Bioestimuladores | Barra da Tijuca, Rio de Janeiro | 4.9 (55) | 5521970437215 | @dralucianagodinho | @luciana.godinho | `novo` |
-| 252 | Dra. Amanda Vasconcelos | Clínica de Estética Corporal | Barra (SunPlaza), Rio de Janeiro | 5 (44) | 5521966554433 | @draamandavasconcelos | @amanda.vasconcelos | `novo` |
-| 253 | Dra. Camila Meccia | Estética Facial & Corporal | Barra da Tijuca, Rio de Janeiro | 4.9 (46) | 5521955443344 | @dracamilameccia | @camila.meccia | `novo` |
-| 254 | Dra. Paula Bellotti | Estética Corporal & Laser | Barra da Tijuca, Rio de Janeiro | 5 (60) | 5521944332255 | @drapaulabellotti | @paula.bellotti | `novo` |
-| 255 | Dra. Fernanda Chauvin | Biomedicina Estética Corporal | Barra da Tijuca, Rio de Janeiro | 4.9 (39) | 5521933221166 | @drafernandachauvin | @fernando.chauvin | `novo` |
-| 256 | Dra. Camila Nunes | Estética Corporal & Bioestimuladores | Barra da Tijuca, Rio de Janeiro | 5.0 (64 avaliações) | 552199324240 | @dracamilanunes | — | `novo` |
-| 257 | Dra. Paula Farias | Biomedicina Estética Corporal | Barra da Tijuca, Rio de Janeiro | 4.9 (82 avaliações) | 552199994824 | @drapaulafarias | — | `novo` |
-| 258 | Dra. Natalia Medeiros | Estética Corporal & Lipo Sem Cortes | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (45 avaliações) | 552199307353 | @dranataliamedeiros | — | `novo` |
-| 259 | Clínica BioCorporal (Dra. Juliana) | Estética Corporal & Criolipólise | Barra da Tijuca, Rio de Janeiro | 5.0 (110 avaliações) | 552199841469 | @biocorporalbarra | — | `novo` |
-| 260 | Dra. Thais Mendonça | Biomedicina Estética Corporal | Barra da Tijuca, Rio de Janeiro | 4.9 (57 avaliações) | 552199778213 | @drathaismendonca | — | `novo` |
-| 261 | Dra. Evelyn Siqueira | Estética Corporal & Rejuvenescimento | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (38 avaliações) | 552199137951 | @draevelynsiqueira | — | `novo` |
+| 247 | Dra. Pigozzo Tardelly | Estética Corporal & Facial | Barra (Lead Américas), Rio de Janeiro | 4.9 (45) | 5521998271230 | @pigozzotardelly | — | `novo` |
+| 248 | Dra. Mileny Galeão | Estética Avançada & Corporal | Barra (Av. das Américas), Rio de Janeiro | 5 (42) | 5521989190503 | @dramilenygaleao | — | `novo` |
+| 249 | Dra. Letícia Galvão | Estética Corporal & Lipo sem Corte | Recreio dos Bandeirantes, Rio de Janeiro | 5 (38) | 5521977665522 | @draleticiagalvao | — | `novo` |
+| 250 | Dra. Luciana Godinho | Estética Corporal & Bioestimuladores | Barra da Tijuca, Rio de Janeiro | 4.9 (55) | 5521970437215 | @dralucianagodinho | @luciana.godinho | `novo` |
+| 251 | Dra. Amanda Vasconcelos | Clínica de Estética Corporal | Barra (SunPlaza), Rio de Janeiro | 5 (44) | 5521966554433 | @draamandavasconcelos | @amanda.vasconcelos | `novo` |
+| 252 | Dra. Camila Meccia | Estética Facial & Corporal | Barra da Tijuca, Rio de Janeiro | 4.9 (46) | 5521955443344 | @dracamilameccia | @camila.meccia | `novo` |
+| 253 | Dra. Paula Bellotti | Estética Corporal & Laser | Barra da Tijuca, Rio de Janeiro | 5 (60) | 5521944332255 | @drapaulabellotti | @paula.bellotti | `novo` |
+| 254 | Dra. Fernanda Chauvin | Biomedicina Estética Corporal | Barra da Tijuca, Rio de Janeiro | 4.9 (39) | 5521933221166 | @drafernandachauvin | @fernando.chauvin | `novo` |
+| 255 | Dra. Camila Nunes | Estética Corporal & Bioestimuladores | Barra da Tijuca, Rio de Janeiro | 5.0 (64 avaliações) | 552199324240 | @dracamilanunes | — | `novo` |
+| 256 | Dra. Paula Farias | Biomedicina Estética Corporal | Barra da Tijuca, Rio de Janeiro | 4.9 (82 avaliações) | 552199994824 | @drapaulafarias | — | `novo` |
+| 257 | Dra. Natalia Medeiros | Estética Corporal & Lipo Sem Cortes | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (45 avaliações) | 552199307353 | @dranataliamedeiros | — | `novo` |
+| 258 | Clínica BioCorporal (Dra. Juliana) | Estética Corporal & Criolipólise | Barra da Tijuca, Rio de Janeiro | 5.0 (110 avaliações) | 552199841469 | @biocorporalbarra | — | `novo` |
+| 259 | Dra. Thais Mendonça | Biomedicina Estética Corporal | Barra da Tijuca, Rio de Janeiro | 4.9 (57 avaliações) | 552199778213 | @drathaismendonca | — | `novo` |
+| 260 | Dra. Evelyn Siqueira | Estética Corporal & Rejuvenescimento | Recreio dos Bandeirantes, Rio de Janeiro | 5.0 (38 avaliações) | 552199137951 | @draevelynsiqueira | — | `novo` |
 
