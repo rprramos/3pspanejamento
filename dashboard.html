@@ -5500,7 +5500,7 @@ select.mini{border:1px solid var(--line);border-radius:8px;padding:5px 8px;font-
       "igPessoal": "@antonio.neto",
       "siteAntigo": "https://antonionetoimoveisrj.com.br",
       "motivo": "Corretor de alto padrão na Barra e Recreio (CRECI-RJ 54451). Contato direto no Whats.",
-      "status": "novo",
+      "status": "msg_enviada",
       "urlNova": "",
       "dataProposta": "",
       "valor": 0,
@@ -7946,7 +7946,14 @@ function copiarImagemCase(){
 var D=JSON.parse(document.getElementById('dados').textContent);
 var OV=JSON.parse(localStorage.getItem('prospector_ov')||'{}');
 var MODE='file';
-function aplicaOv(arr){return arr.filter(function(l){return !(OV[l.slug]&&OV[l.slug]._del)}).map(function(l){return Object.assign({},l,OV[l.slug]||{})})}
+function aplicaOv(arr){
+  var M = { 'redesenhado': 'msg_enviada', 'publicado': 'msg_enviada', 'descartado': 'recusado' };
+  return arr.filter(function(l){ return !(OV[l.slug] && OV[l.slug]._del); }).map(function(l){
+    var obj = Object.assign({}, l, OV[l.slug] || {});
+    if (M[obj.status]) obj.status = M[obj.status];
+    return obj;
+  });
+}
 var leads=aplicaOv(D.leads||[]);
 if(Object.keys(OV).length)document.getElementById('limpar-ov')&&(document.getElementById('limpar-ov').style.display='inline-block');
 fetch('/api/leads',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){MODE='db';leads=j;fetch('/api/config',{cache:'no-store'}).then(function(r){return r.json()}).then(function(c){CFG=(c&&c.contratante!==undefined)?c.contratante:c;HG=(c&&c.hostgator)||{};if(view==='config')render()});var m=document.getElementById('modo');m.textContent='banco conectado';m.className='modo db';m.title='Alterações salvas no prospector.db';var lb=document.getElementById('limpar-ov');if(lb)lb.style.display='none';render()}).catch(function(){});
