@@ -8025,12 +8025,7 @@ function fil(){
 }
 function recarrega(){return fetch('/api/leads',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){leads=j;render()})}
 
-function marcarContatado(slug){
-  var l = leads.filter(function(x){ return x.slug === slug; })[0];
-  if (l && l.status === 'novo') {
-    salvarOv(slug, { status: 'msg_enviada' });
-  }
-}
+
 
 function salvarOv(slug,ch){
  if(MODE==='db'){fetch('/api/leads/'+encodeURIComponent(slug),{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(ch)}).then(recarrega);return}
@@ -8131,14 +8126,14 @@ function copiarMsgDirect(slug, igHandle, btnElem){
 function acoes(l){var a=[];
  if(l.igProfissional||l.igPessoal){
    var igH = l.igProfissional || l.igPessoal;
-   a.push('<button onclick="marcarContatado(\''+l.slug+'\');copiarMsgDirect(\''+l.slug+'\',\''+igH+'\',this);return false" style="background:#C13584;color:#fff;font-weight:700;border:0;border-radius:6px;padding:4px 8px;cursor:pointer;font-family:var(--sans);font-size:12px" title="Copia a mensagem formatada e abre o Instagram no perfil/direct">📩 Direct IG (Copia Msg)</button>');
+   a.push('<button onclick="copiarMsgDirect(\''+l.slug+'\',\''+igH+'\',this);return false" style="background:#C13584;color:#fff;font-weight:700;border:0;border-radius:6px;padding:4px 8px;cursor:pointer;font-family:var(--sans);font-size:12px" title="Copia a mensagem formatada e abre o Instagram no perfil/direct">📩 Direct IG (Copia Msg)</button>');
  }
- if(l.igProfissional) a.push('<a href="https://instagram.com/'+l.igProfissional.replace('@','').trim()+'" target="_blank" onclick="marcarContatado(\''+l.slug+'\')" style="background:#E1306C;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">📸 IG Profissional</a>');
- if(l.igPessoal) a.push('<a href="https://instagram.com/'+l.igPessoal.replace('@','').trim()+'" target="_blank" onclick="marcarContatado(\''+l.slug+'\')" style="background:#833AB4;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">👤 IG Pessoal</a>');
+ if(l.igProfissional) a.push('<a href="https://instagram.com/'+l.igProfissional.replace('@','').trim()+'" target="_blank" style="background:#E1306C;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">📸 IG Profissional</a>');
+ if(l.igPessoal) a.push('<a href="https://instagram.com/'+l.igPessoal.replace('@','').trim()+'" target="_blank" style="background:#833AB4;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">👤 IG Pessoal</a>');
  if(l.whatsapp) {
    var msg = getWaMsg(l);
-   a.push('<a href="whatsapp://send?phone='+l.whatsapp+'&text='+msg+'" onclick="marcarContatado(\''+l.slug+'\')" style="background:#25D366;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">💬 App Whats</a>');
-   a.push('<a href="https://web.whatsapp.com/send?phone='+l.whatsapp+'&text='+msg+'" target="_blank" onclick="marcarContatado(\''+l.slug+'\')" style="background:#128C7E;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">🌐 Whats Web</a>');
+   a.push('<a href="whatsapp://send?phone='+l.whatsapp+'&text='+msg+'" style="background:#25D366;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">💬 App Whats</a>');
+   a.push('<a href="https://web.whatsapp.com/send?phone='+l.whatsapp+'&text='+msg+'" target="_blank" style="background:#128C7E;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">🌐 Whats Web</a>');
  }
  if(l.email&&l.email.indexOf('@')>0) a.push('<a href="mailto:'+l.email+'">e-mail</a>');
  a.push('<a href="#" onclick="abrirEdit(\''+l.slug+'\');return false">✎ dados</a>');
