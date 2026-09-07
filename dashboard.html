@@ -6192,7 +6192,7 @@ function nav(){
 }
 function pillStatus(s){return '<span class="pill" style="background:color-mix(in srgb,'+CORES[s]+' 18%,white);color:'+CORES[s]+'">'+NOMES[s]+'</span>'}
 function getWaMsg(l){
-  var b = (l.cidade||'').indexOf('Recreio')>=0 ? 'no Recreio ou Barra e adjacências' : 'na Barra ou Recreio e adjacências';
+  var b = (l.cidade||'').indexOf('Recreio')>=0 ? 'no Recreio, Barra e adjacências' : 'na Barra, Recreio e adjacências';
   var n = l.nome || '';
   var esp = l.nicho || 'Estética Avançada';
   var nota = l.nota || '4.9';
@@ -6209,7 +6209,7 @@ function getWaMsg(l){
 }
 
 function getRawMsg(l){
-  var b = (l.cidade||'').indexOf('Recreio')>=0 ? 'no Recreio ou Barra e adjacências' : 'na Barra ou Recreio e adjacências';
+  var b = (l.cidade||'').indexOf('Recreio')>=0 ? 'no Recreio, Barra e adjacências' : 'na Barra, Recreio e adjacências';
   var n = l.nome || '';
   var esp = l.nicho || 'sua área';
   var nota = l.nota || '4.9';
