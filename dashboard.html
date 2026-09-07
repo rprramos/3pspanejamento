@@ -163,23 +163,24 @@ select.mini{border:1px solid var(--line);border-radius:8px;padding:5px 8px;font-
 </aside>
 <main>
   <div class="topbar"><h1 id="titulo">Visão geral</h1><span class="upd" id="upd"></span><span class="modo file" id="modo" title="Abra pelo iniciar-dashboard.bat para salvar no banco">modo arquivo</span><button id="limpar-ov" style="display:none;border:1px solid var(--line);background:var(--white);color:var(--muted);font-size:11px;font-weight:700;padding:4px 10px;border-radius:12px;cursor:pointer;font-family:var(--sans)" onclick="if(confirm('Descartar as edições feitas neste navegador e voltar aos dados do plugin?')){localStorage.removeItem('prospector_ov');location.reload()}">limpar edições locais</button><button id="btn-copiar-img" onclick="copiarImagemCase()" style="background:var(--accent);color:#fff;border:0;padding:8px 14px;border-radius:10px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:var(--sans);margin-left:8px" title="Copia a foto do case de 800 leads para a memória. Depois é só dar Ctrl+V no chat do WhatsApp!">📸 Copiar Imagem do Case (Ctrl+V)</button><select class="select-categoria" id="filtro-categoria" onchange="categoriaFiltro=this.value;pag=1;render()">
-<option value="todos">⚡ Todas as Categorias (320 Leads)</option>
-<option value="top1">🏆 TOP 1 — Estética Facial & Dermato (38)</option>
+<option value="todos">⚡ Todas as Categorias (319 Leads Auditados)</option>
+<option value="top1">🏆 TOP 1 — Estética Facial & Dermato (40)</option>
 <option value="top2">📐 TOP 2 — Arquitetura & Interiores (40)</option>
 <option value="top3">🦷 TOP 3 — Odontologia Estética & Lentes (44)</option>
 <option value="top4">🥗 TOP 4 — Nutrição Esportiva & Clínica (50)</option>
 <option value="top5">⚖️ TOP 5 — Advocacia & Direito (48)</option>
-<option value="top6">🏡 TOP 6 — Corretores de Imóveis de Luxo (50)</option>
-<option value="top7">✨ TOP 7 — Estética Corporal (Donos/Doutores) (50)</option>
+<option value="top6">🏡 TOP 6 — Corretores de Imóveis de Luxo (49)</option>
+<option value="top7">✨ TOP 7 — Estética Corporal (Donos/Doutores) (48)</option>
 <option value="" disabled>────────── Por Profissão ──────────</option>
 <option value="Corretor de Imóveis de Luxo">Corretor de Imóveis de Luxo</option>
 <option value="Consultora Imobiliária de Luxo">Consultora Imobiliária de Luxo</option>
+<option value="Direito Imobiliário & Família">Direito Imobiliário & Família</option>
+<option value="Direito de Família">Direito de Família</option>
+<option value="Direito Imobiliário">Direito Imobiliário</option>
 <option value="Estética Corporal & Facial">Estética Corporal & Facial</option>
 <option value="Estética Facial & Dermatologia">Estética Facial & Dermatologia</option>
 <option value="Biomedicina Estética Corporal">Biomedicina Estética Corporal</option>
 <option value="Nutrição Esportiva">Nutrição Esportiva</option>
-<option value="Direito de Família">Direito de Família</option>
-<option value="Direito Imobiliário">Direito Imobiliário</option>
 <option value="Harmonização Orofacial">Harmonização Orofacial</option>
 <option value="Arquitetura Residencial">Arquitetura Residencial</option>
 <option value="Design de Interiores">Design de Interiores</option>
@@ -4313,7 +4314,7 @@ select.mini{border:1px solid var(--line);border-radius:8px;padding:5px 8px;font-
     {
       "slug": "marco-tulio-gripa-advocacia-barra",
       "nome": "Dr. Marco Túlio Gripa",
-      "nicho": "Direito Imobiliário",
+      "nicho": "Direito Imobiliário & Família",
       "cidade": "Barra (Av. Afonso Arinos), Rio de Janeiro",
       "nota": 4.9,
       "avaliacoes": 45,
@@ -4323,7 +4324,7 @@ select.mini{border:1px solid var(--line);border-radius:8px;padding:5px 8px;font-
       "igProfissional": "@marcotuliogripa.adv",
       "igPessoal": "@marcotulio.gripa",
       "siteAntigo": "https://marcotuliogripa.com.br",
-      "motivo": "Inventário e direito imobiliário na Afonso Arinos Barra.",
+      "motivo": "Advogado especialista em Direito Imobiliário e Inventário na Barra. Atendimento direto no Whats.",
       "status": "novo",
       "urlNova": "",
       "dataProposta": "",
@@ -5481,30 +5482,6 @@ select.mini{border:1px solid var(--line);border-radius:8px;padding:5px 8px;font-
       "dataProposta": "",
       "valor": 0,
       "obs": "Qualificado para a mensagem de 20 min com o case do advogado (800 leads).",
-      "contratoStatus": "pendente",
-      "contratoEm": "",
-      "manutencao": 0,
-      "pago": 0
-    },
-    {
-      "slug": "antonio-neto-imoveis-barra",
-      "nome": "Antônio Neto",
-      "nicho": "Corretor de Imóveis de Luxo",
-      "cidade": "Barra (SunPlaza), Rio de Janeiro",
-      "nota": 5,
-      "avaliacoes": 46,
-      "email": "contato@antonionetoimoveisrj.com.br",
-      "telefone": "(22) 99282-4113",
-      "whatsapp": "5522992824113",
-      "igProfissional": "@antonionetoimoveis.rj",
-      "igPessoal": "@antonio.neto",
-      "siteAntigo": "https://antonionetoimoveisrj.com.br",
-      "motivo": "Corretor de alto padrão na Barra e Recreio (CRECI-RJ 54451). Contato direto no Whats.",
-      "status": "msg_enviada",
-      "urlNova": "",
-      "dataProposta": "",
-      "valor": 0,
-      "obs": "Qualificado para a mensagem de 20 min com o case da advogada (800 leads).",
       "contratoStatus": "pendente",
       "contratoEm": "",
       "manutencao": 0,
