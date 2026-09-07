@@ -6258,6 +6258,10 @@ function copiarMsgDirect(slug, igHandle, btnElem){
 
 function acoes(l){var a=[];
  a.push('<button onclick="deletar(\''+l.slug+'\');return false" style="background:#fee2e2;color:#991b1b;border:1px solid #f87171;font-weight:700;border-radius:6px;padding:4px 8px;cursor:pointer;font-family:var(--sans);font-size:12px" title="Excluir este contato do pipeline">🗑️ Excluir</button>');
+ var siteUrl = l.siteAntigo || l.site || l.urlNova;
+ if(siteUrl && siteUrl.startsWith('http')){
+   a.push('<a href="'+siteUrl+'" target="_blank" style="background:#2563eb;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none" title="Visitar site oficial">🌐 Site Oficial</a>');
+ }
  if(l.igProfissional||l.igPessoal){
    var igH = l.igProfissional || l.igPessoal;
    a.push('<button onclick="copiarMsgDirect(\''+l.slug+'\',\''+igH+'\',this);return false" style="background:#C13584;color:#fff;font-weight:700;border:0;border-radius:6px;padding:4px 8px;cursor:pointer;font-family:var(--sans);font-size:12px" title="Copia a mensagem formatada e abre o Instagram no perfil/direct">📩 Direct IG (Copia Msg)</button>');
