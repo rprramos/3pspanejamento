@@ -7950,9 +7950,9 @@ function aplicaOv(arr){return arr.filter(function(l){return !(OV[l.slug]&&OV[l.s
 var leads=aplicaOv(D.leads||[]);
 if(Object.keys(OV).length)document.getElementById('limpar-ov')&&(document.getElementById('limpar-ov').style.display='inline-block');
 fetch('/api/leads',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){MODE='db';leads=j;fetch('/api/config',{cache:'no-store'}).then(function(r){return r.json()}).then(function(c){CFG=(c&&c.contratante!==undefined)?c.contratante:c;HG=(c&&c.hostgator)||{};if(view==='config')render()});var m=document.getElementById('modo');m.textContent='banco conectado';m.className='modo db';m.title='Alterações salvas no prospector.db';var lb=document.getElementById('limpar-ov');if(lb)lb.style.display='none';render()}).catch(function(){});
-var CORES={novo:'var(--novo)',redesenhado:'var(--rede)',publicado:'var(--pub)',proposta:'var(--prop)',respondeu:'var(--resp)',fechado:'var(--fech)',descartado:'var(--cinza)'};
-var NOMES={novo:'Novo',redesenhado:'Redesenhado',publicado:'Publicado',proposta:'Proposta enviada',respondeu:'Respondeu',fechado:'Fechado',descartado:'Descartado'};
-var ORDEM=['novo','redesenhado','publicado','proposta','respondeu','fechado'];
+var CORES={novo:'#87837B',msg_enviada:'#3B82F6',respondeu:'#F59E0B',negociacao:'#8B5CF6',proposta:'#D97757',fechado:'#10B981',recusado:'#EF4444'};
+var NOMES={novo:'Leads Novos',msg_enviada:'Primeira Mensagem',respondeu:'Respondido',negociacao:'Em Negociação',proposta:'Proposta Enviada',fechado:'Fechado',recusado:'Recusado'};
+var ORDEM=['novo','msg_enviada','respondeu','negociacao','proposta','fechado','recusado'];
 var view='geral',busca='',sortCol='nome',sortAsc=true,pag=1,porPag='auto';
 function pagSize(){if(porPag!=='auto')return porPag;var v=document.getElementById('view');var h=v?v.clientHeight:600;return Math.max(4,Math.floor((h-165)/59))}
 function mudaPorPag(v){
@@ -7978,7 +7978,7 @@ function ordenar(col){
 
 document.getElementById('upd').textContent='atualizado em '+(D.atualizado||'—');
 function dias(iso){if(!iso)return 0;return Math.floor((Date.now()-new Date(iso+'T12:00:00'))/864e5)}
-function ativos(){return fil().filter(function(l){return l.status!=='descartado'})}
+function ativos(){return fil().filter(function(l){return l.status!=='recusado'})}
 var categoriaFiltro = 'todos';
 function getCategoria(l){
   var n = (l.nicho || '').toLowerCase();
@@ -8017,6 +8017,14 @@ function fil(){
   });
 }
 function recarrega(){return fetch('/api/leads',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){leads=j;render()})}
+
+function marcarContatado(slug){
+  var l = leads.filter(function(x){ return x.slug === slug; })[0];
+  if (l && l.status === 'novo') {
+    salvarOv(slug, { status: 'msg_enviada' });
+  }
+}
+
 function salvarOv(slug,ch){
  if(MODE==='db'){fetch('/api/leads/'+encodeURIComponent(slug),{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(ch)}).then(recarrega);return}
  OV[slug]=Object.assign(OV[slug]||{},ch);localStorage.setItem('prospector_ov',JSON.stringify(OV));leads=aplicaOv(D.leads||[]);render()}
@@ -8116,14 +8124,14 @@ function copiarMsgDirect(slug, igHandle, btnElem){
 function acoes(l){var a=[];
  if(l.igProfissional||l.igPessoal){
    var igH = l.igProfissional || l.igPessoal;
-   a.push('<button onclick="copiarMsgDirect(\''+l.slug+'\',\''+igH+'\',this);return false" style="background:#C13584;color:#fff;font-weight:700;border:0;border-radius:6px;padding:4px 8px;cursor:pointer;font-family:var(--sans);font-size:12px" title="Copia a mensagem formatada para a memória e abre o Instagram no perfil/direct">📩 Direct IG (Copia Msg)</button>');
+   a.push('<button onclick="marcarContatado(\''+l.slug+'\');copiarMsgDirect(\''+l.slug+'\',\''+igH+'\',this);return false" style="background:#C13584;color:#fff;font-weight:700;border:0;border-radius:6px;padding:4px 8px;cursor:pointer;font-family:var(--sans);font-size:12px" title="Copia a mensagem formatada e abre o Instagram no perfil/direct">📩 Direct IG (Copia Msg)</button>');
  }
- if(l.igProfissional) a.push('<a href="https://instagram.com/'+l.igProfissional.replace('@','').trim()+'" target="_blank" style="background:#E1306C;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">📸 IG Profissional</a>');
- if(l.igPessoal) a.push('<a href="https://instagram.com/'+l.igPessoal.replace('@','').trim()+'" target="_blank" style="background:#833AB4;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">👤 IG Pessoal</a>');
+ if(l.igProfissional) a.push('<a href="https://instagram.com/'+l.igProfissional.replace('@','').trim()+'" target="_blank" onclick="marcarContatado(\''+l.slug+'\')" style="background:#E1306C;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">📸 IG Profissional</a>');
+ if(l.igPessoal) a.push('<a href="https://instagram.com/'+l.igPessoal.replace('@','').trim()+'" target="_blank" onclick="marcarContatado(\''+l.slug+'\')" style="background:#833AB4;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">👤 IG Pessoal</a>');
  if(l.whatsapp) {
    var msg = getWaMsg(l);
-   a.push('<a href="whatsapp://send?phone='+l.whatsapp+'&text='+msg+'" style="background:#25D366;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">💬 App Whats</a>');
-   a.push('<a href="https://web.whatsapp.com/send?phone='+l.whatsapp+'&text='+msg+'" target="_blank" style="background:#128C7E;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">🌐 Whats Web</a>');
+   a.push('<a href="whatsapp://send?phone='+l.whatsapp+'&text='+msg+'" onclick="marcarContatado(\''+l.slug+'\')" style="background:#25D366;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">💬 App Whats</a>');
+   a.push('<a href="https://web.whatsapp.com/send?phone='+l.whatsapp+'&text='+msg+'" target="_blank" onclick="marcarContatado(\''+l.slug+'\')" style="background:#128C7E;color:#fff;font-weight:700;border-radius:6px;padding:4px 8px;text-decoration:none">🌐 Whats Web</a>');
  }
  if(l.email&&l.email.indexOf('@')>0) a.push('<a href="mailto:'+l.email+'">e-mail</a>');
  a.push('<a href="#" onclick="abrirEdit(\''+l.slug+'\');return false">✎ dados</a>');
@@ -8135,18 +8143,20 @@ function card(l){
  return '<div class="card" draggable="true" ondragstart="dragIni(event,\''+l.slug+'\')" ondragend="dragFim(event)" style="--cor:'+CORES[l.status]+'"><div class="nm" style="display:flex;align-items:center;justify-content:space-between;gap:6px"><span>'+l.nome+'</span>'+catPill+f+'</div><div class="mt"><b>'+(l.nicho||'')+'</b> · '+(l.nota?'★ '+l.nota+' ('+l.avaliacoes+')':'')+(l.cidade?' · '+l.cidade:'')+'</div>'+(l.motivo?'<div class="motivo">'+l.motivo+'</div>':'')+(l.obs?'<div class="mt">'+l.obs+'</div>':'')+(l.valor?'<div class="valor">R$ '+l.valor.toLocaleString('pt-BR')+(l.manutencao?' <span style="color:var(--muted);font-weight:600;font-size:11px">+ R$ '+l.manutencao.toLocaleString('pt-BR')+'/mês</span>':'')+'</div>':'')+acoes(l)+'</div>'}
 function vGeral(){
  var ls=fil(),at=ativos();
+ var msgs=ls.filter(function(l){return l.status==='msg_enviada'});
+ var resps=ls.filter(function(l){return l.status==='respondeu'||l.status==='negociacao'});
  var props=ls.filter(function(l){return l.status==='proposta'});
  var fu=props.filter(function(l){return dias(l.dataProposta)>=4});
  var fech=ls.filter(function(l){return l.status==='fechado'});
  var receita=fech.reduce(function(a,l){return a+(l.valor||0)},0);
  var pot=at.length*700;
- var html='<div class="stats">'+[['Leads ativos',at.length,''],['Propostas na rua',props.length,''],['Follow-ups pendentes',fu.length,'ambar'],['Fechados',fech.length,'verde'],['Receita fechada','R$ '+receita.toLocaleString('pt-BR'),'verde'],['Potencial (R$700/página)','R$ '+pot.toLocaleString('pt-BR'),'laranja']].map(function(s){return '<div class="stat '+s[2]+'"><div class="n">'+s[1]+'</div><div class="l">'+s[0]+'</div></div>'}).join('')+'</div>';
+ var html='<div class="stats">'+[['Leads ativos',at.length,''],['1ª Msg Enviada',msgs.length,''],['Respondidos / Negociação',resps.length,'ambar'],['Propostas na rua',props.length,''],['Fechados',fech.length,'verde'],['Receita fechada','R$ '+receita.toLocaleString('pt-BR'),'verde']].map(function(s){return '<div class="stat '+s[2]+'"><div class="n">'+s[1]+'</div><div class="l">'+s[0]+'</div></div>'}).join('')+'</div>';
  var max=Math.max.apply(null,ORDEM.map(function(s){return ls.filter(function(l){return l.status===s}).length}).concat([1]));
- html+='<div class="painel funil"><h2>Funil do pipeline</h2>'+ORDEM.map(function(s){var n=ls.filter(function(l){return l.status===s}).length;return '<div class="linha"><span>'+NOMES[s]+'</span><div class="barra"><div class="fill" style="width:'+(n/max*100)+'%;background:'+CORES[s]+'"></div></div><b>'+n+'</b></div>'}).join('')+'</div>';
- html+='<div class="painel"><h2>Follow-ups pendentes (4+ dias sem resposta)</h2>'+(fu.length?fu.map(function(l){return '<div class="fup-item"><b>'+l.nome+'</b><span class="dias">'+dias(l.dataProposta)+' dias</span><span style="color:var(--muted);font-size:12px">proposta em '+l.dataProposta+'</span>'+(l.whatsapp?'<a style="margin-left:auto;font-size:12px;font-weight:700;color:var(--accent-2)" href="https://wa.me/'+l.whatsapp+'" target="_blank">chamar no WhatsApp →</a>':'')+'</div>'}).join(''):'<div class="vazio">Nenhum follow-up pendente. 👌</div>')+'</div>';
+ html+='<div class="painel funil"><h2>Funil do pipeline comercial</h2>'+ORDEM.map(function(s){var n=ls.filter(function(l){return l.status===s}).length;return '<div class="linha"><span>'+NOMES[s]+'</span><div class="barra"><div class="fill" style="width:'+(n/max*100)+'%;background:'+CORES[s]+'"></div></div><b>'+n+'</b></div>'}).join('')+'</div>';
+ html+='<div class="painel"><h2>Propostas pendentes de follow-up (4+ dias)</h2>'+(fu.length?fu.map(function(l){return '<div class="fup-item"><b>'+l.nome+'</b><span class="dias">'+dias(l.dataProposta)+' dias</span><span style="color:var(--muted)">Proposta enviada em '+l.dataProposta+'</span></div>'}).join(''):'<div style="color:var(--muted);font-size:13px;padding:8px 0">Nenhuma proposta pendente no momento.</div>')+'</div>';
  return html}
 function vPipeline(){var por={};fil().forEach(function(l){(por[l.status]=por[l.status]||[]).push(l)});
- return '<p class="dica-drag">Arraste um card para mudar o status — os automáticos (redesenhado, publicado, proposta) o plugin move sozinho; use o arrasto principalmente para <b>Respondeu</b> e <b>Fechado</b>.</p><div class="board">'+ORDEM.concat(['descartado']).map(function(s){var arr=por[s]||[];return '<div class="col" data-st="'+s+'" ondragover="dragSobre(event)" ondragleave="dragSai(event)" ondrop="solta(event,\''+s+'\')"><h3>'+NOMES[s]+'<span>'+arr.length+'</span></h3><div class="cards">'+(arr.length?arr.map(card).join(''):'<div class="vazio">solte aqui</div>')+'</div></div>'}).join('')+'</div>'}
+ return '<p class="dica-drag">Arraste os cards entre as colunas para atualizar o status do lead no pipeline comercial.</p><div class="board">'+ORDEM.map(function(s){var arr=por[s]||[];return '<div class="col" data-st="'+s+'" ondragover="dragSobre(event)" ondragleave="dragSai(event)" ondrop="solta(event,\''+s+'\')"><h3>'+NOMES[s]+'<span>'+arr.length+'</span></h3><div class="cards">'+(arr.length?arr.map(card).join(''):'<div class="vazio">solte aqui</div>')+'</div></div>'}).join('')+'</div>'}
 function vClientes(){var ls=fil().slice().sort(function(a,b){var x=a[sortCol]||'',y=b[sortCol]||'';return(x<y?-1:x>y?1:0)*(sortAsc?1:-1)});
  var pp=pagSize();var total=ls.length,paginas=Math.max(1,Math.ceil(total/pp));if(pag>paginas)pag=paginas;
  var ini=(pag-1)*pp,fim=Math.min(ini+pp,total);ls=ls.slice(ini,fim);
