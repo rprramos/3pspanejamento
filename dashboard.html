@@ -4866,9 +4866,9 @@ function aplicaOv(arr){
 var leads=aplicaOv(D.leads||[]);
 if(Object.keys(OV).length)document.getElementById('limpar-ov')&&(document.getElementById('limpar-ov').style.display='inline-block');
 fetch('/api/leads',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){MODE='db';leads=j;fetch('/api/config',{cache:'no-store'}).then(function(r){return r.json()}).then(function(c){CFG=(c&&c.contratante!==undefined)?c.contratante:c;HG=(c&&c.hostgator)||{};if(view==='config')render()});var m=document.getElementById('modo');m.textContent='banco conectado';m.className='modo db';m.title='Alterações salvas no prospector.db';var lb=document.getElementById('limpar-ov');if(lb)lb.style.display='none';render()}).catch(function(){});
-var CORES={novo:'#87837B',msg_enviada:'#3B82F6',respondeu:'#F59E0B',negociacao:'#8B5CF6',proposta:'#D97757',fechado:'#10B981',recusado:'#EF4444'};
-var NOMES={novo:'Leads Novos',msg_enviada:'Primeira Mensagem',respondeu:'Respondido',negociacao:'Em Negociação',proposta:'Proposta Enviada',fechado:'Fechado',recusado:'Recusado'};
-var ORDEM=['novo','msg_enviada','respondeu','negociacao','proposta','fechado','recusado'];
+var CORES={novo:'#87837B',msg_enviada:'#3B82F6',respondeu:'#F59E0B',negociacao:'#8B5CF6',proposta:'#D97757',fechado:'#10B981',recusado:'#EF4444',dados_errados:'#E11D48'};
+var NOMES={novo:'Leads Novos',msg_enviada:'Primeira Mensagem',respondeu:'Respondido',negociacao:'Em Negociação',proposta:'Proposta Enviada',fechado:'Fechado',recusado:'Recusado',dados_errados:'⚠️ Dados Errados'};
+var ORDEM=['novo','msg_enviada','respondeu','negociacao','proposta','fechado','recusado','dados_errados'];
 var view='geral',busca='',sortCol='nome',sortAsc=true,pag=1,porPag='auto';
 function pagSize(){if(porPag!=='auto')return porPag;var v=document.getElementById('view');var h=v?v.clientHeight:600;return Math.max(4,Math.floor((h-165)/59))}
 function mudaPorPag(v){
