@@ -5094,14 +5094,21 @@ function getWaMsg(l){
 function getRawMsg(l){
   var n = l.nome || '';
   var esp = l.nicho || 'sua área';
-  var isAdv = (esp.toLowerCase().indexOf('advog')>=0 || esp.toLowerCase().indexOf('direit')>=0);
+  var espLower = esp.toLowerCase();
+  
+  var isAdv = (espLower.indexOf('advog')>=0 || espLower.indexOf('direit')>=0);
+  var isArch = (espLower.indexOf('arquit')>=0 || espLower.indexOf('interior')>=0 || espLower.indexOf('ilumina')>=0);
+  var isMed = (espLower.indexOf('estética')>=0 || espLower.indexOf('dermato')>=0 || espLower.indexOf('odonto')>=0 || espLower.indexOf('nutri')>=0 || espLower.indexOf('biomedic')>=0 || espLower.indexOf('lente')>=0 || espLower.indexOf('plástica')>=0);
 
-  var p1 = "Achei o contato de vocês pelo Google enquanto procurava sobre " + esp + " aqui na Barra.";
-  var p2 = "O que me fez mandar essa mensagem foi a nota de vocês no Google. Como trabalho com captação de clientes, *me chamou a atenção ver uma autoridade desse nível sendo 'escondida' pelo algoritmo do Instagram.* É como dar uma palestra brilhante para um estádio lotado, mas com o microfone no mudo.";
+  var termoAtividade = isArch ? 'projetos' : (isMed ? 'pacientes' : 'clientes');
+  var notaStr = (l.nota ? l.nota : '5') + '⭐';
+
+  var p1 = "Achei o seu contato pelo Google enquanto procurava sobre " + esp + " aqui na Barra.";
+  var p2 = "O que me fez mandar essa mensagem foi a nota " + notaStr + " no Google. Como trabalho com captação de clientes, me chamou a atenção ver uma autoridade desse nível sendo 'escondida' pelo algoritmo do Instagram.";
   var p3 = isAdv
-    ? "Eu construo a engrenagem para ligar esse microfone: monto todo o processo estratégico e crio vídeos focados em vendas. Olha o print abaixo: os vídeos que estruturei para um colega seu de advocacia, rodando com tráfego, geraram 800 contatos em 20 dias. Se na advocacia o resultado foi esse, no seu nicho o potencial é bizarro."
-    : "Eu construo a engrenagem para ligar esse microfone: monto todo o processo estratégico e crio vídeos focados em vendas. Olha o print abaixo: os vídeos que estruturei para uma advogada, rodando com tráfego, geraram 800 contatos em 20 dias. Se na advocacia o resultado foi esse, no seu nicho o potencial é bizarro.";
-  var p4 = n + ", posso te mostrar em 15 minutinhos como ligar esse microfone e fazer a região inteira te ouvir? Qual dia fica melhor essa semana?";
+    ? "Eu construo a estratégia audiovisual e crio vídeos focados em vendas. Olha o print abaixo: os vídeos que estruturei para um colega seu de advocacia, rodando com tráfego, geraram 800 contatos em 20 dias. Se na advocacia o resultado foi esse, no seu nicho o potencial é bizarro."
+    : "Eu construo a estratégia audiovisual e crio vídeos focados em vendas. Olha o print abaixo: os vídeos que estruturei para uma advogada, rodando com tráfego, geraram 800 contatos em 20 dias. Se na advocacia o resultado foi esse, no seu nicho o potencial é bizarro.";
+  var p4 = n + ", posso te mostrar em 15 minutinhos como podemos captar novos " + termoAtividade + " através das redes sociais? Qual dia fica melhor essa semana?";
 
   return p1 + "\n\n" + p2 + "\n\n" + p3 + "\n\n" + p4;
 }
